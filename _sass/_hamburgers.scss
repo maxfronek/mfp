@@ -1,0 +1,142 @@
+
+/* oh #hamburgers */
+
+ /* testing for cool #hamburger animations */
+
+.hamburger {
+    border: none;
+	position: fixed;
+    z-index: 100;
+	display: block;
+	width: 30px;
+	height: 30px;
+	padding: 0;
+	top: 20px;
+	left: 20px;
+	background: transparent;
+	overflow: hidden;
+	opacity: 1;
+	-webkit-transition-delay: 0s;
+	transition-delay: 0s;
+	-webkit-transition: opacity 0.2s cubic-bezier(0.86, 0, 0.07, 1);
+	transition: opacity 0.2s cubic-bezier(0.86, 0, 0.07, 1);
+ 
+    .patty {
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 1px;
+	left: 0;
+	top: 14px;
+	background: $light;
+	opacity: 1;
+	-webkit-transition: opacity 0.15s linear, -webkit-transform 0.3s cubic-bezier(0.86, 0, 0.07, 1), background 0.2s linear;
+	transition: opacity 0.15s linear, transform 0.3s cubic-bezier(0.86, 0, 0.07, 1), background 0.2s linear;
+        
+     
+     &:nth-child(1) {
+	-webkit-transform: translateY(-6px);
+         transform: translateY(-6px);}
+     &:nth-child(2) {
+	-webkit-transform: translateY(0px);
+	transform: translateY(0px);}
+     &:nth-child(3) {
+	-webkit-transform: translateY(6px);
+	transform: translateY(6px);}
+
+    
+    } // end regular patty and children 
+    
+    
+    
+    &.expand {z-index: 100;
+    
+        .patty {
+    &:nth-child(1) {
+	-webkit-transform: translateY(-9px);
+	transform: translateY(-9px);}
+    &:nth-child(2) {
+	-webkit-transform: translateY(0px);
+	transform: translateY(0px);}
+    &:nth-child(3) {
+	-webkit-transform: translateY(9px);
+	transform: translateY(9px);}
+
+        } // end expanded patty and child
+            
+    } // end expanded hamburger
+    
+    &.collapse {display: block;
+    
+        .patty {
+            &:nth-child(1) {
+	-webkit-transform: translateY(0px);
+	transform: translateY(0px);}
+            &:nth-child(2) {
+	-webkit-transform: translateY(0px);
+	transform: translateY(0px), skewX(30);}
+            &:nth-child(3) {
+	-webkit-transform: translateY(0px);
+	transform: translateY(0px);}   
+        } // end collapsed patties
+        
+    } // end collapse
+    
+    &#xgonnagiveittoya {
+          .patty {
+            &:nth-child(1) {
+	-webkit-transform: rotate(-135deg);
+	transform: rotate(-135deg);}
+            &:nth-child(2) {-webkit-transform: rotate(-135deg);
+	transform: rotate(-135deg);}
+            &:nth-child(3) {
+	-webkit-transform: rotate(-225deg);
+	transform: rotate(-225deg);}   
+        } // end DMX patties
+        
+        &.expand {
+            
+            .patty {
+                &:nth-child(1) {
+	-webkit-transform: rotate(135deg);
+	transform: rotate(135deg);}
+            &:nth-child(2) {-webkit-transform: rotate(135deg);
+	transform: rotate(135deg);}
+            &:nth-child(3) {
+	-webkit-transform: rotate(225deg);
+	transform: rotate(225deg);}     
+            }
+        } // end expand + DMX
+        
+    } // end DMX
+    
+    &.collapse.xgonnagiveittoya {z-index: 2;}
+    
+} // end amburgesa
+
+/* pieces of shit
+html .hamburger.expand:hover .patty,
+.hamburger.expand.on_press .patty {
+	-webkit-transition: opacity 0.15s linear, -webkit-transform 0.15s linear;
+	transition: opacity 0.15s linear, transform 0.15s linear;
+}
+
+html .hamburger.expand:hover .patty:nth-child(1),
+.hamburger.expand.on_press .patty:nth-child(1) {
+	-webkit-transform: translateY(-9px);
+	transform: translateY(-9px);
+}
+
+html .hamburger.expand:hover .patty:nth-child(2),
+.hamburger.expand.on_press .patty:nth-child(2) {
+	-webkit-transform: translateY(0px);
+	transform: translateY(0px);
+}
+
+html .hamburger.expand:hover .patty:nth-child(3),
+.hamburger.expand.on_press .patty:nth-child(3) {
+	-webkit-transform: translateY(9px);
+	transform: translateY(9px);
+}
+*/
+

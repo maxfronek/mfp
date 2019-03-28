@@ -1,0 +1,47 @@
+<aside>
+	<div class="container">
+		<nav>
+			<ul>
+{% for page in site.pages %} {% if page.title %}
+<li><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
+{% endif %} {% endfor %}
+<li><a href="{{ '/blog' | prepend: site.baseurl }}">Blog</a></li>
+			</ul>
+		</nav>
+	</div>
+</aside>
+
+<header>
+    <button class="hamburger">
+           <span class="patty"></span>
+           <span class="patty"></span>
+           <span class="patty"></span>
+       </button>
+    
+    <a class="mtof" id="logo" style="" href="" title="" rel="home">
+ 
+<span class="m-left"></span>
+<span class="x-left"></span>
+<span class="x-right"></span>
+<span class="m-right"></span>
+<span class="a-left"></span>
+<span class="a-right"></span>
+<span class="a-cross"></span>
+<span class="f-left"></span>
+<span class="f-top"></span>
+<span class="o-full"></span>
+<span class="r-left"></span>
+<span class="r-cross"></span>
+<span class="r-circle"></span>
+<span class="r-diag"></span>
+<span class="n-cross"></span>
+<span class="e-left-1"></span>
+<span class="e-left-2"></span>
+<span class="e-center"></span>
+<span class="e-bottom"></span>
+<span class="k-left"></span>
+<span class="k-top"></span>
+<span class="k-bottom"></span>
+</a>
+	<h1><a href="{{ site.baseurl }}">{{ site.title }}</a></h1>
+</header>
