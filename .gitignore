@@ -2,3 +2,6 @@
 .DS_Store
 Thumbs.db
 _site
+.sass_cache
+Gemfile
+Gemfile.lock
