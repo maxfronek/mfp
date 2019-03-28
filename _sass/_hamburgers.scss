@@ -1,17 +1,15 @@
 
 /* oh #hamburgers */
 
- /* testing for cool #hamburger animations */
-
 .hamburger {
     border: none;
 	position: fixed;
     z-index: 100;
 	display: block;
-	width: 30px;
+	width: 35px;
 	height: 30px;
 	padding: 0;
-	top: 20px;
+	top: 100px;
 	left: 20px;
 	background: transparent;
 	overflow: hidden;
@@ -21,6 +19,8 @@
 	-webkit-transition: opacity 0.2s cubic-bezier(0.86, 0, 0.07, 1);
 	transition: opacity 0.2s cubic-bezier(0.86, 0, 0.07, 1);
  
+    @include hocus {cursor: pointer;}
+    
     .patty {
 	display: block;
 	position: absolute;
@@ -39,7 +39,7 @@
          transform: translateY(-6px);}
      &:nth-child(2) {
 	-webkit-transform: translateY(0px);
-	transform: translateY(0px);}
+	transform: translateY(0px);}  
      &:nth-child(3) {
 	-webkit-transform: translateY(6px);
 	transform: translateY(6px);}
@@ -54,13 +54,14 @@
         .patty {
     &:nth-child(1) {
 	-webkit-transform: translateY(-9px);
-	transform: translateY(-9px);}
+	transform: translateY(-9px); }
     &:nth-child(2) {
 	-webkit-transform: translateY(0px);
 	transform: translateY(0px);}
     &:nth-child(3) {
 	-webkit-transform: translateY(9px);
-	transform: translateY(9px);}
+	transform: translateY(9px);
+            }
 
         } // end expanded patty and child
             
@@ -82,7 +83,7 @@
         
     } // end collapse
     
-    &#xgonnagiveittoya {
+    &.close {
           .patty {
             &:nth-child(1) {
 	-webkit-transform: rotate(-135deg);
@@ -110,7 +111,7 @@
         
     } // end DMX
     
-    &.collapse.xgonnagiveittoya {z-index: 2;}
+    &.collapse.close {z-index: 3;}
     
 } // end amburgesa
 

@@ -2,13 +2,17 @@
 <html>
   {% include head.html %}
 
-  <body>
+  <body {% if page.title %}{% endif %}>
     {% include header.html %}
+    {% include menu.html %}
     <main>
       <article>
         {{ content }}
       </article>
-      {% include footer.html %}
+
     </main>
-  </body>
+      
+            {% include footer.html %}
+      
+  </body> 
 </html>

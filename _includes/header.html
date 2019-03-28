@@ -1,24 +1,11 @@
-<aside>
-	<div class="container">
-		<nav>
-			<ul>
-{% for page in site.pages %} {% if page.title %}
-<li><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
-{% endif %} {% endfor %}
-<li><a href="{{ '/blog' | prepend: site.baseurl }}">Blog</a></li>
-			</ul>
-		</nav>
-	</div>
-</aside>
-
 <header>
-    <button class="hamburger">
+    <button class="hamburger" id="hamburger">
            <span class="patty"></span>
            <span class="patty"></span>
            <span class="patty"></span>
        </button>
     
-    <a class="mtof" id="logo" style="" href="" title="" rel="home">
+    <a class="mtof" id="logo" style="" {% if page.title %}href="/"{% endif %} title="" rel="home">
  
 <span class="m-left"></span>
 <span class="x-left"></span>
@@ -43,5 +30,5 @@
 <span class="k-top"></span>
 <span class="k-bottom"></span>
 </a>
-	<h1><a href="{{ site.baseurl }}">{{ site.title }}</a></h1>
+
 </header>

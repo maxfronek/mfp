@@ -691,7 +691,9 @@ position: absolute;
 
 .mtof {
     border: none;
-	position: relative;
+	position: fixed;
+    top: 25px;
+    left: 21px;
 	display: block;
 	padding: 0;
 	background: transparent;
@@ -699,11 +701,9 @@ position: absolute;
 	opacity: 1;
 	-webkit-transition-delay: 0.1s;
 	transition-delay: 0.1s;
-	/*-webkit-transition: opacity 0.2s cubic-bezier(0.86, 0, 0.07, 1);
-	transition: opacity 0.2s cubic-bezier(0.86, 0, 0.07, 1);*/
     @include prefix(transition, all .3s ease-in-out, ms moz o webkit);
-    /* margin: 30px 0 0 50px; */
-    @includes justify-content(center);
+    @include justify-content(center);
+    
 
 
  .m-left, 
@@ -877,43 +877,43 @@ position: absolute;
     -webkit-transition: opacity 0.1s linear, -webkit-transform 0.3s cubic-bezier(0.86, 0, 0.07, 1), background 0.2s linear;
 	transition: opacity 0.1s linear, transform 0.3s cubic-bezier(0.86, 0, 0.07, 1), background 0.2s linear;}
 
-.ftime {/*margin: 30px 0 0 45px;*/ margin-left: -40%;}
-.ftime span {background: #ca9a2c;}
+&.ftime {margin-left: -10px;
+ span {background: #ca9a2c;}
 
 
-.ftime .m-left {transform: rotate(180deg)}
-.ftime .m-right {transform: translateX(-3px) translateY(1px) scaleY(.95);}
+ .m-left {transform: rotate(180deg)}
+ .m-right {transform: translateX(-3px) translateY(1px) scaleY(.95);}
 
-.ftime .x-left {transform: rotate(-90deg) scaleY(1.05) translateX(19px) translateY(10px)}
-.ftime .x-right {transform: rotate(-35deg) translateX(2px) translateY(2px) scaleY(.715)}
+ .x-left {transform: rotate(-90deg) scaleY(1.05) translateX(19px) translateY(10px)}
+ .x-right {transform: rotate(-35deg) translateX(2px) translateY(2px) scaleY(.715)}
 
-.ftime .a-left {transform: rotate(0deg) scaleY(0.68) translateY(-7px) translateX(-5px)}
-.ftime .a-right {transform: rotate(180deg) translateY(-2px) translateX(2px) scaleY(.95);}
-.ftime .a-cross {transform: rotate(-180deg) scaleX(.7) translateY(2px) translateX(10px);}
+ .a-left {transform: rotate(0deg) scaleY(0.68) translateY(-7px) translateX(-5px)}
+ .a-right {transform: rotate(180deg) translateY(-2px) translateX(2px) scaleY(.95);}
+ .a-cross {transform: rotate(-180deg) scaleX(.7) translateY(2px) translateX(10px);}
 
-.ftime .o-full {transform: translateX(0px); opacity: 1; background: transparent; border-color: #ca9a2c;}
+ .o-full {transform: translateX(0px); opacity: 1; background: transparent; border-color: #ca9a2c;}
 
-.ftime .r-diag {opacity: 1; transform: rotate(-130deg) scaleX(.76) translateX(-2px);}
-.ftime .r-circle {opacity: 1; background: transparent; border-color: #ca9a2c;  border-left-color: transparent;}
+ .r-diag {opacity: 1; transform: rotate(-130deg) scaleX(.76) translateX(-2px);}
+ .r-circle {opacity: 1; background: transparent; border-color: #ca9a2c;  border-left-color: transparent;}
 
-.ftime .e-left-1 { opacity: 1; -webkit-transform: translateX(12.5px) translateY(4.5px) scaleY(.96); transform: translateX(12.5px) translateY(4.5px) scaleY(.96);
+ .e-left-1 { opacity: 1; -webkit-transform: translateX(12.5px) translateY(4.5px) scaleY(.96); transform: translateX(12.5px) translateY(4.5px) scaleY(.96);
 }
-.ftime .e-left-2 {}
-.ftime .e-center {opacity: 1; -webkit-transform: rotate(0deg) translateX(-3px) translateY(0px) scaleX(.7); transform: rotate(0deg) translateX(-3px) translateY(0px) scaleX(.7);}
-.ftime .e-bottom {opacity: 1; 
+ .e-left-2 {}
+ .e-center {opacity: 1; -webkit-transform: rotate(0deg) translateX(-3px) translateY(0px) scaleX(.7); transform: rotate(0deg) translateX(-3px) translateY(0px) scaleX(.7);}
+ .e-bottom {opacity: 1; 
     -webkit-transform:rotate(0deg) translateX(-1px) translateY(1px);
     transform: rotate(0deg) translateX(-1px) translateY(1px);}
 
-.ftime .k-left {}
-.ftime .k-top {opacity: 1;
+ .k-left {}
+ .k-top {opacity: 1;
 -webkit-transform: rotate(-50deg) translateY(0px) translateX(1px);
     transform: rotate(-50deg) translateY(0px) translateX(1px);}
-.ftime .k-bottom {opacity: 1;
+ .k-bottom {opacity: 1;
 -webkit-transform: rotate(49deg) translateY(0px) translateX(-1px) scaleX(.95);
     transform: rotate(49deg) translateY(0px) translateX(-1px) scaleX(.95);}
 
+    } // end ftime
 
 
-
-}
+} // end mtof
 

@@ -1,0 +1,12 @@
+html {font-size: 100%;}
+
+body {}
+
+
+h1, h2, h3, h4, h5, h6 {font-family: $heading-font;}
+
+h1 {
+    &.homepage-title {margin-bottom: 0;}
+}
+
+p {font-family: $font-style; font-size: 1.2rem; letter-spacing: .07rem;}
