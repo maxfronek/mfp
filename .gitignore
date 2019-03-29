@@ -6,3 +6,6 @@ _site
 Gemfile
 Gemfile.lock
 /.sass-cache
+/images
+/images/kauai
+assets

@@ -6,15 +6,17 @@ $content-width: 900px;
 // fonts
 
 $heading-font: 'ivymode', sans-serif;
-$font-style: 'Futura', sans-serif;
+$font-style: 'futura-pt', 'Futura', sans-serif;
 
 // colors
 $main: #ca9a2c;
-$font-color: #0a2216;
-$link-color: #ca9a2c;
-$link-hover-color: #eceadd;
+$mf-green: #0a2216;
+$font-color: #404040;
+$link-color: #404040;
 $heading-font-color: #ca9a2c;
+$link-hover-color: rgba($heading-font-color, .5);
 $light: #eceadd;
+$mid: #878878;
 $header: #0a2216;
 
 //mixins

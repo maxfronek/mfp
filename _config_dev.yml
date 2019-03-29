@@ -30,7 +30,17 @@ markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
-
+  - jekyll-responsive-image
+responsive_image:
+  template: _includes/srcset.html
+  sizes:
+  - width: 480  # [Required] How wide the resized image will be.
+    quality: 60 # [Optional] Overrides default_quality for this size.
+  - width: 600
+  - width: 1000
+    quality: 80
+  - width: 2000
+    quality: 80
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.

@@ -30,7 +30,10 @@ markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
-
+  - jekyll-responsive-image
+responsive_image:
+  template: _includes/srcset.html
+  
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.

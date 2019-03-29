@@ -1,0 +1,34 @@
+--- 
+layout: default 
+---
+<div class="grid">
+    
+    <aside>
+    <h2 class="title">{{ page.title }}</h2>
+<time
+  >{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if
+  page.meta %} • {{ page.meta }}{% endif %}</time
+>
+  {% for category in page.categories %}{{ category }} {% endfor %}
+    
+<section>{{ content }}</section>
+
+    </aside>
+    
+
+    <div>
+{% for image in page.images %}
+
+{% capture path %}{{ image.img_url }}{% endcapture %}
+{% capture alt %}{{ image.title }}{% endcapture %}
+
+{% responsive_image_block %}
+  path: {{ path }}
+  alt: {{ alt }}
+  sizes: "(max-width: 400px) 100vw, 50vw"
+{% endresponsive_image_block %}
+
+{% endfor %}
+    </div>
+    
+</div>

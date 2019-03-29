@@ -2,10 +2,21 @@
 layout: default 
 ---
 
-<h2>{{ page.title }}</h2>
+<h2 class="title">{{ page.title }}</h2>
 <time
   >{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if
   page.meta %} • {{ page.meta }}{% endif %}</time
 >
+{% if page.image %}
 
+{% capture path %}{{ page.image | replace: "/images", "images" }}{% endcapture %}
+{% capture alt %} {{ page.image_alt }} {% endcapture %}
+
+{% responsive_image_block %}
+  path: {{ path }}
+  alt: {{ alt }}
+{% endresponsive_image_block %}
+
+
+{% endif %}
 {{ content }}
