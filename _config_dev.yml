@@ -41,6 +41,21 @@ responsive_image:
     quality: 80
   - width: 2000
     quality: 80
+defaults:
+-
+ scope:
+   path: "" # an empty string here means all files in the project
+   type: "posts" # previously `post` in Jekyll 2.2.
+ values:
+   layout: "default"
+   is_post: true  
+-
+ scope:
+   path: "" # an empty string here means all files in the project
+   type: "pages" # previously `post` in Jekyll 2.2.
+ values:
+   layout: "default"
+   is_page: true  
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.

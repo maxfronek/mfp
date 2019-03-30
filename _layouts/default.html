@@ -2,10 +2,10 @@
 <html>
   {% include head.html %}
 
-  <body {% if page.title %}{% endif %}>
+  <body>
     {% include header.html %}
     {% include menu.html %}
-    <main>
+    <main class="{% if page.is_post %}post{% elsif page.is_page %}page{% endif %}">
       <article>
         {{ content }}
       </article>

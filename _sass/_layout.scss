@@ -2,8 +2,7 @@ body {
   margin: 0;
   color: $font-color;
   font-family: $font-style;
-  background: rgb(250,250,250);
-  background: linear-gradient(212deg, rgba(250,250,250,1) 0%, rgba(246,246,246,1) 46%, rgba(231,236,231,1) 100%);
+  background: $bg;
   font-size: 1rem;
   line-height: 1.6;
   min-height: 100vh;
@@ -28,13 +27,16 @@ header {
 }
 main {
   padding: 0 15px;
-    width: 100%;
+  width: calc(100% - 2rem);
   max-width: $content-width;
   //  overflow: hidden;
   margin: 0 auto;
     min-height: 100vh;
     @include flexbox;
     @include align-items(center);
+    @include justify-content(center);
+    
+    &.post {max-width: 1600px;}
     
    // &.embiggen {overflow: visible;}
 }
@@ -45,6 +47,8 @@ time {
   max-width: $content-width;
   margin: 0 auto;
 }
+
+article {width: 100%;}
 
 /* Menu */
 
@@ -103,21 +107,8 @@ menu {
 
 
 img {object-fit: cover; width: 100%; max-height: 500px;}
+video {object-fit: cover; width: 100%; max-height: 500px;}
 
-
-.grid {
-    display: grid; grid-template-columns: 1fr 2fr 1fr;
-        
-    aside {position: fixed;@include flexbox; @include justify-content(center); height: 100vh; @include flex-direction(column); z-index:2;}
-    div {grid-column: 2 / span 2;
-    
-            .gallery-item {
-                @include prefix(transition, all 1s ease-in-out, webkit moz ms o); position: relative; z-index: 1;
-                &.embiggen { object-fit: cover; width: 100vw; height: 100vh; max-height: 100vh; margin-left: -50%; z-index: 3;
-                }
-        }
-    }
-}
 
 
 footer {

@@ -16,19 +16,43 @@ layout: default
     </aside>
     
 
-    <div>
+    <section class="images">
+{% if page.video %}
+     <video loop muted autoplay playsinline>
+        <source src="{{ page.video | strip_html }}" type="{% if page.video contains 'mp4' %}video/mp4{% else %}video/webm{% endif %}">
+</video>    
+{% endif %}
+        
 {% for image in page.images %}
-
-{% capture path %}{{ image.img_url }}{% endcapture %}
+        {% capture thecycle %}{% cycle 'uno', 'dos', 'tres', 'cuatro'  %}{% endcapture %}
+<div class="imagewrap {{ thecycle }}">
+        {% capture path %}{{ image.img_url }}{% endcapture %}
 {% capture alt %}{{ image.title }}{% endcapture %}
 
+    {% if path contains 'mp4' or path contains 'webm' %}
+ <video loop muted autoplay playsinline>
+        <source src="{{ path | strip_html }}" type="{% if path contains 'mp4' %}video/mp4{% else %}video/webm{% endif %}">
+</video>  
+    {% else %}
 {% responsive_image_block %}
   path: {{ path }}
   alt: {{ alt }}
   sizes: "(max-width: 400px) 100vw, 50vw"
 {% endresponsive_image_block %}
-
+{% endif %}
+{% if image.title %}
+        <p class="caption">{{ alt }}</p>
+{% endif %}
+        
+        </div>
+        {% if image.blockquote %}
+        <blockquote class="{{ thecycle }}">{{ image.blockquote }}</blockquote>
+        {% elsif image.paragraph %}
+        <p class="{{ thecycle }}">{{ image.paragraph }}</p>
+        {% elsif image.heading %}
+        <h3 class="{{ thecycle }}">{{ image.heading }}</h3>
+        {% endif %}
 {% endfor %}
-    </div>
+    </section>
     
 </div>

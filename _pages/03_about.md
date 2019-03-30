@@ -3,7 +3,7 @@
 layout: page
 title: About Me
 permalink: /about/
-image: /images/about.jpg
+image: /images/page_images/about.jpg
 ---
 
 ![Me]({{ page.image  | prepend:  site.baseurl }})

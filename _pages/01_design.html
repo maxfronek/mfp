@@ -1,0 +1,16 @@
+---
+layout: page
+title: Design
+permalink: /design/
+---
+
+{% for post in site.posts %}
+{% for category in post.categories %}
+{% if category contains 'design' %}
+		<time>{{ post.date | date: "%b %-d, %Y" }}</time>
+		<h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+{% else %}
+{% continue %}
+{% endif %}
+{% endfor %}
+{% endfor %}
