@@ -24,6 +24,8 @@ header {
   @include flexbox;
   @include justify-content(center);
   @include align-items(center);
+    
+    @include medium {top: unset;bottom: 0;width: 140px;height: 75px;display: block;}    
 }
 main {
   padding: 0 15px;
@@ -38,6 +40,9 @@ main {
     
     &.post {max-width: 1600px;}
     
+    @include medium {width: 95%;
+    padding: 0 0;}
+    
    // &.embiggen {overflow: visible;}
 }
 time {
@@ -49,6 +54,10 @@ time {
 }
 
 article {width: 100%;}
+
+.blog, .list {max-width: 600px; margin: 0 auto;}
+
+
 
 /* Menu */
 
@@ -68,6 +77,9 @@ menu {
     
   border-bottom: 1px solid lighten($light, 30%);
   box-shadow: 0px 1px 1px RGBA(4, 25, 54, 0.1);
+    
+    @include medium {padding-left: 0;}
+    
   nav {
     max-width: 800px;
     ul {
@@ -78,6 +90,9 @@ menu {
           position: relative;
           font-size: 4rem;
           margin-bottom:2rem;
+          @include medium {font-size: 3rem;}
+          
+          
         a {
           text-decoration: none;
           display: block;
@@ -110,8 +125,35 @@ img {object-fit: cover; width: 100%; max-height: 500px;}
 video {object-fit: cover; width: 100%; max-height: 500px;}
 
 
+.list-item {
+
+    a {
+        img {position: fixed; top: 0; right: 0; opacity: 0; width: 50%; min-height: 67vh; z-index: -1; @include prefix(transition, .2s all ease-in-out, webkit ms moz o);}
+    
+    @include hocus {
+        img  {opacity: .3;
+            @include medium {opacity: 0;}
+        }
+    }
+}
+}
 
 footer {
   text-align: center;
+  @include flexbox; @include flex-direction(row);@include align-items(center);  @include justify-content(center);  
   padding: 40px;
+    hr {width: 100%; position: absolute; top: unset; margin-top: -5px;z-index: -1;}
+    .footer-links {background-color: $bg; padding: 0 2rem; z-index: 1;}
+    a {
+        &:after {content: ""; margin-right: 1rem;}
+        &:last-child {&:after {content: "";margin-right: 0rem;}}
+            
+    img {width: 30px; @include prefix(transition, .2s all ease-in-out, ms moz webkit o);}
+        
+      @include hocus {img { opacity: .6;}}    
+    }
+
+    
+    
+    
 }

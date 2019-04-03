@@ -21,6 +21,7 @@
     transition: all .3s ease-in-out;
     margin: -20px 0 40px;
 
+    @include medium {top: unset;bottom: 69px;right: 60px;left: unset;}
     
     .m-left,
     .m-right,
@@ -703,6 +704,11 @@ position: absolute;
 	transition-delay: 0.1s;
     @include prefix(transition, all .3s ease-in-out, ms moz o webkit);
     @include justify-content(center);
+    
+    
+    @include medium {top: unset;bottom: 69px;
+        //right: 60px;left: unset;
+    }
     
 
 

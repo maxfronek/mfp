@@ -1,5 +1,5 @@
 --- 
-layout: default 
+layout: "default" 
 ---
 <div class="grid">
     
@@ -9,9 +9,7 @@ layout: default
   >{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if
   page.meta %} • {{ page.meta }}{% endif %}</time
 >
-  {% for category in page.categories %}{{ category }} {% endfor %}
-    
-<section>{{ content }}</section>
+  {% for category in page.categories %}<a href="{{ site.url }}/category/{{ category | remove: ',' }}" title="">{{ category }}</a> {% endfor %}
 
     </aside>
     
@@ -25,7 +23,7 @@ layout: default
         
 {% for image in page.images %}
         {% capture thecycle %}{% cycle 'uno', 'dos', 'tres', 'cuatro'  %}{% endcapture %}
-<div class="imagewrap {{ thecycle }}">
+<div class="imagewrap {{ thecycle }} {% if image.anchor %}{{ image.anchor }}{% endif %}">
         {% capture path %}{{ image.img_url }}{% endcapture %}
 {% capture alt %}{{ image.title }}{% endcapture %}
 
@@ -38,7 +36,7 @@ layout: default
 {% responsive_image_block %}
   path: {{ path }}
   alt: {{ alt }}
-  sizes: "(max-width: 400px) 100vw, 50vw"
+  sizes: "(max-width: 550px) 67vh, 100vw"
 {% endresponsive_image_block %}
 
 {% endif %}
@@ -49,12 +47,17 @@ layout: default
         </div>
         {% if image.blockquote %}
         <blockquote class="{{ thecycle }}">{{ image.blockquote }}</blockquote>
-        {% elsif image.paragraph %}
+        {% endif %}
+        {% if image.paragraph %}
         <p class="{{ thecycle }}">{{ image.paragraph }}</p>
-        {% elsif image.heading %}
+        {% endif %}
+        {% if image.heading %}
         <h3 class="{{ thecycle }}">{{ image.heading }}</h3>
         {% endif %}
 {% endfor %}
+        
+        {{ content }}
+        
     </section>
     
 </div>

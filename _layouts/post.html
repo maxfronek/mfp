@@ -1,22 +1,48 @@
 --- 
 layout: "default" 
 ---
-
-<h2 class="title">{{ page.title }}</h2>
+<div class="grid">
+    
+    <aside>
+    <h2 class="title">{{ page.title }}</h2>
 <time
   >{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if
   page.meta %} • {{ page.meta }}{% endif %}</time
 >
-{% if page.image %}
+  {% for category in page.categories %}<a href="{{ site.url }}/category/{{ category }}" title="">{{ category }}</a> {% endfor %}
+    
+    </aside>
+    
 
-{% capture path %}{{ page.image | replace: "/images", "images" }}{% endcapture %}
-{% capture alt %} {{ page.image_alt }} {% endcapture %}
+    <section class="images">
+{% if page.video %}
+     <video loop muted autoplay playsinline>
+        <source src="{{ page.video | strip_html }}" type="{% if page.video contains 'mp4' %}video/mp4{% else %}video/webm{% endif %}">
+</video> 
+{% endif %}
+{% if page.image %}
+        {% capture thecycle %}{% cycle 'uno', 'dos', 'tres', 'cuatro'  %}{% endcapture %}
+<div class="imagewrap {{ thecycle }}">
+        {% capture path %}{{ page.image }}{% endcapture %}
+{% capture alt %}{{ image.title }}{% endcapture %}
 
 {% responsive_image_block %}
   path: {{ path }}
   alt: {{ alt }}
+  sizes: "(max-width: 400px) 100vw, 50vw"
 {% endresponsive_image_block %}
 
-
+    
+{% if image.title %}
+        <p class="caption">{{ alt }}</p>
 {% endif %}
-{{ content }}
+        
+</div>
+{% endif %}
+ 
+        
+        {{ content }}
+        
+    </section>
+    
+</div>

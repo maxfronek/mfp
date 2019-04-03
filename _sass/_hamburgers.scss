@@ -21,6 +21,8 @@
  
     @include hocus {cursor: pointer;}
     
+    @include medium {top:  unset;bottom:  20px; left: 80px;}
+    
     .patty {
 	display: block;
 	position: absolute;

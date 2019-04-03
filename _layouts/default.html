@@ -6,7 +6,7 @@
     {% include header.html %}
     {% include menu.html %}
     <main class="{% if page.is_post %}post{% elsif page.is_page %}page{% endif %}">
-      <article>
+      <article {% if page.url == '/blog/' %}class="blog"{% endif %}>
         {{ content }}
       </article>
 

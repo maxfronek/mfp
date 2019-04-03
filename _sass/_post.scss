@@ -1,4 +1,3 @@
-
 .grid {
     display: grid; grid-template-columns: 1fr 2fr 1fr;
         
@@ -15,6 +14,12 @@
         }
         scroll-snap-type: y mandatory;
             .imagewrap {position: relative; scroll-snap-align: start; overflow: hidden;z-index: 1; width: 100%; 
+                
+                        &.left { img {object-position: 25%% 50%;} }
+                        &.right {  img {object-position: 75% 50%;} }
+                        
+               
+                
                 &.uno {grid-column: span 4;}
                 &.dos {grid-column: 2 / 4;}
                 &.tres {grid-column: 1 / span 2;
@@ -31,8 +36,32 @@
                     &.cuatro {width: 133%;} */
                 }
         } // end gallery item
-        .caption {position: absolute; opacity: 0; transition-delay: 1.3s; @include prefix(transition, .6s ease-in-out, webkit ms o moz); background-color: rgba($bg, .7);padding: 1rem; top: 10%; right: 0;
+        .caption {position: absolute; opacity: 0; transition-delay: 1.3s; z-index: -1; @include prefix(transition, .6s ease-in-out, webkit ms o moz); background-color: rgba($bg, .7);padding: 1rem; top: 10%; right: 0;
             &.reveal {opacity: 1; z-index: 4;}
         }
     }
-}
+    
+    @include medium {
+  
+        aside {position: relative;height: auto;max-width: 100%; grid-column: span 3;
+            h2 {text-indent: 50%;margin-left: 50%;
+  @include prefix(transform, translateX(-100%), ms moz webkit o);}
+        }
+        .images {grid-column: span 3;
+        blockquote, p, h3 {
+                &.uno,
+                &.dos,
+                &.tres,
+                &.cuatro {grid-column: span 4;}
+        } // end text style 
+            .imagewrap {position: relative; scroll-snap-align: start; overflow: hidden;z-index: 1; width: 100%; 
+                &.uno,
+                &.dos,
+                &.tres,
+                &.cuatro {grid-column: span 4;}
+            }// end imagewrap style
+        } // end .images
+     
+    } // end medium media query
+    
+} //end grid class
