@@ -17,10 +17,13 @@ title: Max Fronek
 email: mf@maxfronek.com
 description: >- # this means to ignore newlines until "baseurl:"
   Los Angeles-based graphic / web designer and photographer.
-baseurl: "/mfp" # the subpath of your site, e.g. /blog
-url: "https://maxfronek.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://tyrannosaurus.studio" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: classymax
 github_username:  maxfronek
+instagram_username: classymax
+behance_username: maxfronek
+dribbble_username: _mf
 
 # Build settings
 sass:
@@ -40,7 +43,7 @@ responsive_image:
   - width: 1000
     quality: 80
   - width: 2000
-    quality: 80
+    quality: 80    
 defaults:
 -
  scope:
@@ -55,7 +58,7 @@ defaults:
    type: "pages" # previously `post` in Jekyll 2.2.
  values:
    layout: "default"
-   is_page: true  
+   is_page: true
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
