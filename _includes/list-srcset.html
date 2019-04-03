@@ -17,4 +17,4 @@ Usage:
 {% endfor %}
 {% endcapture %}
 
-<img data-src="/{{ path }}" alt="{{ alt }}" data-srcset="{{ srcset | strip_newlines }} /{{ path }} {{ original.width }}w" data-sizes="{{ sizes }}" class="{% if page.layout == photo_post %}gallery-item{% endif %}{% if page.is_list == true %}list-image{% endif %} lazyload">
+<img data-src="/{{ path }}" alt="{{ alt }}" data-srcset="{{ srcset | strip_newlines }} /{{ path }} {{ original.width }}w" data-sizes="{{ sizes }}" class="list-image lazyload">
