@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: list
 title: Photography
 permalink: /photography/
 ---
@@ -7,8 +7,27 @@ permalink: /photography/
 {% for post in site.posts %}
 {% for category in post.categories %}
 {% if category contains 'photography' %}
+
+<div class="list-item">
 		<time>{{ post.date | date: "%b %-d, %Y" }}</time>
-		<h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+		<h3><a class="list-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}
+  
+          {% for image in post.images limit: 1 %}    
+{% capture path %}{{ image.img_url }}{% endcapture %}
+{% capture alt %}{{ image.title }}{% endcapture %}
+
+{% responsive_image_block %}
+  path: {{ path }}
+  alt: {{ alt }}
+  template: /_includes/list-srcset.html    
+  sizes: "(max-width: 400px) 100vw, 50vw"
+{% endresponsive_image_block %}
+            </a></h3>
+</div>    
+
+{% endfor %}
+
+
 {% else %}
 {% continue %}
 {% endif %}
