@@ -33,7 +33,7 @@ main {
   max-width: $content-width;
   //  overflow: hidden;
   margin: 0 auto;
-    min-height: 100vh;
+    min-height: 80vh;
     @include flexbox;
     @include align-items(center);
     @include justify-content(center);
@@ -142,7 +142,7 @@ footer {
   text-align: center;
   @include flexbox; @include flex-direction(row);@include align-items(center);  @include justify-content(center);  
   padding: 40px;
-    hr {width: 100%; position: absolute; top: unset; margin-top: -5px;z-index: -1;}
+    hr {width: 100%; position: absolute; top: unset; margin-top: -5px;z-index: -1; border: 0px solid transparent; border-top: 1px solid $heading-font-color;}
     .footer-links {background-color: $bg; padding: 0 2rem; z-index: 1;}
     a {
         &:after {content: ""; margin-right: 1rem;}
@@ -150,10 +150,10 @@ footer {
             
     img {width: 30px; @include prefix(transition, .2s all ease-in-out, ms moz webkit o);}
         
-      @include hocus {img { opacity: .6;}}    
+      @include hocus {img { opacity: .6;}}
+        
     }
 
-    
-    
+    @include medium {padding-bottom: 100px;}
     
 }
