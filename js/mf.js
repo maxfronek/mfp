@@ -32,6 +32,26 @@ logo.onmouseout = function(){
     logo.classList.remove('ftime');
 }
 
+
+/*
+
+
+var link = document.getElementsByClassName("list-link"),
+    listItem = document.getElementsByClassName("list-item"),
+    photo = document.getElementsByClassName("list-image");
+    
+    reveal = function() {
+        photo[i].classList.toggle('show');
+      //  alert('hovered over ' + photo);
+};
+
+for (var i = 0; i < link.length; i++) {
+    link[i].addEventListener('mouseover', reveal, false);
+    link[i].addEventListener('mouseout', reveal, false);
+    // photo[i].addEventListener('mouseover', reveal, false);
+} 
+*/
+
 // photo post niceties
 /*
 var photo = document.querySelector('.gallery-item'),
@@ -51,6 +71,7 @@ var classname = document.getElementsByClassName("gallery-item"),
 
 var embiggen = function() {
     this.classList.toggle('embiggen');
+    this.sizes = "200vw"
     var parent = this.parentNode,
         caption = parent.childNodes[3];
     parent.classList.toggle('embiggen');
