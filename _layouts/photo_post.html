@@ -1,6 +1,7 @@
 --- 
 layout: "default" 
 ---
+{% if page.feature_color %}<span id="feature_color" data-color="{{ page.feature_color }}"></span>{% endif %}
 <div class="grid">
     
     <aside>
@@ -72,6 +73,28 @@ layout: "default"
         
         {{ content }}
         
-    </section>
-    
+    </section>    
 </div>
+
+<script>
+    var color = document.getElementById('feature_color'),
+        hex = '#' + color.getAttribute('data-color'),
+        body = document.querySelector('body'),
+        footerLinks = document.querySelector('.footer-links');
+        
+    console.log(hex);
+    var colorize = function() {
+        var footerLinks = document.querySelector('.footer-links');
+        document.body.style.background = hex;
+        document.body.classList.add('overlay');
+        footerLinks.style.backgroundColor = hex;
+    };
+    
+    document.addEventListener("DOMContentLoaded", function() { 
+    // this function runs when the DOM is ready, i.e. when the document has been parsed
+    colorize();
+});
+
+   
+        
+</script>

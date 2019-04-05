@@ -196,6 +196,13 @@ video {object-fit: cover; width: 100%; max-height: 500px;}
 }
 
 
+// makes posts take featured background color if applicable
+
+
+.overlay {
+    img {opacity: .7;}
+}
+
 
 footer {
   text-align: center;

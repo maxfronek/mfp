@@ -63,5 +63,13 @@
         } // end .images
      
     } // end medium media query
+   
+    .overlay & {
+        .images {
+            
+        > * {background-color: transparent;}
+        
+        }
+    }
     
 } //end grid class
