@@ -3,7 +3,6 @@
 Thumbs.db
 _site
 .sass-cache
-Gemfile
 Gemfile.lock
 /.sass-cache
 /images
