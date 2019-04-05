@@ -32,7 +32,7 @@
 	position: absolute;
 	width: 1px;
 	height: 100%;
-	background: $light;
+	background: $mf-green;
 	opacity: 1;
         
 	-webkit-transition: opacity 0.15s linear, -webkit-transform 0.3s cubic-bezier(0.86, 0, 0.07, 1), background 0.2s linear;
@@ -51,13 +51,13 @@
 	@include prefix(transform, rotate(141deg), webkit moz o ms);
     }
 
-  .a-left {height: 44px;left: 7.6px;top: 12px;border-bottom: 1px solid $light;
+  .a-left {height: 44px;left: 7.6px;top: 12px;border-bottom: 1px solid $mf-green;
       @include prefix(transform, rotate(23deg), webkit moz o ms);
     position: absolute;
     }
 
 
-  .a-right {height: 44px;right: 8.6px;top: 12px;border-bottom: 1px solid $light;
+  .a-right {height: 44px;right: 8.6px;top: 12px;border-bottom: 1px solid $mf-green;
 	@include prefix(transform, rotate(337deg), webkit moz o ms);
     position: absolute;
     }
@@ -693,8 +693,8 @@ position: absolute;
 .mtof {
     border: none;
 	position: fixed;
-    top: 25px;
-    left: 21px;
+    top: 67px;
+    right: 75px;
 	display: block;
 	padding: 0;
 	background: transparent;
@@ -706,7 +706,7 @@ position: absolute;
     @include justify-content(center);
     
     
-    @include medium {top: unset;bottom: 69px;
+    @include medium {top: unset;bottom: 100px; right: 50px;
         //right: 60px;left: unset;
     }
     
@@ -718,7 +718,7 @@ position: absolute;
  .x-right, 
  .a-left, 
  .a-right, 
- .a-cross {display: block; position: absolute; background: $light; opacity: 1;	width: 1px;
+ .a-cross {display: block; position: absolute; background: $mf-green; opacity: 1;	width: 1px;
     -webkit-transition: opacity 0.15s linear, -webkit-transform 0.3s cubic-bezier(0.86, 0, 0.07, 1), background 0.2s linear;
 	transition: opacity 0.15s linear, transform 0.3s cubic-bezier(0.86, 0, 0.07, 1), background 0.2s linear;} 
 
@@ -753,7 +753,7 @@ position: absolute;
 	height: 41px;
 	left: 8px;
 	top: 12px;
-border-bottom: 1px solid $light;
+border-bottom: 1px solid $mf-green;
 @include prefix(transform, rotate(23deg), webkit ms moz o);
 position: absolute;
 }
@@ -763,7 +763,7 @@ position: absolute;
 	height: 42px;
 	left: 24px;
 	top: 12px;
-    border-bottom: 1px solid $light;
+    border-bottom: 1px solid $mf-green;
     @include prefix(transform, rotate(338deg), webkit ms moz o);
     position: absolute;
 }
@@ -777,7 +777,7 @@ position: absolute;
  .f-left,  .f-top,  .r-left,  .r-cross,  .r-diag,  .n-cross,  .e-left-1,  .e-left-2,  .e-center,  .e-bottom,  .k-left,  .k-top,  .k-bottom  {
 	display: block;
 	position: absolute;
-    background: $light;
+    background: $mf-green;
 	opacity: 0;
 	-webkit-transition: opacity 0.15s linear, -webkit-transform 0.3s cubic-bezier(0.86, 0, 0.07, 1), background 0.2s linear;
 	transition: opacity 0.15s linear, transform 0.3s cubic-bezier(0.86, 0, 0.07, 1), background 0.2s linear;
@@ -787,7 +787,7 @@ position: absolute;
  .o-full {
     height: 41px;
     width: 41px;
-    border-color: $light;
+    border-color: $mf-green;
     border-radius: 50%;
     display: inline-block;
     position: absolute;

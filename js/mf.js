@@ -32,6 +32,38 @@ logo.onmouseout = function(){
     logo.classList.remove('ftime');
 }
 
+var aboutContent = document.getElementById('about');
+
+var showAbout = function() {
+    aboutContent.classList.toggle('show');};
+
+logo.addEventListener('click', showAbout, false);
+
+
+
+
+
+// homepage gallery hover title
+
+var galItem = document.getElementsByClassName("imagewrap");
+
+var showItemContent = function(){
+    var itemContent = this.childNodes[3];
+    itemContent.classList.add('show');
+}
+
+var hideItemContent = function(){
+    var itemContent = this.childNodes[3];
+    itemContent.classList.remove('show');
+}
+
+
+
+for (var i = 0; i < galItem.length; i++) {
+    galItem[i].addEventListener('mouseover', showItemContent, false);
+    galItem[i].addEventListener('mouseleave', hideItemContent, false);
+}
+
 
 /*
 
@@ -87,4 +119,9 @@ var embiggen = function() {
 
 for (var i = 0; i < classname.length; i++) {
     classname[i].addEventListener('click', embiggen, false);
-}
+};
+
+
+sal({
+    threshold: .7,
+});

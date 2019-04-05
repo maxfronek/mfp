@@ -9,7 +9,7 @@
 	width: 35px;
 	height: 30px;
 	padding: 0;
-	top: 100px;
+	top: 72px;
 	left: 20px;
 	background: transparent;
 	overflow: hidden;
@@ -21,16 +21,16 @@
  
     @include hocus {cursor: pointer;}
     
-    @include medium {top:  unset;bottom:  20px; left: 80px;}
+    @include medium {top:  unset;bottom:  50px; left: 15px;}
     
     .patty {
 	display: block;
 	position: absolute;
 	width: 100%;
-	height: 1px;
+	height: 2px;
 	left: 0;
 	top: 14px;
-	background: $light;
+	background: $mf-green;
 	opacity: 1;
 	-webkit-transition: opacity 0.15s linear, -webkit-transform 0.3s cubic-bezier(0.86, 0, 0.07, 1), background 0.2s linear;
 	transition: opacity 0.15s linear, transform 0.3s cubic-bezier(0.86, 0, 0.07, 1), background 0.2s linear;
@@ -72,6 +72,7 @@
     &.collapse {display: block;
     
         .patty {
+            background: $light;
             &:nth-child(1) {
 	-webkit-transform: translateY(0px);
 	transform: translateY(0px);}
@@ -87,6 +88,7 @@
     
     &.close {
           .patty {
+            background: $light;
             &:nth-child(1) {
 	-webkit-transform: rotate(-135deg);
 	transform: rotate(-135deg);}

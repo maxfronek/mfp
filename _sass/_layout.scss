@@ -11,7 +11,7 @@ body {
 
 
 header {
-  background: $header;
+  background: transparent;
   padding: 0px 15px;
   text-align: center;
   margin: 0px 0 0;
@@ -38,6 +38,12 @@ main {
     @include align-items(center);
     @include justify-content(center);
     
+    &.index {display: grid; max-width: 100%; margin: 0 auto;width: 100%; grid-template-columns: 6rem repeat(4, 1fr) 6rem; margin-top: 80px;
+    
+        @include tablet {grid-template-columns: 4rem repeat(4, 1fr) 4rem;}
+    
+    }
+    
     &.post {max-width: 1600px;}
     &.page {padding-top: 10rem;}
     @include medium {width: 95%;
@@ -53,7 +59,12 @@ time {
   margin: 0 auto;
 }
 
-article {width: 100%;}
+article {width: 100%;
+
+    .index & {grid-column: 2 / span 4;
+    }
+    
+}
 
 .blog, .list {max-width: 600px; margin: 0 auto;}
 
@@ -125,6 +136,23 @@ img {object-fit: cover; width: 100%; max-height: 500px;}
 video {object-fit: cover; width: 100%; max-height: 500px;}
 
 
+.about {
+    opacity: 0; z-index: -1; position: fixed; background: darken($light, 5%); height: 100vh; width: 100vw; top: 0; left: 0; @include flexbox; @include align-items(center); @include justify-content(center); @include flex-direction(column); padding: 4rem; @include prefix(transition, .6s all ease-in-out, webkit ms moz o);
+    &.show {opacity: 1; z-index: 3;}
+    
+     @include tablet {padding: 2rem}
+    
+    p {font-size: 2.6rem; max-width: 800px;
+        &.email {font-size: 1.2rem;}
+        
+        @include tablet {font-size: 2rem;}
+        @include medium {font-size: 1.6rem;}
+        
+    }
+    
+}
+
+
 .list-item {
 
     a {
@@ -137,6 +165,32 @@ video {object-fit: cover; width: 100%; max-height: 500px;}
     }
 }
 }
+
+
+// homepage display
+
+
+.images.home {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); grid-gap: 2rem;
+    
+    .imagewrap {min-height: 500px;position: relative;
+    
+        img {min-width: 100%; min-height: 100%; max-height: none;}
+        .content {opacity: 0; z-index: 2; @include prefix(transition, all .2s ease-in-out, webkit moz ms o); background-color: $mf-green; position: absolute; left: 0; top: 0; min-height: 100%; width: 100%; @include flexbox; @include justify-content(center); @include align-items(center);@include flex-direction(column); text-align: center;
+            h2 {color: $light; font-family: $font-style; text-transform:uppercase; font-weight: 200; letter-spacing: .3rem;}
+            
+            &.show {opacity: 1;}
+            
+        }
+        
+           @include medium {grid-column: span 4;}
+        
+    }
+    
+}
+
+
 
 footer {
   text-align: center;

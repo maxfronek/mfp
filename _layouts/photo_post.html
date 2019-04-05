@@ -23,7 +23,7 @@ layout: "default"
         
 {% for image in page.images %}
         {% capture thecycle %}{% cycle 'uno', 'dos', 'tres', 'cuatro'  %}{% endcapture %}
-<div class="imagewrap {{ thecycle }} {% if image.anchor %}{{ image.anchor }}{% endif %}">
+<div class="imagewrap {{ thecycle }} {% if image.anchor %}{{ image.anchor }}{% endif %}"  data-sal="slide-{% cycle 'left', 'down', 'right', 'up' %}" data-sal-easing="ease-out-bounce" >
         {% capture path %}{{ image.img_url }}{% endcapture %}
 {% capture alt %}{{ image.title }}{% endcapture %}
 

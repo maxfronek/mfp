@@ -16,7 +16,7 @@
 title: Max Fronek
 email: mf@maxfronek.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Los Angeles-based graphic / web designer and photographer.
+  I am a graphic designer and photographer based in Los Angeles, California. I love to solve problems creatively, and present information in the clearest way possible. My main areas of focus are corporate identity, branding, and photography, though I also have experience in product and packaging development, marketing, and animation. Whatever design needs you or your company may have, I’m sure we can find the best possible way to express your idea.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://mfdesign-netlify.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: classymax
