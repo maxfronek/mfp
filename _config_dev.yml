@@ -25,6 +25,7 @@ instagram_username: classymax
 behance_username: maxfronek
 dribbble_username: _mf
 linkedin_username: maxfronek
+behance_username: _mf
 
 # Build settings
 sass:
@@ -35,6 +36,7 @@ theme: minima
 plugins:
   - jekyll-feed
   - jekyll-responsive-image
+permalink: none  
 responsive_image:
   template: _includes/srcset.html
   sizes:
