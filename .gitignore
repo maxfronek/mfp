@@ -8,7 +8,9 @@ Gemfile.lock
 /images/page_images
 /images/post_images
 /images/kauai
+/_posts/demo_posts
 /assets
 /videos
 /photography
 /graphic design
+_config_dev.yml

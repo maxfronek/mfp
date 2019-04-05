@@ -36,7 +36,6 @@ theme: minima
 plugins:
   - jekyll-feed
   - jekyll-responsive-image
-permalink: none  
 responsive_image:
   template: _includes/srcset.html
   sizes:
