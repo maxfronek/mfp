@@ -19,7 +19,6 @@ description: >- # this means to ignore newlines until "baseurl:"
   Los Angeles-based graphic / web designer and photographer.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://mfdesign-netlify.com" # the base hostname & protocol for your site, e.g. http://example.com
-url: "https://mf.design" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: classymax
 github_username:  maxfronek
 instagram_username: classymax
