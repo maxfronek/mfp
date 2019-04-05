@@ -18,13 +18,14 @@ email: mf@maxfronek.com
 description: >- # this means to ignore newlines until "baseurl:"
   Los Angeles-based graphic / web designer and photographer.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://tyrannosaurus.studio" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://mf.design" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: classymax
 github_username:  maxfronek
 instagram_username: classymax
 behance_username: maxfronek
 dribbble_username: _mf
 linkedin_username: maxfronek
+behance_username: _mf
 
 # Build settings
 sass:
@@ -35,6 +36,7 @@ theme: minima
 plugins:
   - jekyll-feed
   - jekyll-responsive-image
+permalink: none  
 responsive_image:
   template: _includes/srcset.html
   sizes:
