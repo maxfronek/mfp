@@ -39,7 +39,7 @@ main {
     @include justify-content(center);
     
     &.post {max-width: 1600px;}
-    
+    &.page {padding-top: 10rem;}
     @include medium {width: 95%;
     padding: 0 0;}
     
