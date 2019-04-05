@@ -36,8 +36,12 @@ var aboutContent = document.getElementById('about');
 
 var showAbout = function() {
     aboutContent.classList.toggle('show');};
+var closeInfo = document.getElementById('close-info'),
+    hideAbout = function() {
+    aboutContent.classList.remove('show');};
 
 logo.addEventListener('click', showAbout, false);
+closeInfo.addEventListener('click', hideAbout, false);
 
 
 
@@ -45,7 +49,7 @@ logo.addEventListener('click', showAbout, false);
 
 // homepage gallery hover title
 
-var galItem = document.getElementsByClassName("imagewrap");
+var galItem = document.getElementsByClassName("image");
 
 var showItemContent = function(){
     var itemContent = this.childNodes[3];

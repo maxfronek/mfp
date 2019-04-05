@@ -9,7 +9,7 @@
 	width: 35px;
 	height: 30px;
 	padding: 0;
-	top: 72px;
+	top: 5.5rem;
 	left: 20px;
 	background: transparent;
 	overflow: hidden;
@@ -19,9 +19,9 @@
 	-webkit-transition: opacity 0.2s cubic-bezier(0.86, 0, 0.07, 1);
 	transition: opacity 0.2s cubic-bezier(0.86, 0, 0.07, 1);
  
-    @include hocus {cursor: pointer;}
-    
-    @include medium {top:  unset;bottom:  50px; left: 15px;}
+    @include hocus {cursor: pointer; outline: 0px solid transparent;}
+    @include tablet {top: 3.5rem;}
+    @include medium {top:  2.2rem;left: 15px;}
     
     .patty {
 	display: block;
@@ -30,7 +30,7 @@
 	height: 2px;
 	left: 0;
 	top: 14px;
-	background: $mf-green;
+	background: rgba($mf-green, .5);
 	opacity: 1;
 	-webkit-transition: opacity 0.15s linear, -webkit-transform 0.3s cubic-bezier(0.86, 0, 0.07, 1), background 0.2s linear;
 	transition: opacity 0.15s linear, transform 0.3s cubic-bezier(0.86, 0, 0.07, 1), background 0.2s linear;
@@ -72,7 +72,7 @@
     &.collapse {display: block;
     
         .patty {
-            background: $light;
+            background: rgba($mf-green, .7);
             &:nth-child(1) {
 	-webkit-transform: translateY(0px);
 	transform: translateY(0px);}
@@ -88,7 +88,7 @@
     
     &.close {
           .patty {
-            background: $light;
+            background: rgba($mf-green, .7);
             &:nth-child(1) {
 	-webkit-transform: rotate(-135deg);
 	transform: rotate(-135deg);}
@@ -102,6 +102,8 @@
         &.expand {
             
             .patty {
+                background: rgba($heading-font-color, .7); 
+                filter: hue-rotate(-30deg) brightness(80%);
                 &:nth-child(1) {
 	-webkit-transform: rotate(135deg);
 	transform: rotate(135deg);}

@@ -693,7 +693,7 @@ position: absolute;
 .mtof {
     border: none;
 	position: fixed;
-    top: 67px;
+    top: 5rem;
     right: 75px;
 	display: block;
 	padding: 0;
@@ -705,8 +705,8 @@ position: absolute;
     @include prefix(transition, all .3s ease-in-out, ms moz o webkit);
     @include justify-content(center);
     
-    
-    @include medium {top: unset;bottom: 100px; right: 50px;
+    @include tablet {top: 3.25rem; right: 60px;}
+    @include medium {top: 1rem; right: unset; left: 47%; position: absolute;
         //right: 60px;left: unset;
     }
     
@@ -718,7 +718,7 @@ position: absolute;
  .x-right, 
  .a-left, 
  .a-right, 
- .a-cross {display: block; position: absolute; background: $mf-green; opacity: 1;	width: 1px;
+ .a-cross {display: block; position: absolute; background: rgba($mf-green, .5);; opacity: 1;	width: 1px;
     -webkit-transition: opacity 0.15s linear, -webkit-transform 0.3s cubic-bezier(0.86, 0, 0.07, 1), background 0.2s linear;
 	transition: opacity 0.15s linear, transform 0.3s cubic-bezier(0.86, 0, 0.07, 1), background 0.2s linear;} 
 

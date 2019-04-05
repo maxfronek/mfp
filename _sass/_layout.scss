@@ -25,7 +25,7 @@ header {
   @include justify-content(center);
   @include align-items(center);
     
-    @include medium {top: unset;bottom: 0;width: 140px;height: 75px;display: block;}    
+    @include medium {top: unset;bottom: 0;width: 100%;height: 75px;display: block; position: inherit;}    
 }
 main {
   padding: 0 15px;
@@ -38,9 +38,10 @@ main {
     @include align-items(center);
     @include justify-content(center);
     
-    &.index {display: grid; max-width: 100%; margin: 0 auto;width: 100%; grid-template-columns: 6rem repeat(4, 1fr) 6rem; margin-top: 80px;
+    &.index {display: grid; max-width: 100%; margin: 0 auto;width: 100%; grid-template-columns: 6rem repeat(4, 1fr) 6rem; margin-top: 6rem;
     
-        @include tablet {grid-template-columns: 4rem repeat(4, 1fr) 4rem;}
+        @include tablet {grid-template-columns: 4rem repeat(4, 1fr) 4rem; margin-top: 4rem;}
+        @include medium {grid-template-columns: 2rem repeat(4, 1fr) 2rem; margin-top: 2rem;}
     
     }
     
@@ -79,12 +80,14 @@ menu {
   top: 0;
   left: 0;
   height: 100vh;
-  background: rgba($header, .9);
+  background: darken($light, 5%); 
   width: 100%;
+  padding: 0;
   z-index: -1;
     @include prefix(transition, .2s all ease-in-out, ms moz webkit o);
     @include flexbox;
     @include align-items(center);
+    @include justify-content(center);
     
   border-bottom: 1px solid lighten($light, 30%);
   box-shadow: 0px 1px 1px RGBA(4, 25, 54, 0.1);
@@ -111,10 +114,9 @@ menu {
           margin-left: -1rem;
           box-shadow: 0;
           @include prefix(transition, .2s all ease-in-out, ms webkit moz o);
-            &:before {content: '//';@include prefix(transition, .2s all ease-in-out, ms webkit moz o);padding-left: 1rem; opacity: 0; margin-left: -1rem;}
+            &:before {content: '';@include prefix(transition, .2s all ease-in-out, ms webkit moz o); opacity: 0;}
             @include hocus {
-                color: $light;
-                &:before {opacity: 1; margin-left: 0;}
+                &:before {opacity: 1;}
             }    
             
         }
@@ -150,6 +152,9 @@ video {object-fit: cover; width: 100%; max-height: 500px;}
         
     }
     
+    .close-info {position: absolute;top: 185px; right: 24px;
+  @include prefix(transform, rotate(90deg),webkit moz ms o);}
+    
 }
 
 
@@ -174,7 +179,7 @@ video {object-fit: cover; width: 100%; max-height: 500px;}
     display: grid;
     grid-template-columns: repeat(2, 1fr); grid-gap: 2rem;
     
-    .imagewrap {min-height: 500px;position: relative;
+    .image {min-height: 500px;position: relative;
     
         img {min-width: 100%; min-height: 100%; max-height: none;}
         .content {opacity: 0; z-index: 2; @include prefix(transition, all .2s ease-in-out, webkit moz ms o); background-color: $mf-green; position: absolute; left: 0; top: 0; min-height: 100%; width: 100%; @include flexbox; @include justify-content(center); @include align-items(center);@include flex-direction(column); text-align: center;

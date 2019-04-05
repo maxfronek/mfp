@@ -2,7 +2,7 @@
 <html>
   {% include head.html %}
 
-  <body>
+  <body {% if page.is_post and post.feature_color %}style="background-color: #{{ post.feature_color }}"{% endif %}>
     {% include header.html %}
     {% include menu.html %}
     <main class="{% if page.is_post %}post{% elsif page.is_page and page.url != '/' %}page{% elsif page.url == '/' %}index{% else %}no-class{% endif %}">

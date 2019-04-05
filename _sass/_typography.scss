@@ -9,6 +9,7 @@ a {
   font-weight: initial;
     @include prefix(transition, .2s all ease-in-out, webkit ms moz o);
     
+    @include hocus {cursor: pointer;}
 }
 
 
@@ -56,13 +57,19 @@ h6 {font-size: 1rem; font-weight: 700;}
 
 blockquote {border-left: 2px solid $header; padding-left: 2rem; margin-left: 0; font-size: 2.6rem;}
 
+.about {
+    .email {text-align: center; }
+}
+.close-info {font-family: $sub-heading-font;font-weight: 600;font-size: 1.2rem;letter-spacing: .05rem;
+    @include hocus {color: $heading-font-color;filter: hue-rotate(-30deg) brightness(80%);opacity: .7;}
+}
 
 menu {
     nav {
         ul {
             li {
-                a { font-family: $heading-font;color: $heading-font-color;
-                    @include hocus {color: $light;}
+                a {font-family: $sub-heading-font;color: $mf-green; text-transform: uppercase; letter-spacing: .5rem; font-size: 1.6rem; background-image: linear-gradient(to right, $heading-font-color 50%, transparent 50%); background-size: 201% 1px; background-repeat: no-repeat; background-position: right top;
+                    @include hocus {color: $heading-font-color; background-position: left top;}
                 }
             }
         }

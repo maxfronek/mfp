@@ -12,8 +12,8 @@ layout: default
 {% if category contains 'design' or category contains 'photography' %}
 
           {% for image in post.images limit: 1 %}    
- 
-           <div class="imagewrap {{ thecycle }} {% if image.anchor %}{{ image.anchor }}{% endif %}"  >
+  {% capture thecycle %}{% cycle 'alpha', 'bravo', 'charlie', 'delta'  %}{% endcapture %}
+           <div class="image {{ thecycle }} {% if image.anchor %}{{ image.anchor }}{% endif %}"  >
         {% capture path %}{{ image.img_url }}{% endcapture %}
 {% capture alt %}{{ image.title }}{% endcapture %}
 
