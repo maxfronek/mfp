@@ -5,7 +5,8 @@ _site
 .sass-cache
 Gemfile.lock
 /.sass-cache
-/images
+/images/page_images
+/images/post_images
 /images/kauai
 /assets
 /videos
