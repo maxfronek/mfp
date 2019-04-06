@@ -1,34 +1,48 @@
 ---
-layout: list
+layout: default
 title: Design
 permalink: /design/
 ---
-
+<section class="images home ">
 {% for post in site.posts %}
 {% for category in post.categories %}
 {% if category contains 'design' %}
 
-<div class="list-item">
-		<time>{{ post.date | date: "%b %-d, %Y" }}</time>
-		<h3><a class="list-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }} {% for image in post.images limit: 1 %}    
-{% capture path %}{{ image.img_url }}{% endcapture %}
+    
+    {% for image in post.images limit: 1 %}    
+  {% capture thecycle %}{% cycle 'alpha', 'bravo', 'charlie', 'delta'  %}{% endcapture %}
+       
+           <div class="image {{ thecycle }} {% if image.anchor %}{{ image.anchor }}{% endif %}"  >
+        {% capture path %}{{ image.img_url }}{% endcapture %}
 {% capture alt %}{{ image.title }}{% endcapture %}
+
+    {% if path contains 'mp4' or path contains 'webm' %}
+ <video loop muted autoplay playsinline>
+        <source src="{{ path | strip_html }}" type="{% if path contains 'mp4' %}video/mp4{% else %}video/webm{% endif %}">
+</video>  
+    {% else %}
 
 {% responsive_image_block %}
   path: {{ path }}
   alt: {{ alt }}
-  template: /_includes/list-srcset.html    
-  sizes: "(max-width: 400px) 100vw, 50vw"
-{% endresponsive_image_block %} </a></h3>
-  
-          
-</div>    
+  sizes: "(max-width: 550px) 100vh, 80vw"
+  template: /_includes/unlazy-srcset.html    
+{% endresponsive_image_block %}
 
-{% endfor %}
-
+{% endif %}
+<div class="content{% if post.cover_color %} {{ post.cover_color }}{% elsif post.feature_color %} {{ post.feature_color }}{% else %} white{% endif %}">
+             <a href="{{ post.url | prepend: site.url }}" title="{{post.title }}"><h2>{{ post.title }}</h2>
+                 <time>{{ post.date | date: "%b %-d, %Y" }}</time>
+    </a>  
+         </div>
+               
+        </div>    
+ {% endfor %}       
 
 {% else %}
 {% continue %}
 {% endif %}
+    
 {% endfor %}
 {% endfor %}
+</section>
