@@ -1,17 +1,11 @@
 --- 
 layout: "default" 
 ---
-{% if page.feature_color %}<span id="feature_color" data-color="{{ page.feature_color }}"></span>{% endif %}
+<span id="feature_color" data-color="{% if page.feature_color %}{{ page.feature_color }}{% else %}white{% endif %}"></span>
 <div class="grid">
     
     <aside>
     <h2 class="title">{{ page.title }}</h2>
-<time
-  >{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if
-  page.meta %} • {{ page.meta }}{% endif %}</time
->
-  {% for category in page.categories %}<a href="{{ site.url }}/category/{{ category | remove: ',' }}" title="">{{ category }}</a> {% endfor %}
-
     </aside>
     
 
@@ -73,21 +67,32 @@ layout: "default"
         
         {{ content }}
         
-    </section>    
+    </section> 
+    
+    <section class="end-matter">
+    <time
+  >{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if
+  page.meta %} • {{ page.meta }}{% endif %}</time
+><ul>
+        {% for category in page.categories %}<li><a href="{{ site.url }}/category/{{ category | remove: ',' }}" title="">{{ category }}</a></li>{% endfor %}
+        </ul>
+  
+
+    </section>
+    
 </div>
 
 <script>
     var color = document.getElementById('feature_color'),
-        hex = '#' + color.getAttribute('data-color'),
+        scheme = color.getAttribute('data-color'),
         body = document.querySelector('body'),
         footerLinks = document.querySelector('.footer-links');
         
-    console.log(hex);
+    console.log(scheme);
     var colorize = function() {
         var footerLinks = document.querySelector('.footer-links');
-        document.body.style.background = hex;
-        document.body.classList.add('overlay');
-        footerLinks.style.backgroundColor = hex;
+        document.body.classList.add(scheme);
+        footerLinks.classList.add(scheme);
     };
     
     document.addEventListener("DOMContentLoaded", function() { 

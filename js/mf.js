@@ -32,15 +32,20 @@ logo.onmouseout = function(){
     logo.classList.remove('ftime');
 }
 
-var aboutContent = document.getElementById('about');
+var aboutContent = document.getElementById('about'),
+    aboutAlt = document.getElementById('me');
 
 var showAbout = function() {
-    aboutContent.classList.toggle('show');};
+    aboutContent.classList.toggle('show');
+    aboutAlt.classList.toggle('extra');};
 var closeInfo = document.getElementById('close-info'),
     hideAbout = function() {
-    aboutContent.classList.remove('show');};
+    aboutContent.classList.remove('show');
+    aboutAlt.classList.toggle('extra');
+    };
 
 logo.addEventListener('click', showAbout, false);
+aboutAlt.addEventListener('click', showAbout, false);
 closeInfo.addEventListener('click', hideAbout, false);
 
 

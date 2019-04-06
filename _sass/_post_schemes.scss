@@ -1,0 +1,147 @@
+
+// schemes & colors for feature posts 
+
+ 
+$pink: #e9c2d5;
+$grey: #37373d;
+$powder-blue: #8eadd1;
+$sage: #657e69;
+$teal: #608d8f;
+$dark-blue: #0f6080;
+$yellow: #d3d99e;
+$sand: #eceadd;
+
+
+$pink--dark: darken($pink, 20%);
+$pink--light: lighten($pink, 10%);
+$pink--complement: $dark-blue;
+
+$grey--dark: darken($grey, 20%);
+$grey--light: lighten($grey, 20%);
+$grey--complement: $sage;
+
+$powder-blue--dark: darken($powder-blue, 20%);
+$powder-blue--light: lighten($powder-blue, 20%);
+$powder-blue--complement: $yellow;
+
+$sage--dark: darken($sage, 20%);
+$sage--light: lighten($sage, 20%);
+$sage--complement: $yellow;
+
+$dark-blue--dark: darken($dark-blue, 20%);
+$dark-blue--light: lighten($dark-blue, 20%);
+$dark-blue--complement: $pink;
+
+$teal--dark: darken($teal, 20%);
+$teal--light: lighten($teal, 20%);
+$teal--complement: $sage;
+
+
+.white {background-color: $bg;
+    &.footer-links {background-color: $bg;}
+    &.content {h2{color: darken($light, 30%); }}
+}
+.sand {background-color: $light;
+    &.footer-links {background-color: $light;}
+    &.content {h2{color: darken($light, 30%); }}
+}
+.pink {background-color: $pink;
+    h2 {color: $pink--dark !important;}
+    &.content {h2 {color: $pink--dark}}
+    .hamburger {
+        .patty {background-color: $pink--dark;}
+    }
+    .mtof {
+        span {background: $pink--dark;}
+    }
+    blockquote {color: $pink--dark; border-color: $pink--light;}
+    p {color: darken($pink--dark, 20%);}
+    &.footer-links {background-color: $pink;}
+}
+.grey {background-color: $grey--dark;
+    h2 {color: $grey--light !important;}
+    .hamburger {
+        .patty {background-color: $grey--light;}
+    }
+    .mtof {
+        span {background: $grey--light;}
+    }
+    blockquote {color: $grey--light; border-color: $grey--complement;}
+    p {color: lighten($grey--light, 20%);}
+    &.footer-links {background-color: $pink;}
+}
+.powder-blue {background-color: $powder-blue;
+    &.footer-links {background-color: $powder-blue;}
+    h2 {color: $powder-blue--dark !important;}
+    &.content {h2 {color: $powder-blue--dark}}
+    .hamburger {
+        .patty {background-color: $powder-blue--dark;}
+    }
+    .mtof {
+        span {background: $powder-blue--dark;}
+    }
+    blockquote {color: $powder-blue--dark; border-color: $powder-blue--complement;}
+    p {color: darken($powder-blue--dark, 20%);}
+}
+.sage {background-color: $sage;
+    &.footer-links {background-color: $sage;}
+        h2 {color: $sage--dark !important;}
+  &.content {h2 {color: $sage--dark}}
+        .hamburger {
+        .patty {background-color: $sage--dark;}
+    }
+    .mtof {
+        span {background: $sage--dark;}
+    }
+    blockquote {color: $sage--dark; border-color: $sage--complement;}
+    p {color: darken($sage--dark, 20%);}
+    
+}
+.dark-blue { background-color: $dark-blue;
+    &.footer-links {background-color: $dark-blue;}
+      h2 {color: $dark-blue--light !important;}
+  &.content {h2 {color: $dark-blue--light}}
+           .hamburger {
+        .patty {background-color: $dark-blue--light;}
+    }
+    .mtof {
+        span {background: $dark-blue--dark;}
+    }
+    blockquote {color: $dark-blue--light; border-color: $dark-blue--complement;}
+    p {color: lighten($dark-blue--light, 20%);}
+}
+.teal { background-color: $teal;
+    &.footer-links {background-color: $teal;}
+      h2 {color: $teal--dark !important;}
+  &.content {h2 {color: $teal--dark}}
+           .hamburger {
+        .patty {background-color: $teal--dark;}
+    }
+    .mtof {
+        span {background: $teal--light;}
+    }
+    blockquote {color: $teal--dark; border-color: $teal--complement;}
+    p {color: lighten($teal--dark, 20%);}
+}
+
+
+aside {h2 {&.title {
+            &.white { 
+                h2{color: darken($light, 30%); }
+            } // end white
+            &.pink {
+                h2{color: $pink--dark;}
+            }
+            &.grey {
+                   h2{color: $grey--light;}
+            }
+            &.powder-blue {
+                   h2{color: $powder-blue--dark;}
+            }
+            &.sage {
+                   h2{color: $sage--dark;}
+            }
+            &.dark-blue {
+                     h2{color: $powder-blue;}
+            }
+        }}}

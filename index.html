@@ -31,7 +31,7 @@ layout: default
 {% endresponsive_image_block %}
 
 {% endif %}
-<div class="content" {% if post.feature_color %}style="background: #{{ post.feature_color | color_desaturate: 30 }}"{% endif %}>
+<div class="content{% if post.cover_color %} {{ post.cover_color }}{% elsif post.feature_color %} {{ post.feature_color }}{% else %} white{% endif %}">
              <a href="{{ post.url | prepend: site.url }}" title="{{post.title }}"><h2>{{ post.title }}</h2></a>  
          </div>
                
