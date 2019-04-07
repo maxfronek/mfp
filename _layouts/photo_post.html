@@ -6,6 +6,7 @@ layout: "default"
     
     <aside>
     <h2 class="title">{{ page.title }}</h2>
+   {% if page.excerpt %}<p>{{ page.excerpt }}</p>{% endif %}  
     </aside>
     
 
@@ -17,8 +18,8 @@ layout: "default"
 {% endif %}
         
 {% for image in page.images %}
-        {% capture thecycle %}{% cycle 'uno', 'dos', 'tres', 'cuatro'  %}{% endcapture %}
-<div class="imagewrap {{ thecycle }} {% if image.anchor %}{{ image.anchor }}{% endif %}"  data-sal="slide-{% cycle 'left', 'down', 'right', 'up' %}" data-sal-easing="ease-out-bounce" >
+
+<div class="imagewrap {% if image.width %}{{ image.width }}{% endif %} {% if image.anchor %}{{ image.anchor }}{% endif %}" {% if forloop.index > 3 %} data-sal="slide-{% cycle 'left', 'down', 'right', 'up' %}" data-sal-delay="100"  data-sal-duration="500" data-sal-easing="ease-out-bounce" {% endif %} >
         {% capture path %}{{ image.img_url }}{% endcapture %}
 {% capture alt %}{{ image.title }}{% endcapture %}
 

@@ -1,33 +1,30 @@
 .grid {
-    display: grid; grid-template-columns: 1fr 2fr 1fr;
+    display: grid; grid-template-columns: 1fr 1fr 1fr 1fr;
         
-    aside {@include flexbox; @include justify-content(center); @include flex-direction(column); z-index:2; margin: 0; grid-column: span 3;
-        h2 {margin-bottom: 4rem;}
+    aside {@include flexbox; @include justify-content(center); @include flex-direction(column); z-index:2; margin: 0; grid-column: span 4;
+        h2 {margin-bottom: 2rem;}
+        p {text-align: center;}
     }
-    .images {grid-column: span 3; position: relative; display: grid; grid-template-columns: 25% 1fr 25%; grid-template-rows: auto;
-        > * {margin:0 auto 2rem; grid-column: 1 / -1; z-index: 4; padding: .5rem;}
+    .images {grid-column: span 4; position: relative; display: grid; grid-template-columns: repeat(12, 1fr); grid-template-rows: auto; grid-gap: 2rem;
+        > * {margin:0 auto; grid-column: 1 / -1; z-index: 4; padding: .5rem;}
         &:first-child {z-index: initial;}
         blockquote {padding-left: 2rem;}
-        blockquote, p, h3 {
-                &.uno {grid-column: span 4;}
-                &.dos {grid-column: span 2;}
-                &.tres {grid-column: 2 / 4;}
-                &.cuatro {grid-column: 2 / span 3;}
-        }
-        scroll-snap-type: y mandatory;
-            .imagewrap {position: relative; scroll-snap-align: start; overflow: hidden;z-index: 1; width: 100%; 
+        blockquote, p, h3 {grid-column: span 12;scroll-snap-type: y mandatory;}
+            .imagewrap {position: relative; scroll-snap-align: start; overflow: hidden;z-index: 1; width: 100%; padding: 0;
                 
                         &.left { img {object-position: 25%% 50%;} }
                         &.right {  img {object-position: 75% 50%;} }
                         
                
                 
-                &.uno {grid-column: span 4;}
-                &.dos {grid-column: 2 / 4;}
-                &.tres {grid-column: 1 / span 2;
+                &.full {grid-column: span 12;}
+                &.threequarters {grid-column: span 9;}
+                &.half {grid-column: span 6;}
+                &.onequarter {grid-column: span 3;
                     &.embiggen { }
                     }
-                &.cuatro {grid-column: 1 / span 2;}
+                &.twothirds {grid-column: span 8;}
+                &.onethird {grid-column: span 4;}
    
         }
             .gallery-item { object-fit: cover;height: 500px;

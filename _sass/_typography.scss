@@ -12,15 +12,16 @@ a {
     @include hocus {cursor: pointer;}
     
     &.me {font-weight: 600; font-size: 1.2rem; letter-spacing: .05rem; font-family: $sub-heading-font;@include prefix(transition, .2s all ease-in-out, webkit moz ms o);
-        &:before {opacity: 0; @include prefix(transition, .2s all ease-in-out, webkit moz ms o); content: "About ";}
-        &.extra {@include prefix(transition, .2s all ease-in-out, webkit moz ms o);&:before {opacity: 1;}}
+        &:before {opacity: 0; @include prefix(transition, .5s opacity ease-in-out, webkit moz ms o); content: "About ";}
+        &.extra {&:before {opacity: 1;}}
         @include hocus {color: $heading-font-color;
         }
     }
 }
 
 
-p {font-family: $font-style; font-size: 1.2rem; letter-spacing: .07rem; font-weight: 300; margin: 0 0 2rem;
+p {font-family: $font-style; font-size: 1.2rem; letter-spacing: .07rem; font-weight: 300; margin: 0 auto 2rem; max-width: 900px;
+    &.left {margin: 0 0 2rem;}
 
     a {text-decoration: none; @include prefix(box-shadow, 0px -5px 0px $link-hover-color inset, webkit);
         @include hocus {@include prefix(box-shadow, 0px -30px 0px $link-hover-color inset, webkit);}
@@ -52,9 +53,8 @@ h1 { font-size: 6.85rem;
 
 h2 {font-size: 4rem;
     &.title {font-family: $font-style; font-weight: 200; margin: -.9rem 0 0; font-weight: 200; @include flexbox; @include justify-content(center);
-        @include big {margin-left: 5rem;}
         @include small {}
-        aside & {font-size:2.2rem; color: $mf-green;}
+        aside & {font-size:2.6rem; color: $mf-green;}
     }
 }
 h3 {font-size: 2.6rem; text-indent: -3.6rem;margin-left: 3.6rem; }
@@ -69,6 +69,10 @@ blockquote {border-left: 2px solid $header; padding-left: 2rem; margin-left: 0; 
 }
 .close-info {font-family: $sub-heading-font;font-weight: 600;font-size: 1.2rem;letter-spacing: .05rem;
     @include hocus {color: $heading-font-color;filter: hue-rotate(-30deg) brightness(80%);opacity: .7;}
+}
+
+aside {
+    p {font-family: $sub-heading-font; letter-spacing: .1rem; font-weight: 200;}
 }
 
 menu {
