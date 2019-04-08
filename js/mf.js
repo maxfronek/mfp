@@ -130,6 +130,16 @@ for (var i = 0; i < classname.length; i++) {
     classname[i].addEventListener('click', embiggen, false);
 };
 
+// initialize masonry grid
+/*
+var masonry = new MiniMasonry({
+    container: '.masonry',
+    minify: true,
+    gutter: 0
+    
+}); 
+*/
+// initialize animation on scroll
 
 sal({
     threshold: .7,

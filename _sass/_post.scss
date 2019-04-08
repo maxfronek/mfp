@@ -2,13 +2,15 @@
     display: grid; grid-template-columns: 1fr 1fr 1fr 1fr;
         
     aside {@include flexbox; @include justify-content(center); @include flex-direction(column); z-index:2; margin: 0; grid-column: span 4;
-        h2 {margin-bottom: 2rem;}
-        p {text-align: center;}
+        h2 {margin-bottom: 2rem; text-transform: capitalize;}
+        p {text-align: center; width: 80%; margin-bottom: 4rem; text-transform: capitalize;}
     }
     .images {grid-column: span 4; position: relative; display: grid; grid-template-columns: repeat(12, 1fr); grid-template-rows: auto; grid-gap: 2rem;
         > * {margin:0 auto; grid-column: 1 / -1; z-index: 4; padding: .5rem;}
         &:first-child {z-index: initial;}
-        blockquote {padding-left: 2rem;}
+        blockquote {padding: 2rem 0; max-width: 900px;
+            @include medium {padding: .5rem 0;}
+        }
         blockquote, p, h3 {grid-column: span 12;scroll-snap-type: y mandatory;}
             .imagewrap {position: relative; scroll-snap-align: start; overflow: hidden;z-index: 1; width: 100%; padding: 0;
                 
@@ -49,10 +51,10 @@
     
     @include medium {
   
-        aside {position: relative;height: auto;max-width: 100%; grid-column: span 3; display: none;
+        aside {position: relative;height: auto;max-width: 100%; grid-column: span 4; 
             h2 {}
         }
-        .images {grid-column: span 3;
+        .images {grid-column: span 4; grid-gap: 1rem;
         blockquote, p, h3 {
                 &.uno,
                 &.dos,
@@ -65,7 +67,7 @@
                 &.tres,
                 &.cuatro {grid-column: span 4;}
                 
-                img {height: auto;}
+                img {height: 100%;}
                 
                 .gallery-item {
                     &.embiggen {max-height: 600px;height: auto;width: 200%;margin-left: -50%;}
@@ -89,3 +91,15 @@
     }
     
 } //end grid class
+
+.next-post {width: 100%;background-color: #FAE9FA;min-height: 200px;position: absolute;left: 0;margin-top: 10rem;
+  @include flexbox;
+  @include justify-content(center);
+  @include align-items(center); @include flex-direction(column);
+    span {opacity: .3;}
+    h3, p { text-align: center;margin: 0;text-indent: 0;}
+    
+    h3 {margin: 1rem auto; font-size: 2rem;}
+    p {margin: 0; font-size: 1rem;}
+    
+}

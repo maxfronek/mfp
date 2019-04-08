@@ -6,7 +6,7 @@ layout: default
 
 <p>{{ site.description }}</p>
 {% endcomment %}
-<section class="images home">
+<section class="images home masonry" id="">
 {% for post in site.posts %}
 {% for category in post.categories %}
 {% if category contains 'design' or category contains 'photography' %}

@@ -10,6 +10,7 @@ $teal: #608d8f;
 $dark-blue: #0f6080;
 $yellow: #d3d99e;
 $sand: #eceadd;
+$red: #893434;
 
 
 $pink--dark: darken($pink, 20%);
@@ -37,17 +38,22 @@ $teal--light: lighten($teal, 20%);
 $teal--complement: $sage;
 
 
+$red--dark: darken($red, 20%);
+$red--light: lighten($red, 20%);
+$red--complement: $powder-blue;
+
+
 .white {background-color: $bg;
-    &.footer-links {background-color: $bg;}
-    &.content {h2{color: darken($light, 30%); }}
+    &.footer-links, &.next-post {background-color: $bg;}
+    &.content {h1, h2, h3{color: darken($light, 30%); }}
 }
 .sand {background-color: $light;
-    &.footer-links {background-color: $light;}
-    &.content {h2{color: darken($light, 30%); }}
+    &.footer-links, &.next-post {background-color: $light;}
+    &.content {h1, h2, h3{color: darken($light, 30%); }}
 }
 .pink {background-color: $pink;
-    h2 {color: $pink--dark !important;}
-    &.content {h2 {color: $pink--dark}}
+    h1, h1, h2, h3, h3 {color: $pink--dark !important;}
+    &.content {h1, h2, h3 {color: $pink--dark}}
     .hamburger {
         .patty {background-color: $pink--dark;}
     }
@@ -56,10 +62,10 @@ $teal--complement: $sage;
     }
     blockquote {color: $pink--dark; border-color: $pink--light;}
     p {color: darken($pink--dark, 20%);}
-    &.footer-links {background-color: $pink;}
+    &.footer-links, &.next-post {background-color: $pink;}
 }
 .grey {background-color: $grey--dark;
-    h2 {color: $grey--light !important;}
+    h1, h2, h3 {color: $grey--light !important;}
     .hamburger {
         .patty {background-color: $grey--light;}
     }
@@ -68,12 +74,12 @@ $teal--complement: $sage;
     }
     blockquote {color: $grey--light; border-color: $grey--complement;}
     p {color: lighten($grey--light, 20%);}
-    &.footer-links {background-color: $pink;}
+    &.footer-links, &.next-post {background-color: $pink;}
 }
 .powder-blue {background-color: $powder-blue;
-    &.footer-links {background-color: $powder-blue;}
-    h2 {color: $powder-blue--dark !important;}
-    &.content {h2 {color: $powder-blue--dark}}
+    &.footer-links, &.next-post {background-color: $powder-blue;}
+    h1, h2, h3 {color: $powder-blue--dark !important;}
+    &.content {h1, h2, h3 {color: $powder-blue--dark}}
     .hamburger {
         .patty {background-color: $powder-blue--dark;}
     }
@@ -84,9 +90,9 @@ $teal--complement: $sage;
     p {color: darken($powder-blue--dark, 20%);}
 }
 .sage {background-color: $sage;
-    &.footer-links {background-color: $sage;}
-        h2 {color: $sage--dark !important;}
-  &.content {h2 {color: $sage--dark}}
+    &.footer-links, &.next-post {background-color: $sage;}
+        h1, h2, h3 {color: $sage--dark !important;}
+  &.content {h1, h2, h3 {color: $sage--dark}}
         .hamburger {
         .patty {background-color: $sage--dark;}
     }
@@ -98,9 +104,12 @@ $teal--complement: $sage;
     
 }
 .dark-blue { background-color: $dark-blue;
-    &.footer-links {background-color: $dark-blue;}
-      h2 {color: $dark-blue--light !important;}
-  &.content {h2 {color: $dark-blue--light}}
+    &.footer-links, &.next-post {background-color: $dark-blue;
+        span {color: $dark-blue--complement;}
+    }
+    
+      h1, h2, h3 {color: $dark-blue--light !important;}
+  &.content {h1, h2, h3 {color: $dark-blue--light}}
            .hamburger {
         .patty {background-color: $dark-blue--light;}
     }
@@ -111,9 +120,9 @@ $teal--complement: $sage;
     p {color: lighten($dark-blue--light, 20%);}
 }
 .teal { background-color: $teal;
-    &.footer-links {background-color: $teal;}
-      h2 {color: $teal--dark !important;}
-  &.content {h2 {color: $teal--dark}}
+    &.footer-links, &.next-post {background-color: $teal;}
+      h1, h2, h3 {color: $teal--dark !important;}
+  &.content {h1, h2, h3 {color: $teal--dark}}
            .hamburger {
         .patty {background-color: $teal--dark;}
     }
@@ -124,24 +133,39 @@ $teal--complement: $sage;
     p {color: lighten($teal--dark, 20%);}
 }
 
+.red { background-color: $red;
+    &.footer-links, &.next-post, &.next-post {background-color: $red;}
+      h1, h2, h3 {color: $red--dark !important;}
+  &.content {h1, h2, h3 {color: $red--dark}}
+           .hamburger {
+        .patty {background-color: $red--dark;}
+    }
+    .mtof {
+        span {background: $red--light;}
+    }
+    blockquote {color: $red--dark; border-color: $red--complement;}
+    p {color: lighten($red--dark, 20%);}
+}
 
-aside {h2 {&.title {
+
+
+aside {h1, h2, h3 {&.title {
             &.white { 
-                h2{color: darken($light, 30%); }
+                h1, h2, h3{color: darken($light, 30%); }
             } // end white
             &.pink {
-                h2{color: $pink--dark;}
+                h1, h2, h3{color: $pink--dark;}
             }
             &.grey {
-                   h2{color: $grey--light;}
+                   h1, h2, h3{color: $grey--light;}
             }
             &.powder-blue {
-                   h2{color: $powder-blue--dark;}
+                   h1, h2, h3{color: $powder-blue--dark;}
             }
             &.sage {
-                   h2{color: $sage--dark;}
+                   h1, h2, h3{color: $sage--dark;}
             }
             &.dark-blue {
-                     h2{color: $powder-blue;}
+                     h1, h2, h3{color: $powder-blue;}
             }
         }}}

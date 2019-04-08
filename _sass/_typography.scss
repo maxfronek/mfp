@@ -13,9 +13,11 @@ a {
     
     &.me {font-weight: 600; font-size: 1.2rem; letter-spacing: .05rem; font-family: $sub-heading-font;@include prefix(transition, .2s all ease-in-out, webkit moz ms o);
         &:before {opacity: 0; @include prefix(transition, .5s opacity ease-in-out, webkit moz ms o); content: "About ";}
-        &.extra {&:before {opacity: 1;}}
+        &.extra { z-index: 7;
+            &:before {opacity: 1;}}
         @include hocus {color: $heading-font-color;
         }
+        @include medium {font-size: .9rem;}
     }
 }
 
@@ -34,7 +36,7 @@ code {
 
 h1, h2, h3 {
   font-family: $heading-font;
-  font-weight: 600;
+  font-weight: 200;
   color: $heading-font-color;
   line-height: 1.1;  
    a {color: $link-color; @include prefix(box-shadow, 0px -1px 0px $link-hover-color inset, webkit);
@@ -62,7 +64,9 @@ h4 {font-size: 1.2rem; text-transform: uppercase; letter-spacing: .35rem; font-w
 h5 {font-size: 1.2rem; text-transform: uppercase; letter-spacing: .25rem; font-weight: 300;}
 h6 {font-size: 1rem; font-weight: 700;}
 
-blockquote {border-left: 2px solid $header; padding-left: 2rem; margin-left: 0; font-size: 2.6rem;}
+blockquote {font-family: $sub-heading-font;border-top: 2px solid $header; border-bottom: 2px solid $header; padding-top: 2rem 0; margin-left: 0; font-size: 1.8rem; font-weight: 400; letter-spacing: .05rem;
+    @include medium {font-size: 1.2rem;padding: .5rem 0; }
+    }
 
 .about {
     .email {text-align: center; }
@@ -72,15 +76,29 @@ blockquote {border-left: 2px solid $header; padding-left: 2rem; margin-left: 0; 
 }
 
 aside {
-    p {font-family: $sub-heading-font; letter-spacing: .1rem; font-weight: 200;}
+    h2 {text-align: center;}
+    p {font-family: $sub-heading-font; letter-spacing: .1rem; font-weight: 200;
+    
+        @include medium {font-size: 1rem; text-align: center;font-weight: 400; opacity: .5;}    
+        
+    }
+}
+
+.next-post {
+    span {font-family: $sub-heading-font; letter-spacing: .1rem; font-weight: 600; text-transform: uppercase;}
+    p {font-family: $sub-heading-font; letter-spacing: .1rem; font-weight: 200; text-transform: capitalize;
+        @include medium {font-size: 1rem;font-weight: 400; opacity: .5;}    
+        
+    }
 }
 
 menu {
     nav {
         ul {
             li {
-                a {font-family: $sub-heading-font;color: $mf-green; text-transform: uppercase; letter-spacing: .5rem; font-size: 1.6rem; background-image: linear-gradient(to right, $heading-font-color 50%, transparent 50%); background-size: 201% 1px; background-repeat: no-repeat; background-position: right top;
+                a {font-family: $sub-heading-font;color: $mf-green; text-transform: uppercase; letter-spacing: .5rem; font-size: 1.6rem; background-image: linear-gradient(to right, $heading-font-color 50%, transparent 50%); background-size: 201% 1px; background-repeat: no-repeat; background-position: right top; font-weight: 200;
                     @include hocus {color: $heading-font-color; background-position: left top;}
+                    @include medium {font-size: 1.1rem;}
                 }
             }
         }
