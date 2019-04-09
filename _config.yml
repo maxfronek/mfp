@@ -15,11 +15,11 @@
 # in the templates via {{ site.myvariable }}.
 title: Max Fronek
 email: mf@maxfronek.com
-description: |- # this means to preserve newlines until "baseurl:"
-  I’ve been in love with design my entire life. Finding the perfect way to present information and solving problems creatively gets me going. |-
+description: |
+  I’ve been in love with design my entire life. Finding the perfect way to present information and solving problems creatively is a passion of mine.
   
-  I work with various clients to achieve their short- and long-term needs focusing mainly on: product branding, product and packaging development, marketing, and corporate identity. |-
-
+  I work with various clients to achieve their short- and long-term needs focusing mainly on: product branding, product and packaging development, marketing, and corporate identity.
+  
   Let’s chat about how we can elevate your brand together.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://mfdesign-netlify.com" # the base hostname & protocol for your site, e.g. http://example.com

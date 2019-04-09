@@ -7,9 +7,10 @@ layout: default
 <p>{{ site.description }}</p>
 {% endcomment %}
 <section class="images home masonry" id="">
-{% for post in site.posts %}
+{% assign posts = site.posts | sort: 'order' %} 
+{% for post in posts  %}
 {% for category in post.categories %}
-{% if category contains 'design' or category contains 'photography' %}
+{% if category contains 'featured' %}
 
           {% for image in post.images limit: 1 %}    
   {% capture thecycle %}{% cycle 'alpha', 'bravo', 'charlie', 'delta'  %}{% endcapture %}
@@ -32,7 +33,10 @@ layout: default
 
 {% endif %}
 <div class="content{% if post.cover_color %} {{ post.cover_color }}{% elsif post.feature_color %} {{ post.feature_color }}{% else %} white{% endif %}">
-             <a href="{{ post.url | prepend: site.url }}" title="{{post.title }}"><h2>{{ post.title }}</h2></a>  
+             <a href="{{ post.url | prepend: site.url }}" title="{{post.title }}"><h2>{{ post.title }}</h2>
+                 <ul>     {% for category in post.categories %}{% unless category == 'featured' %}<li>{{ category }}</li>{% endunless %}{% endfor %}</ul>
+
+    </a>  
          </div>
                
         </div>    

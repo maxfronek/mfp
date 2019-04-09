@@ -4,10 +4,10 @@ layout: "default"
 <span id="feature_color" data-color="{% if page.feature_color %}{{ page.feature_color }}{% else %}white{% endif %}"></span>
 <div class="grid">
     
-    <aside>
+    <figure>
     <h2 class="title">{{ page.title }}</h2>
    {% if page.excerpt %}<p>{{ page.excerpt }}</p>{% endif %}  
-    </aside>
+    </figure>
     
 
     <section class="images">
@@ -19,6 +19,10 @@ layout: "default"
         
 {% for image in page.images %}
 
+    {% if image.heading %}
+        <h3 class="{{ thecycle }} heading">{{ image.heading }}</h3>
+        {% endif %}
+    
 <div class="imagewrap {% if image.width %}{{ image.width }}{% endif %} {% if image.anchor %}{{ image.anchor }}{% endif %}" {% if forloop.index > 3 %} data-sal="slide-{% cycle 'left', 'down', 'right', 'up' %}" data-sal-delay="100"  data-sal-duration="500" data-sal-easing="ease-out-bounce" {% endif %} >
         {% capture path %}{{ image.img_url }}{% endcapture %}
 {% capture alt %}{{ image.title }}{% endcapture %}
@@ -55,15 +59,19 @@ layout: "default"
 {% endif %}
         
         </div>
+     {% if image.blockquote or image.paragraph %}   
+        <div class="extras">
         {% if image.blockquote %}
-        <blockquote class="{{ thecycle }}">{{ image.blockquote }}</blockquote>
+            <aside class="pullquote {{ thecycle }}">
+            <blockquote>{{ image.blockquote }}</blockquote>
+            </aside>        
         {% endif %}
         {% if image.paragraph %}
-        <p class="{{ thecycle }}">{{ image.paragraph }}</p>
+        <p class="{{ thecycle }}">{{ image.paragraph | newline_to_br }}</p>
         {% endif %}
-        {% if image.heading %}
-        <h3 class="{{ thecycle }}">{{ image.heading }}</h3>
-        {% endif %}
+                        </div>
+      {% endif %}        
+
 {% endfor %}
         
         {{ content }}
@@ -85,7 +93,7 @@ layout: "default"
 {% if page.next_in_category.url != nil %}
 	<a href="{{ page.next_in_category.url }}" class="next-link">
 <div class="next-post {% if page.next_in_category.cover_color %}{{ page.next_in_category.cover_color }}{% endif %}">
-        <span>Next Post in {% for category in page.categories limit: 1 %}{{ category }}{% endfor %}</span>
+        <span>Next in {% for category in page.categories limit: 1 %}{{ category }}{% endfor %}</span>
         <h3>{{ page.next_in_category.title }}</h3>
         <p>{{ page.next_in_category.excerpt }}</p>
 {% comment %}

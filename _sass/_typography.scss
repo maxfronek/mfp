@@ -37,7 +37,7 @@ code {
 h1, h2, h3 {
   font-family: $heading-font;
   font-weight: 200;
-  color: $heading-font-color;
+  color: $font-color;
   line-height: 1.1;  
    a {color: $link-color; @include prefix(box-shadow, 0px -1px 0px $link-hover-color inset, webkit);
         @include hocus {@include prefix(box-shadow, 0px -30px 0px $link-hover-color inset, webkit);}}
@@ -47,24 +47,33 @@ h4, h5, h6 {font-family: $font-style; color: $mid; margin: 0;
     a { color: $mid; @include prefix(box-shadow, 0px -1px 0px $link-hover-color inset, webkit);
         @include hocus {@include prefix(box-shadow, 0px -30px 0px $link-hover-color inset, webkit);}}}
 
-h1 { font-size: 6.85rem;
-    &.title {margin-bottom: 0;text-indent: -9.8rem;margin-left: 9.8rem; line-height: .9;
+h1 { font-size: 4rem;
+    &.title {margin-bottom: 0;
         @include medium {font-size: 4.85rem; text-indent: -4.5rem; margin-left: 4.5rem;}
     }
 }
 
-h2 {font-size: 4rem;
+h2 {font-size: 3rem;
     &.title {font-family: $font-style; font-weight: 200; margin: -.9rem 0 0; font-weight: 200; @include flexbox; @include justify-content(center);
         @include small {}
         aside & {font-size:2.6rem; color: $mf-green;}
     }
 }
-h3 {font-size: 2.6rem; text-indent: -3.6rem;margin-left: 3.6rem; }
+h3 {font-size: 2rem; line-height: 1.6; }
 h4 {font-size: 1.2rem; text-transform: uppercase; letter-spacing: .35rem; font-weight: 700;}
 h5 {font-size: 1.2rem; text-transform: uppercase; letter-spacing: .25rem; font-weight: 300;}
 h6 {font-size: 1rem; font-weight: 700;}
 
-blockquote {font-family: $sub-heading-font;border-top: 2px solid $header; border-bottom: 2px solid $header; padding-top: 2rem 0; margin-left: 0; font-size: 1.8rem; font-weight: 400; letter-spacing: .05rem;
+blockquote {font-size: 1.4rem; text-align: left; margin: 0; padding-right: 2rem;
+    
+    a {text-decoration: none; @include prefix(box-shadow, 0px -5px 0px $link-hover-color inset, webkit);
+        @include hocus {@include prefix(box-shadow, 0px -30px 0px $link-hover-color inset, webkit);}
+    }
+    @include huge {font-size: 1.8rem;}
+    @include tablet {font-size: 1.2rem;}
+}
+
+.heading {font-family: $sub-heading-font;border-top: 2px solid $header; border-bottom: 2px solid $header; padding: 2rem 0; margin-left: 0; font-size: 1.8rem; font-weight: 400; letter-spacing: .05rem;
     @include medium {font-size: 1.2rem;padding: .5rem 0; }
     }
 
@@ -75,7 +84,7 @@ blockquote {font-family: $sub-heading-font;border-top: 2px solid $header; border
     @include hocus {color: $heading-font-color;filter: hue-rotate(-30deg) brightness(80%);opacity: .7;}
 }
 
-aside {
+figure {
     h2 {text-align: center;}
     p {font-family: $sub-heading-font; letter-spacing: .1rem; font-weight: 200;
     
