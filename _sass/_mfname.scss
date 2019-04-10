@@ -20,6 +20,7 @@
 	transition: opacity 0.2s cubic-bezier(0.86, 0, 0.07, 1);*/
     transition: all .3s ease-in-out;
     margin: -20px 0 40px;
+    z-index: 999;
 
     @include medium {top: unset;bottom: 69px;right: 60px;left: unset;}
     
@@ -702,6 +703,7 @@ position: absolute;
 	opacity: 1;
 	-webkit-transition-delay: 0.1s;
 	transition-delay: 0.1s;
+    z-index: 999;
     @include prefix(transition, all .3s ease-in-out, ms moz o webkit);
     @include justify-content(center);
     
@@ -710,6 +712,7 @@ position: absolute;
         //right: 60px;left: unset;
     }
     
+    &.fixed {position: fixed;}
 
 
  .m-left, 

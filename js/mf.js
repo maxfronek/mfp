@@ -1,7 +1,9 @@
 // start with the menu
 
 var nav = document.querySelector('#hamburger'),
-    menu = document.getElementsByTagName('menu')[0];
+    menu = document.getElementsByTagName('menu')[0],
+    logo = document.getElementById('logo'),
+    header = document.querySelector('header');
 
 
 nav.onmouseover = function(){
@@ -12,17 +14,31 @@ nav.onmouseout = function(){
     nav.classList.remove('expand');
 }
 
-nav.onclick = function(){
+
+
+var showMenu = function(){
     menu.classList.toggle('show');
+    header.classList.toggle('z-plus');
     console.log('You done clicked it.');
+    document.querySelector('body').classList.toggle('lock');
     nav.classList.toggle('collapse');
     nav.classList.toggle('expand');
+    logo.classList.toggle('fixed');
+    
     setTimeout(function(){ nav.classList.toggle('close');}, 500);
+    
+    if (document.querySelector("#about").classList.contains("show")) {   
+    setTimeout(function() {
+        aboutContent.classList.remove('show');
+        aboutAlt.classList.remove('extra');
+    }, 250);
+    };
+    
 }
 
-// logo hovering
+nav.addEventListener('click', showMenu, false);
 
-var logo = document.getElementById('logo');
+// logo hovering
 
 logo.onmouseover = function(){
     logo.classList.add('ftime');
@@ -37,7 +53,17 @@ var aboutContent = document.getElementById('about'),
 
 var showAbout = function() {
     aboutContent.classList.toggle('show');
-    aboutAlt.classList.toggle('extra');};
+    aboutAlt.classList.toggle('extra');
+    
+if (document.querySelector("menu").classList.contains("show")) {
+    nav.classList.toggle('collapse');
+    nav.classList.toggle('close');
+    setTimeout(function() {
+        menu.classList.remove('show');
+        header.classList.remove('z-plus');
+    }, 500);
+    };
+};
 var closeInfo = document.getElementById('close-info'),
     hideAbout = function() {
     aboutContent.classList.remove('show');
@@ -129,17 +155,6 @@ var embiggen = function() {
 for (var i = 0; i < classname.length; i++) {
     classname[i].addEventListener('click', embiggen, false);
 };
-
-// initialize masonry grid
-/*
-var masonry = new MiniMasonry({
-    container: '.masonry',
-    minify: true,
-    gutter: 0
-    
-}); 
-*/
-// initialize animation on scroll
 
 sal({
     threshold: .7,

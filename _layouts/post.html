@@ -3,15 +3,12 @@ layout: "default"
 ---
 <div class="grid">
     
-    <aside>
+    <figure>
     <h2 class="title">{{ page.title }}</h2>
 <time
-  >{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if
-  page.meta %} • {{ page.meta }}{% endif %}</time
+  >{% comment %}{{ page.date | date: "%b %-d, %Y" }}{% endcomment %}{{ page.date | date: "%B %Y" }}</time
 >
-  {% for category in page.categories %}<a href="{{ site.url }}/category/{{ category }}" title="">{{ category }}</a> {% endfor %}
-    
-    </aside>
+    </figure>
     
 
     <section class="images">
@@ -40,9 +37,15 @@ layout: "default"
 </div>
 {% endif %}
  
-        
         {{ content }}
         
     </section>
+  <div class="end-matter"> {% if page.author %}{{ page.author }}{% endif %}{% if
+  page.meta %} • {{ page.meta }}{% endif %} 
+      {% if page.categories %}
+    <ul>  {% for category in page.categories %}<li><a href="{{ site.url }}/category/{{ category }}" title="">{{ category }}</a></li>{% endfor %}</ul>
+    {% endif %}
+    </div>  
+  
     
 </div>

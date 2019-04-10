@@ -39,6 +39,7 @@ h1, h2, h3 {
   font-weight: 200;
   color: $font-color;
   line-height: 1.1;  
+  text-transform: capitalize;
    a {color: $link-color; @include prefix(box-shadow, 0px -1px 0px $link-hover-color inset, webkit);
         @include hocus {@include prefix(box-shadow, 0px -30px 0px $link-hover-color inset, webkit);}}
 }
@@ -48,8 +49,12 @@ h4, h5, h6 {font-family: $font-style; color: $mid; margin: 0;
         @include hocus {@include prefix(box-shadow, 0px -30px 0px $link-hover-color inset, webkit);}}}
 
 h1 { font-size: 4rem;
-    &.title {margin-bottom: 0;
-        @include medium {font-size: 4.85rem; text-indent: -4.5rem; margin-left: 4.5rem;}
+    &.title {margin: -2rem auto 4rem; text-align: center;
+        @include medium {font-size: 4.85rem;}
+    }
+    &.category-title {position: fixed;left: 30px; margin: 0;
+  writing-mode: vertical-lr; text-orientation: sideways; top: 0;text-transform: uppercase;letter-spacing: .5rem;font-size: 1rem; height: 100vh;@include flexbox; @include align-items(center); @include justify-content(center); @include prefix(transform, rotate(180deg), webkit ms moz o);
+        @include medium {left: 20px;}
     }
 }
 
@@ -64,7 +69,7 @@ h4 {font-size: 1.2rem; text-transform: uppercase; letter-spacing: .35rem; font-w
 h5 {font-size: 1.2rem; text-transform: uppercase; letter-spacing: .25rem; font-weight: 300;}
 h6 {font-size: 1rem; font-weight: 700;}
 
-blockquote {font-size: 1.4rem; text-align: left; margin: 0; padding-right: 2rem;
+blockquote {font-family: $sub-heading-font;font-size: 1.4rem; text-align: left; margin: 0; padding-right: 2rem; font-weight: 200;
     
     a {text-decoration: none; @include prefix(box-shadow, 0px -5px 0px $link-hover-color inset, webkit);
         @include hocus {@include prefix(box-shadow, 0px -30px 0px $link-hover-color inset, webkit);}

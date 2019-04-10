@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<h4>blog</h4>
+<h1 class="category-title">All Posts</h1>
 <section class="images home">
 {% for post in site.posts %}
 
@@ -30,7 +30,8 @@ layout: default
 {% endif %}
 <div class="content{% if post.cover_color %} {{ post.cover_color }}{% elsif post.feature_color %} {{ post.feature_color }}{% else %} white{% endif %}">
              <a href="{{ post.url | prepend: site.url }}" title="{{post.title }}"><h2>{{ post.title }}</h2>
-                 <time>{{ post.date | date: "%b %-d, %Y" }}</time>
+                  <ul>     {% for category in post.categories %}{% unless category == 'featured' %}<li>{{ category }}</li>{% endunless %}{% endfor %}</ul>
+                 <time>{{ post.date | date: "%B %Y" }}</time>
     </a>  
          </div>
                

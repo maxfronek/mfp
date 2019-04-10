@@ -1,0 +1,107 @@
+--- 
+layout: "default"
+is_category_page: true 
+---
+
+{% if page.paginator %}
+
+  <!-- Pagination is active -->
+  {% assign paginator = page.paginator %}
+
+  {% if paginator.previous_page != nil or paginator.next_page != nil %}
+    <!-- Show page number if we have multiple pages -->
+    <h1 class="category-title">{{ paginator.page }} / {{ paginator.total_pages }} for {{ page.title }}</h1>
+  {% else %}
+    <!-- No page number if we only have a single page -->
+    <h1>Category index for &ldquo;{{ page.title }}&rdquo;</h1>
+  {% endif %}
+
+  <section class="images home">
+    <!-- Show post excerpts for the current page -->
+        {% assign posts = paginator.posts | sort: 'order' %} 
+    {% for post in posts limit:paginator.per_page %}
+
+    
+    {% for image in post.images limit: 1 %}    
+  {% capture thecycle %}{% cycle 'alpha', 'bravo', 'charlie', 'delta'  %}{% endcapture %}
+       
+           <div class="image {{ thecycle }} {% if image.anchor %}{{ image.anchor }}{% endif %}"  >
+        {% capture path %}{{ image.img_url }}{% endcapture %}
+{% capture alt %}{{ image.title }}{% endcapture %}
+
+    {% if path contains 'mp4' or path contains 'webm' %}
+ <video loop muted autoplay playsinline>
+        <source src="{{ path | strip_html }}" type="{% if path contains 'mp4' %}video/mp4{% else %}video/webm{% endif %}">
+</video>  
+    {% else %}
+
+{% responsive_image_block %}
+  path: {{ path }}
+  alt: {{ alt }}
+  sizes: "(max-width: 550px) 100vh, 80vw"
+  template: /_includes/unlazy-srcset.html    
+{% endresponsive_image_block %}
+
+{% endif %}
+<div class="content{% if post.cover_color %} {{ post.cover_color }}{% elsif post.feature_color %} {{ post.feature_color }}{% else %} white{% endif %}">
+             <a href="{{ post.url | prepend: site.url }}" title="{{post.title }}"><h2>{{ post.title }}</h2>
+                 <time>{{ post.date | date: "%b %-d, %Y" }}</time>
+    </a>  
+         </div>
+               
+        </div>    
+ {% endfor %}       
+
+    {% endfor %}
+  </section>
+  <!-- Show navigation next/previous page links if applicable -->
+  <nav><p>
+    {% if paginator.previous_page %}<a href="{{ paginator.previous_page_path }}"><span aria-hidden="true">&larr;</span> Newer</a>{% endif %}
+    {% if paginator.next_page %}<a href="{{ paginator.next_page_path }}">Older <span aria-hidden="true">&rarr;</span></a>{% endif %}
+  </p></nav>
+
+{% else %}
+
+  <!-- Pagination is not active -->
+  <h1 class="category-title">{{ page.title }}</h1>
+
+  <section class="images home">
+    <!-- Show excerpts for all posts in this category -->
+    {% assign posts = page.posts | sort: 'order' %} 
+{% for post in posts %}
+
+    
+    {% for image in post.images limit: 1 %}    
+  {% capture thecycle %}{% cycle 'alpha', 'bravo', 'charlie', 'delta'  %}{% endcapture %}
+       
+           <div class="image {{ thecycle }} {% if image.anchor %}{{ image.anchor }}{% endif %}"  >
+        {% capture path %}{{ image.img_url }}{% endcapture %}
+{% capture alt %}{{ image.title }}{% endcapture %}
+
+    {% if path contains 'mp4' or path contains 'webm' %}
+ <video loop muted autoplay playsinline>
+        <source src="{{ path | strip_html }}" type="{% if path contains 'mp4' %}video/mp4{% else %}video/webm{% endif %}">
+</video>  
+    {% else %}
+
+{% responsive_image_block %}
+  path: {{ path }}
+  alt: {{ alt }}
+  sizes: "(max-width: 550px) 100vh, 80vw"
+  template: /_includes/unlazy-srcset.html    
+{% endresponsive_image_block %}
+
+{% endif %}
+<div class="content{% if post.cover_color %} {{ post.cover_color }}{% elsif post.feature_color %} {{ post.feature_color }}{% else %} white{% endif %}">
+             <a href="{{ post.url | prepend: site.url }}" title="{{post.title }}"><h2>{{ post.title }}</h2>
+                 <time>{{ post.date | date: "%b %-d, %Y" }}</time>
+    </a>  
+         </div>
+               
+        </div>    
+ {% endfor %}       
+
+{% endfor %}
+  </section>
+
+{% endif %}

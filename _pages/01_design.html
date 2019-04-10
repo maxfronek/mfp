@@ -3,6 +3,7 @@ layout: default
 title: Design
 permalink: /design/
 ---
+<h1 class="category-title">{{ page.title }}</h1>
 <section class="images home ">
 {% assign posts = site.posts | sort: 'order' %} 
 {% for post in posts %}
@@ -33,7 +34,7 @@ permalink: /design/
 {% endif %}
 <div class="content{% if post.cover_color %} {{ post.cover_color }}{% elsif post.feature_color %} {{ post.feature_color }}{% else %} white{% endif %}">
              <a href="{{ post.url | prepend: site.url }}" title="{{post.title }}"><h2>{{ post.title }}</h2>
-                 <time>{{ post.date | date: "%b %-d, %Y" }}</time>
+                 <time>{{ post.date | date: "%B %Y" }}</time>
     </a>  
          </div>
                
