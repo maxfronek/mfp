@@ -20,7 +20,6 @@ var showMenu = function(){
     menu.classList.toggle('show');
     header.classList.toggle('z-plus');
     console.log('You done clicked it.');
-    document.querySelector('body').classList.toggle('lock');
     nav.classList.toggle('collapse');
     nav.classList.toggle('expand');
     logo.classList.toggle('fixed');
@@ -32,9 +31,10 @@ var showMenu = function(){
         aboutContent.classList.remove('show');
         aboutAlt.classList.remove('extra');
     }, 250);
-    };
-    
-}
+    } else {
+    document.querySelector('body').classList.toggle('lock');
+    }; 
+};
 
 nav.addEventListener('click', showMenu, false);
 
@@ -62,12 +62,15 @@ if (document.querySelector("menu").classList.contains("show")) {
         menu.classList.remove('show');
         header.classList.remove('z-plus');
     }, 500);
+    } else {  
+    document.querySelector('body').classList.toggle('lock');
     };
 };
 var closeInfo = document.getElementById('close-info'),
     hideAbout = function() {
     aboutContent.classList.remove('show');
     aboutAlt.classList.toggle('extra');
+    document.querySelector('body').classList.remove('lock');
     };
 
 logo.addEventListener('click', showAbout, false);

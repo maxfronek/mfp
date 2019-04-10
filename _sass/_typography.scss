@@ -83,10 +83,21 @@ blockquote {font-family: $sub-heading-font;font-size: 1.4rem; text-align: left; 
     }
 
 .about {
-    .email {text-align: center; }
+    p { font-size: 1.8rem; max-width: 800px;
+        &.email {text-align: center; font-size: 1.2rem;}
+        @include tablet {font-size: 1.6rem; max-width: calc(100% - 6rem);}
+               
+        @include short {font-size: 1.4rem;}
+        
+        @include medium {font-size: 1.2rem; max-width: 100%;
+            @include short {font-size: 1rem;}
+        }
+ 
+    }
 }
 .close-info {font-family: $sub-heading-font;font-weight: 600;font-size: 1.2rem;letter-spacing: .05rem;
     @include hocus {color: $heading-font-color;filter: hue-rotate(-30deg) brightness(80%);opacity: .7;}
+    @include tablet {font-size: 1rem;}
 }
 
 figure {

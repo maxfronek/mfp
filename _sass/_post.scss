@@ -44,6 +44,10 @@
             @include huge {width: 60%;}
             @include tablet {width: 60%;}
             @include medium {width: 100%; margin: 0rem 0 2rem;}
+            
+            &.right {float: right; margin: 1rem -2rem 1rem 0;}
+            &.full {float: none; margin: 2rem auto; width: 100%; max-width: 1200px;}
+            
         }
         
     } // end images

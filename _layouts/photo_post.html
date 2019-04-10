@@ -18,7 +18,7 @@ layout: "default"
 {% endif %}
         
 {% for image in page.images %}
-
+{% capture thecycle %}{% cycle 'left', 'right' %}{% endcapture %}
     {% if image.heading %}
         <h3 class="{{ thecycle }} heading">{{ image.heading }}</h3>
         {% endif %}
@@ -62,12 +62,12 @@ layout: "default"
      {% if image.blockquote or image.paragraph %}   
         <div class="extras">
         {% if image.blockquote %}
-            <aside class="pullquote {{ thecycle }}">
+            <aside class="pullquote {{ thecycle }} {% unless image.paragraph %}full{% endunless %}">
             <blockquote>{{ image.blockquote }}</blockquote>
             </aside>        
         {% endif %}
         {% if image.paragraph %}
-        <p class="{{ thecycle }}">{{ image.paragraph | newline_to_br }}</p>
+        <p class="">{{ image.paragraph | newline_to_br }}</p>
         {% endif %}
                         </div>
       {% endif %}        

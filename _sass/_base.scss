@@ -213,6 +213,7 @@ $tablet: 767px;
 $tween: 650px;
 $medium: 550px;
 $small: 400px;
+$short: 767px; 
 
 
 @mixin huge {
@@ -268,6 +269,14 @@ $small: 400px;
     @content;
   }
 }
+
+
+@mixin short {
+  @media (max-height: "#{$short}") {
+    @content;
+  }
+}
+
 
 
 
