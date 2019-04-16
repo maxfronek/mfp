@@ -11,7 +11,7 @@ $dark-blue: #0f6080;
 $yellow: #d3d99e;
 $sand: #eceadd;
 $red: #893434;
-
+$orange: #ed7a33;
 
 $pink--dark: darken($pink, 20%);
 $pink--light: lighten($pink, 10%);
@@ -41,6 +41,11 @@ $teal--complement: $sage;
 $red--dark: darken($red, 20%);
 $red--light: lighten($red, 40%);
 $red--complement: $powder-blue;
+
+
+$orange--dark: darken($orange, 20%);
+$orange--light: lighten($orange, 40%);
+$orange--complement: $powder-blue;
 
 
 .white {background-color: $bg;
@@ -134,7 +139,10 @@ $red--complement: $powder-blue;
 }
 
 .red { background-color: $red;
-    &.footer-links, &.next-post, &.next-post {background-color: $red;}
+    &.footer-links, &.next-post {background-color: $red; 
+        span {color: $light;}
+        p {color: $red--light;}
+    }
       h1, h2, h3 {color: $red--light !important;}
   &.content {
       h1, h2, h3 {color: $red--light}
@@ -148,8 +156,30 @@ $red--complement: $powder-blue;
     }
     blockquote {color: $red--dark; border-color: $red--complement;}
     p {color: lighten($red--dark, 20%);}
+    
 }
 
+
+.orange { background-color: $orange;
+    &.footer-links, &.next-post {background-color: $orange; 
+        span {color: $light;}
+        p {color: $orange--light;}
+    }
+      h1, h2, h3 {color: $orange--light !important;}
+  &.content {
+      h1, h2, h3 {color: $orange--light}
+      ul li, time {color: $orange--light;}    
+    }
+           .hamburger {
+        .patty {background-color: $orange--dark;}
+    }
+    .mtof {
+        span {background: $orange--light;}
+    }
+    blockquote {color: $orange--dark; border-color: $orange--complement;}
+    p {color: lighten($orange--dark, 20%);}
+    
+}
 
 
 aside {h1, h2, h3 {&.title {
