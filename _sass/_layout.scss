@@ -183,12 +183,12 @@ video {object-fit: cover; width: 100%; max-height: 500px;}
 
 
 .images {
-    columns:2;column-gap: 0rem; margin-top: -1rem;
-    
+    margin-top: -1rem;
     &.home {}
     
-    .image {position: relative; overflow:hidden; padding: 1rem; @include flex-basis(50%); display: inline-block; min-width: 100%;
-    
+    .image {
+        position: relative; overflow:hidden; padding: 1rem; width: 100%;
+        
         img {min-width: 100%; min-height: 100%; max-height: none;}
         
         .content {opacity: 0; z-index: 2; @include prefix(transition, all .2s ease-in-out, webkit moz ms o); position: absolute; left: 1rem; top: 1rem; min-height: calc(100% - 2rem); height: calc(100% - 2rem); width: calc(100% - 2rem); padding: 1rem;  text-align: center;
@@ -226,6 +226,9 @@ video {object-fit: cover; width: 100%; max-height: 500px;}
     } // end .image
     
     @include medium {columns: 1;}
+    
+    &:before,
+    &:after {content: ""; flex-basis:100%;width:0;order:2;}
     
 } // end images
 

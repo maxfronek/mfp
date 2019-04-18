@@ -6,7 +6,7 @@ layout: default
 
 <p>{{ site.description }}</p>
 {% endcomment %}
-<section class="images home masonry" id="">
+<section class="images home" id="masonry">
 {% assign posts = site.posts | sort: 'order' %} 
 {% for post in posts  %}
 {% for category in post.categories %}

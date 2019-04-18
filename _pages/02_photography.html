@@ -4,7 +4,7 @@ title: Photography
 permalink: /photography/
 ---
 <h1 class="category-title">{{ page.title }}</h1>
-<section class="images home ">
+<section class="images home " id="masonry">
 {% assign posts = site.posts | sort: 'order' %} 
 {% for post in posts %}
 {% for category in post.categories %}

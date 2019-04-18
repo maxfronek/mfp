@@ -15,3 +15,6 @@ Gemfile.lock
 /graphic design
 _config_dev.yml
 *.env
+node_modules/
+package-lock.json
+package.json

@@ -41,8 +41,7 @@
          transform: translateY(-6px);}
      &:nth-child(2) {
 	-webkit-transform: translateY(0px);
-	transform: translateY(0px);
-         @include medium {width: 80%;}    
+	transform: translateY(0px);   
         }  
      &:nth-child(3) {
 	-webkit-transform: translateY(6px);
@@ -55,7 +54,7 @@
     
     &.expand {z-index: 100;
     
-        .patty {
+        .patty {/* old 
     &:nth-child(1) {
 	-webkit-transform: translateY(-9px);
 	transform: translateY(-9px); }
@@ -64,7 +63,16 @@
 	transform: translateY(0px);}
     &:nth-child(3) {
 	-webkit-transform: translateY(9px);
-	transform: translateY(9px);
+	transform: translateY(9px); */
+    &:nth-child(1) {
+	-webkit-transform: scaleX(-6px) scaleX(.9);
+	transform: translateY(-6px) scaleX(.9); }
+    &:nth-child(2) {
+	-webkit-transform: translateY(0px) scaleX(.7);
+	transform: translateY(0px) scaleX(.7);}
+    &:nth-child(3) {
+	-webkit-transform: translateY(6px) scaleX(.5);
+	transform: translateY(6px) scaleX(.5);        
             }
 
         } // end expanded patty and child

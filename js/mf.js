@@ -162,3 +162,13 @@ for (var i = 0; i < classname.length; i++) {
 sal({
     threshold: .7,
 });
+
+Macy({ 
+        container: "#masonry",
+        columns: 2,
+    breakAt: {
+        550: {
+          columns: 1
+    }
+  }
+    });
