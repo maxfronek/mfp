@@ -54,7 +54,7 @@ h1 { font-size: 4rem;
     }
     &.category-title {position: fixed;left: 30px; margin: 0;
   writing-mode: vertical-lr; text-orientation: sideways; top: 0;text-transform: uppercase;letter-spacing: .5rem;font-size: 1rem; height: 100vh;@include flexbox; @include align-items(center); @include justify-content(center); @include prefix(transform, rotate(180deg), webkit ms moz o);
-        @include medium {left: 20px;}
+        @include medium {left: 15px;}
     }
 }
 

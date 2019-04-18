@@ -76,7 +76,10 @@ time {
   margin: 0 auto;
 }
 
-article {width: 100%; grid-column: 2 / span 4;}
+article {width: 100%; grid-column: 2 / span 4;
+    @include small {grid-column: 2 / -1;}
+   .post & { @include small {grid-column: 1 / -1;}}
+}
 
 .blog, .list {margin: 0 auto;}
 
@@ -98,7 +101,7 @@ menu {
     @include prefix(transition, .2s all ease-in-out, ms moz webkit o);
     @include flexbox;
     @include align-items(center);
-    @include justify-content(center);
+    @include justify-content(flex-start);
     
   border-bottom: 1px solid lighten($light, 30%);
   box-shadow: 0px 1px 1px RGBA(4, 25, 54, 0.1);
@@ -106,7 +109,7 @@ menu {
     @include medium {padding-left: 0;}
     
   nav {
-    max-width: 800px;
+    max-width: 800px; margin-left: 2rem;
     ul {
       margin: 0;
       padding: 0;
@@ -126,11 +129,23 @@ menu {
           box-shadow: 0;
           @include prefix(transition, .2s all ease-in-out, ms webkit moz o);
             &:before {content: '';@include prefix(transition, .2s all ease-in-out, ms webkit moz o); opacity: 0;}
-            @include hocus {
-                &:before {opacity: 1;}
-            }    
+    
             
-        }
+                  @include hocus {
+                &:before {opacity: 1;}
+    
+            } 
+        } // end nav ul li a
+
+            .image-preview { position: fixed; top: 25%; right: 2rem; overflow: hidden; opacity: 0; z-index: -1; @include prefix(transition, all .2s ease-in-out, webkit moz ms o); height: 50vh;
+                h3 {position: absolute; bottom: 2rem; right: 2rem; text-align: right; font-weight: 600;}
+                img {max-height: none; height: 100%;@include prefix(transition, all .2s ease-in-out, webkit moz ms o); @include prefix(transform, translateX(100%), webkit moz ms o); mix-blend-mode: multiply; opacity: .7;}
+                &.show { opacity: 1;z-index: 2;
+                    img {@include prefix(transform, translateX(0%), webkit moz ms o);}
+                }  
+                
+            }
+          
       }
     } // end nav ul
     &:after {
@@ -141,6 +156,11 @@ menu {
   } // end nav
 
     &.show {opacity: 1;z-index: 10;}
+    
+    @include medium {
+        @include justify-content(center);
+        nav {margin-Left: 0}
+    }
     
 } // end menu
 
@@ -189,7 +209,7 @@ video {object-fit: cover; width: 100%; max-height: 500px;}
     .image {
         position: relative; overflow:hidden; padding: 1rem; width: 100%;
         
-        img {min-width: 100%; min-height: 100%; max-height: none;}
+        img, video {min-width: 100%; min-height: 100%; max-height: none;}
         
         .content {opacity: 0; z-index: 2; @include prefix(transition, all .2s ease-in-out, webkit moz ms o); position: absolute; left: 1rem; top: 1rem; min-height: calc(100% - 2rem); height: calc(100% - 2rem); width: calc(100% - 2rem); padding: 1rem;  text-align: center;
             
@@ -221,6 +241,9 @@ video {object-fit: cover; width: 100%; max-height: 500px;}
            @include medium {
                grid-column: span 4; min-height: unset;
                &:first-of-type {max-height: 400px;}
+               
+               img, video {height: 300px;}
+               
         } // end medium mq
         
     } // end .image
@@ -254,9 +277,12 @@ footer {
     img {width: 30px; @include prefix(transition, .2s all ease-in-out, ms moz webkit o);}
         
       @include hocus {img { opacity: .6;}}
-        
-    }
+           @include medium { img {width: 25px;} }
 
-    @include medium {padding-bottom: 100px;}
+    @include medium {padding-bottom: 100px;
+        img {width: 25px;}
+    }
+    
+}
     
 }

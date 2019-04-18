@@ -5,9 +5,13 @@ title: Bio
 permalink: /about/
 ---
 
-I've had a passion for being creative throughout my life. More bio stuff. Not important. You just need something here for content. Maybe put a picture in here as well.
-
 ![hey look it is me](/images/page_images/about.jpg)
+
+I've had a passion for design and photography for as long as I can remember.  
+
+---
+
+My photography has been featured in numerous press outlets, and has been presented for advertising content in formats from magazines to billboards. Some places you may have seen my product photos include The Wall Street Journal, GQ, Esquire, Playboy, Gizmodo, Popsugar, and more.
 
 ---
 

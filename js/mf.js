@@ -159,6 +159,25 @@ for (var i = 0; i < classname.length; i++) {
     classname[i].addEventListener('click', embiggen, false);
 };
 
+
+var menuItem = menu.getElementsByClassName("menu-item"),
+    menuInfo = function() {
+        var menuAnchor = this.querySelector('a'),
+            menuTitle = menuAnchor.innerHTML,
+            menuImage = this.querySelector('div');
+    // console.log("Menu Item " + menuTitle + " hovered")    
+    menuImage.classList.toggle('show');
+};
+
+
+
+for (var i = 0; i < menuItem.length; i++) {
+    menuItem[i].addEventListener('mouseover', menuInfo, false);
+    menuItem[i].addEventListener('mouseleave', menuInfo, false);
+};
+
+
+
 sal({
     threshold: .7,
 });
