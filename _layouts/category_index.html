@@ -16,7 +16,7 @@ is_category_page: true
     <h1>Category index for &ldquo;{{ page.title }}&rdquo;</h1>
   {% endif %}
 
-  <section class="images home">
+  <section class="images home" id="masonry">
     <!-- Show post excerpts for the current page -->
         {% assign posts = paginator.posts | sort: 'order' %} 
     {% for post in posts limit:paginator.per_page %}
@@ -65,7 +65,7 @@ is_category_page: true
   <!-- Pagination is not active -->
   <h1 class="category-title">{{ page.title }}</h1>
 
-  <section class="images home">
+  <section class="images home" id="masonry">
     <!-- Show excerpts for all posts in this category -->
     {% assign posts = page.posts | sort: 'order' %} 
 {% for post in posts %}
@@ -80,7 +80,7 @@ is_category_page: true
 
     {% if path contains 'mp4' or path contains 'webm' %}
  <video loop muted autoplay playsinline>
-        <source src="{{ path | strip_html }}" type="{% if path contains 'mp4' %}video/mp4{% else %}video/webm{% endif %}">
+        <source src="/{{ path | strip_html }}" type="{% if path contains 'mp4' %}video/mp4{% else %}video/webm{% endif %}">
 </video>  
     {% else %}
 
