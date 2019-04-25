@@ -20,12 +20,13 @@
                 &.full {grid-column: span 12;}
                 &.threequarters {grid-column: span 9;}
                 &.half {grid-column: span 6;}
-                &.onequarter {grid-column: span 3;
-                    &.embiggen { }
-                    }
+                &.onequarter {grid-column: span 3;}
                 &.twothirds {grid-column: span 8;}
                 &.onethird {grid-column: span 4;}
    
+                
+                &.embiggen {overflow: scroll;}
+                
         }
             .gallery-item { object-fit: cover;height: 500px;
                 @include prefix(transition, all .5s linear, webkit moz ms o);z-index: 1;
@@ -87,7 +88,7 @@
                 img {height: 100%;}
                 
                 .gallery-item {
-                    &.embiggen {max-height: 600px;height: auto;width: 200%;margin-left: -50%;}
+                    &.embiggen {max-height: 600px;height: auto;width: 200%;margin-left: 0%;}
                 }
                 
                 .caption {
@@ -118,5 +119,9 @@
     
     h3 {margin: 1rem auto; font-size: 2rem;}
     p {margin: 0; font-size: 1rem;}
+    
+    @include medium {
+        p {display: none;}
+    }
     
 }

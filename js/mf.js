@@ -38,6 +38,44 @@ var showMenu = function(){
 
 nav.addEventListener('click', showMenu, false);
 
+
+// show / hide menu on scroll (mobile only)
+
+let scrollPos = 0;
+
+function checkPosition() {
+  let windowY = window.scrollY;
+  if (windowY < scrollPos) {
+    // Scrolling UP
+    nav.classList.add('is-visible');
+    nav.classList.remove('is-hidden');
+  } else {
+    // Scrolling DOWN
+    nav.classList.add('is-hidden');
+    nav.classList.remove('is-visible');
+  }
+  scrollPos = windowY;
+};
+
+function debounce(func, wait = 10, immediate = true) {
+  let timeout;
+  return function() {
+    let context = this, args = arguments;
+    let later = function() {
+      timeout = null;
+      if (!immediate) func.apply(context, args);
+    };
+    let callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow) func.apply(context, args);
+  };
+};
+
+window.addEventListener('scroll', debounce(checkPosition));
+
+
+
 // logo hovering
 
 logo.onmouseover = function(){
@@ -137,7 +175,7 @@ var classname = document.getElementsByClassName("gallery-item"),
     w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0),
     h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0); 
 
-
+// enlarge images on posts
 
 var embiggen = function() {
     this.classList.toggle('embiggen');
@@ -175,6 +213,7 @@ for (var i = 0; i < menuItem.length; i++) {
     menuItem[i].addEventListener('mouseover', menuInfo, false);
     menuItem[i].addEventListener('mouseleave', menuInfo, false);
 };
+
 
 
 

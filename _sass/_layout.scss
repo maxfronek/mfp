@@ -41,7 +41,7 @@ header {
     &.z-plus {z-index: 999;
         .me {z-index: 999; opacity: 1;}
     }
-    
+  
 }
 main {
     padding: 0 15px;
@@ -77,8 +77,12 @@ time {
 }
 
 article {width: 100%; grid-column: 2 / span 4;
-    @include small {grid-column: 2 / -1;}
+    @include small {grid-column: 1 / -1;
+        &.category {grid-column: 2 / -1;}
+    }
    .post & { @include small {grid-column: 1 / -1;}}
+    
+    p {}
 }
 
 .blog, .list {margin: 0 auto;}
@@ -139,10 +143,10 @@ menu {
 
             .image-preview { position: fixed; top: 25%; right: 2rem; overflow: hidden; opacity: 0; z-index: -1; @include prefix(transition, all .2s ease-in-out, webkit moz ms o); height: 50vh;
                 h3 {position: absolute; bottom: 2rem; right: 2rem; text-align: right; font-weight: 600;}
-                img {max-height: none; height: 100%;@include prefix(transition, all .2s ease-in-out, webkit moz ms o); @include prefix(transform, translateX(100%), webkit moz ms o); mix-blend-mode: multiply; opacity: .7;}
+                img {max-height: none; height: 100%; width: 50vw;@include prefix(transition, all .2s ease-in-out, webkit moz ms o); @include prefix(transform, translateX(100%), webkit moz ms o); mix-blend-mode: multiply; opacity: .7;}
                 &.show { opacity: 1;z-index: 2;
                     img {@include prefix(transform, translateX(0%), webkit moz ms o);}
-                    @include medium {opacity: 0; display: none;}
+                    @include medium {display: none;}
                 }  
                 
             }

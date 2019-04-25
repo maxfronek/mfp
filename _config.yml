@@ -23,6 +23,7 @@ description: |
   Let’s chat about how we can elevate your brand together.
 baseurl: "https://mf.design/" # the subpath of your site, e.g. /blog
 url: "https://mf.design" # the base hostname & protocol for your site, e.g. http://example.com
+photourl: "https://mf.design/" # for image resources
 twitter_username: classymax
 github_username:  maxfronek
 instagram_username: classymax
@@ -40,17 +41,14 @@ markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
-  - jekyll-responsive-image
-responsive_image:
-  template: _includes/srcset.html
-  sizes:
-  - width: 480  # [Required] How wide the resized image will be.
-    quality: 60 # [Optional] Overrides default_quality for this size.
-  - width: 600
-  - width: 1000
-    quality: 80
-  - width: 2000
-    quality: 80    
+img_sizes:
+  icon: ?nf_resize=fit&w=50&h=50   
+  tiny: ?nf_resize=fit&w=100&h=100
+  small: ?nf_resize=fit&w=300&h=300
+  medium: ?nf_resize=fit&w=480&h=480
+  grande: ?nf_resize=fit&w=600&h=600
+  1k: ?nf_resize=fit&w=1000&h=1000
+  2k: ?nf_resize=fit&w=2000&h=2000  
 defaults:
 -
  scope:

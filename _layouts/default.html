@@ -6,7 +6,7 @@
     {% include header.html %}
     {% include menu.html %}
     <main class="{% if page.is_post %}post{% elsif page.is_page and page.url != '/' %}page{% elsif page.url == '/' %}index{% else %}no-class{% endif %}">
-      <article {% if page.url == '/blog/' %}class="blog"{% endif %}>
+      <article {% if page.url == '/blog/' %}class="blog"{% elsif page.url == '/photography/' or page.url == '/design/' or page.url contains '/category/' %}class="category"{% endif %}>
         {{ content }}
       </article>
 
