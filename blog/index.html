@@ -20,7 +20,7 @@ layout: default
 </video>  
     {% else %}
 
-    <img srcset="{% include img_src.html %}" src="{% include img_srcset.html %}"  sizes="(max-width: 550px) 90vw, 40vw" /> 
+    <img srcset="{% include img_srcset.html %}" src="{% include img_src.html %}"  sizes="(max-width: 550px) 90vw, 40vw" /> 
           
 {% endif %}
 <div class="content{% if post.cover_color %} {{ post.cover_color }}{% elsif post.feature_color %} {{ post.feature_color }}{% else %} white{% endif %}">
