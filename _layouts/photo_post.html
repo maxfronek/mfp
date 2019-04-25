@@ -35,11 +35,11 @@ layout: "default"
 
     {% if forloop.index > 3 %}
     
-    <img data-src="{% include img_src.html %}" data-srcset="{% include img_srcset.html %}" sizes="80vw" class="lazyload" />
+    <img data-src="{% include img_src.html %}" data-srcset="{% include img_srcset.html %}" sizes="80vw" class="lazyload gallery-item" />
     
     {% else %}
     
-    <img srcset="{% include img_srcset.html %}" src="{% include img_src.html %}"  sizes="80vw" />  
+    <img srcset="{% include img_srcset.html %}" src="{% include img_src.html %}"  sizes="80vw" class="gallery-item" />  
     
     {% endif %}
     
