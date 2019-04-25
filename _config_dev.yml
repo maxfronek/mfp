@@ -21,8 +21,9 @@ description: |
   I work with various clients to achieve their short- and long-term needs focusing mainly on: product branding, product and packaging development, marketing, and corporate identity.
   
   Let’s chat about how we can elevate your brand together.
-baseurl: "/" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "localhost:4000" # the base hostname & protocol for your site, e.g. http://example.com
+photourl: "http://localhost:4000/" # for image resources
 twitter_username: classymax
 github_username:  maxfronek
 instagram_username: classymax
@@ -40,6 +41,14 @@ markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
+img_sizes:
+  icon:    
+  tiny: 
+  small: 
+  medium: 
+  grande:
+  1k: 
+  2k:  
 defaults:
 -
  scope:
@@ -55,6 +64,7 @@ defaults:
  values:
    layout: "default"
    is_page: true
+
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.

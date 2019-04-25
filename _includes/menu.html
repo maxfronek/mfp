@@ -31,7 +31,7 @@
                 
                 {% endunless %}
 {% endif %} {% endfor %}
-                <li class="menu-item"><a href="{{ '/about' | prepend: site.baseurl }}">Bio</a><div class="image-preview">
+                <li class="menu-item"><a href="{{ '/about' | prepend: site.photourl }}">Bio</a><div class="image-preview">
           
         {% assign path = "/images/page_images/about.jpg"  %}
         {% capture alt %}{{ page.title }}{% endcapture %}
