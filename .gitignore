@@ -5,9 +5,6 @@ _site
 .sass-cache
 Gemfile.lock
 /.sass-cache
-/images/page_images
-/images/post_images
-/images/kauai
 /_posts/demo_posts
 /assets
 /videos
@@ -18,3 +15,4 @@ _config_dev.yml
 node_modules/
 package-lock.json
 package.json
+yarn.lock
