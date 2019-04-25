@@ -21,13 +21,8 @@
 </video>  
     {% else %}
 
-{% responsive_image_block %}
-  path: {{ path }}
-  alt: {{ alt }}
-  sizes: "(max-width: 550px) 0vw, 50vw"
-  template: /_includes/unlazy-srcset.html    
-{% endresponsive_image_block %}
-
+    <img srcset="{% include img_src.html %}" src="{% include img_srcset.html %}"  sizes="(max-width: 550px) 0vw, 40vw" />  
+    
 {% endif %}
             </div>
         {% endfor %}
@@ -38,15 +33,10 @@
 {% endif %} {% endfor %}
                 <li class="menu-item"><a href="{{ '/about' | prepend: site.baseurl }}">Bio</a><div class="image-preview">
           
-        {% assign path = "images/page_images/about.jpg"  %}
+        {% assign path = "/images/page_images/about.jpg"  %}
         {% capture alt %}{{ page.title }}{% endcapture %}
-    
-{% responsive_image_block %}
-  path: {{ path }}
-  alt: {{ alt }}
-  sizes: "(max-width: 550px) 0vw, 50vw"
-  template: /_includes/unlazy-srcset.html    
-{% endresponsive_image_block %}
+
+    <img srcset="{% include img_src.html %}" src="{% include img_srcset.html %}"  sizes="(max-width: 550px) 0vw, 40vw" /> 
 
             </div></li>
 <li class="menu-item"><a href="{{ '/blog' | prepend: site.baseurl }}">Blog</a>
@@ -63,13 +53,8 @@
 </video>  
     {% else %}
 
-{% responsive_image_block %}
-  path: {{ path }}
-  alt: {{ alt }}
-  sizes: "(max-width: 550px) 0vw, 50vw"
-  template: /_includes/unlazy-srcset.html    
-{% endresponsive_image_block %}
-
+    <img srcset="{% include img_src.html %}" src="{% include img_srcset.html %}"  sizes="(max-width: 550px) 0vw, 40vw" /> 
+            
 {% endif %}
             </div>
         {% endfor %}
