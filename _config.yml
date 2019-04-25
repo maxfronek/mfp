@@ -21,8 +21,8 @@ description: |
   I work with various clients to achieve their short- and long-term needs focusing mainly on: product branding, product and packaging development, marketing, and corporate identity.
   
   Let’s chat about how we can elevate your brand together.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://mfdesign-netlify.com" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/" # the subpath of your site, e.g. /blog
+url: "https://mf.design" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: classymax
 github_username:  maxfronek
 instagram_username: classymax
