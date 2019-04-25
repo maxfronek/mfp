@@ -5,8 +5,6 @@ title: Bio
 permalink: /about/
 ---
 
-![hey look it is me](/images/page_images/about.jpg)
-
 I've had a passion for design and photography for as long as I can remember.  
 
 ---
