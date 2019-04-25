@@ -7,10 +7,8 @@ Gemfile.lock
 /.sass-cache
 /_posts/demo_posts
 /assets
-/videos
 /photography
 /graphic design
-_config_dev.yml
 *.env
 node_modules/
 package-lock.json
