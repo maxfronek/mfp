@@ -84,13 +84,8 @@ is_category_page: true
 </video>  
     {% else %}
 
-{% responsive_image_block %}
-  path: {{ path }}
-  alt: {{ alt }}
-  sizes: "(max-width: 550px) 100vh, 80vw"
-  template: /_includes/unlazy-srcset.html    
-{% endresponsive_image_block %}
-
+    <img srcset="{% include img_src.html %}" src="{% include img_srcset.html %}"  sizes="(max-width: 550px) 100vw, 40vw" />  
+    
 {% endif %}
 <div class="content{% if post.cover_color %} {{ post.cover_color }}{% elsif post.feature_color %} {{ post.feature_color }}{% else %} white{% endif %}">
              <a href="{{ post.url | prepend: site.url }}" title="{{post.title }}"><h2>{{ post.title }}</h2>

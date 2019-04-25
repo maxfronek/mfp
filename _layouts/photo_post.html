@@ -35,21 +35,11 @@ layout: "default"
 
     {% if forloop.index > 3 %}
     
-{% responsive_image_block %}
-  path: {{ path }}
-  alt: {{ alt }}
-  sizes: "(max-width: 550px) 67vh, 100vw"
-{% endresponsive_image_block %}
-
+    <img data-src="{% include img_src.html %}" data-srcset="{% include img_srcset.html %}" sizes="80vw" class="lazyload" />
+    
     {% else %}
     
-        
-{% responsive_image_block %}
-  path: {{ path }}
-  alt: {{ alt }}
-  sizes: "(max-width: 550px) 67vh, 100vw"
-  template: /_includes/unlazy-post-srcset.html 
-{% endresponsive_image_block %}
+    <img srcset="{% include img_src.html %}" src="{% include img_srcset.html %}"  sizes="80vw" />  
     
     {% endif %}
     
