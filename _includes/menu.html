@@ -12,12 +12,12 @@
         {% for image in post.images limit: 1 %} 
         <div class="image-preview">
           
-        {% capture path %}{{ image.img_url }}{% endcapture %}
+        {% capture path %}{{ image.img_url | prepend: site.photourl }}{% endcapture %}
         {% capture alt %}{% if image.title %}{{ image.title }}{% else %}{{ post.title }}{% endif %}{% endcapture %}
         
     {% if path contains 'mp4' or path contains 'webm' %}
  <video loop muted autoplay playsinline>
-        <source src="/{{ path | strip_html }}" type="{% if path contains 'mp4' %}video/mp4{% else %}video/webm{% endif %}">
+        <source src="{{ path | strip_html }}" type="{% if path contains 'mp4' %}video/mp4{% else %}video/webm{% endif %}">
 </video>  
     {% else %}
 
@@ -31,12 +31,12 @@
                 
                 {% endunless %}
 {% endif %} {% endfor %}
-                <li class="menu-item"><a href="{{ '/about' | prepend: site.photourl }}">Bio</a><div class="image-preview">
+                <li class="menu-item"><a href="{{ '/about' }}">Bio</a><div class="image-preview">
           
         {% assign path = "/images/page_images/about.jpg"  %}
         {% capture alt %}{{ page.title }}{% endcapture %}
 
-    <img srcset="../images/page_images/about.jpg?nf_resize=fit&w=600 600w, ../images/page_images/about.jpg?nf_resize=fit&w=300 300w,  ../images/page_images/about.jpg?nf_resize=fit&w=1000 1000w,  ../images/page_images/about.jpg 2x" src="../images/page_images/about.jpg?nf_resize=fit&w=600&h=600"  sizes="(max-width: 550px) 0vw, 40vw" /> 
+    <img srcset="{{ site.photourl }}images/page_images/about.jpg?nf_resize=fit&w=600 600w, {{ site.photourl }}images/page_images/about.jpg?nf_resize=fit&w=300 300w,  {{ site.photourl }}images/page_images/about.jpg?nf_resize=fit&w=1000 1000w,  {{ site.photourl }}images/page_images/about.jpg 2x" src="{{ site.photourl }}images/page_images/about.jpg?nf_resize=fit&w=600&h=600"  sizes="(max-width: 550px) 0vw, 40vw" /> 
 
             </div></li>
 <li class="menu-item"><a href="{{ '/blog' | prepend: site.baseurl }}">Blog</a>
@@ -44,12 +44,12 @@
         {% for image in post.images limit: 1 %} 
         <div class="image-preview">
           
-        {% capture path %}{{ image.img_url }}{% endcapture %}
+        {% capture path %}{{ image.img_url | prepend: site.photourl }}{% endcapture %}
         {% capture alt %}{% if image.title %}{{ image.title }}{% else %}{{ post.title }}{% endif %}{% endcapture %}
         
     {% if path contains 'mp4' or path contains 'webm' %}
  <video loop muted autoplay playsinline>
-        <source src="/{{ path | strip_html }}" type="{% if path contains 'mp4' %}video/mp4{% else %}video/webm{% endif %}">
+        <source src="{{ path | strip_html }}" type="{% if path contains 'mp4' %}video/mp4{% else %}video/webm{% endif %}">
 </video>  
     {% else %}
 

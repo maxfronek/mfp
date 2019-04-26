@@ -24,12 +24,12 @@ layout: "default"
         {% endif %}
     
 <div class="imagewrap {% if image.width %}{{ image.width }}{% endif %} {% if image.anchor %}{{ image.anchor }}{% endif %}" {% if forloop.index > 3 %} data-sal="slide-{% cycle 'left', 'down', 'right', 'up' %}" data-sal-delay="100"  data-sal-duration="500" data-sal-easing="ease-out-bounce" {% endif %} >
-        {% capture path %}{{ image.img_url }}{% endcapture %}
+        {% capture path %}{{ image.img_url | prepend: site.photourl }}{% endcapture %}
 {% capture alt %}{{ image.title }}{% endcapture %}
 
     {% if path contains 'mp4' or path contains 'webm' %}
  <video loop muted autoplay playsinline>
-        <source src="/{{ path | strip_html }}" type="{% if path contains 'mp4' %}video/mp4{% else %}video/webm{% endif %}">
+        <source src="{{ path | strip_html }}" type="{% if path contains 'mp4' %}video/mp4{% else %}video/webm{% endif %}">
 </video>  
     {% else %}
 

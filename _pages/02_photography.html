@@ -15,12 +15,12 @@ permalink: /photography/
   {% capture thecycle %}{% cycle 'alpha', 'bravo', 'charlie', 'delta'  %}{% endcapture %}
        
            <div class="image {{ thecycle }} {% if image.anchor %}{{ image.anchor }}{% endif %}"  >
-        {% capture path %}{{ image.img_url }}{% endcapture %}
+        {% capture path %}{{ image.img_url  | prepend: site.photourl }}{% endcapture %}
 {% capture alt %}{{ image.title }}{% endcapture %}
 
     {% if path contains 'mp4' or path contains 'webm' %}
  <video loop muted autoplay playsinline>
-        <source src="/{{ path | strip_html }}" type="{% if path contains 'mp4' %}video/mp4{% else %}video/webm{% endif %}">
+        <source src="{{ path | strip_html }}" type="{% if path contains 'mp4' %}video/mp4{% else %}video/webm{% endif %}">
 </video>  
     {% else %}
 
