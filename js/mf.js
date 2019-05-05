@@ -175,8 +175,8 @@ var classname = document.getElementsByClassName("gallery-item"),
     w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0),
     h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0); 
 
-// enlarge images on posts
-
+// enlarge images on posts 
+/*
 var embiggen = function() {
     this.classList.toggle('embiggen');
     this.sizes = "200vw"
@@ -192,11 +192,11 @@ var embiggen = function() {
 };
 
 
-
 for (var i = 0; i < classname.length; i++) {
     classname[i].addEventListener('click', embiggen, false);
 };
 
+*/
 
 var menuItem = menu.getElementsByClassName("menu-item"),
     menuInfo = function() {
@@ -221,6 +221,22 @@ sal({
     threshold: .7,
 });
 
+
+
+new LuminousGallery(
+        document.querySelectorAll(".expand"),
+        {
+          arrowNavigation: true
+        },
+        {
+          caption: function(trigger) {
+            return trigger.querySelector("img").getAttribute("alt");
+          }
+        }
+      );
+    
+
+
 Macy({ 
         container: "#masonry",
         columns: 2,
@@ -230,3 +246,5 @@ Macy({
     }
   }
     });
+
+

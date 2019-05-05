@@ -15,22 +15,27 @@ images:
       I did the overall branding, including logo design, business cards, letterhead, and invoice design.  I also designed the webpage, and did a photoshoot for the client to use as unique content.
   - img_url: images/post_images/primarybk/pbk-website-1.jpg
     width: half
+    invert: invert
   - img_url: images/post_images/primarybk/pbk-website-2.jpg
     width: half 
     paragraph: |
       The website maintains a conversational tone throughout, and provides a lighter tone than other, more conservative bookkeepers. The format is cleanly laid out, and is easily expandable for any changing needs the client may have.
   - img_url: images/post_images/primarybk/PBK-shoot-3.jpg
     width: half
+    invert: invert
   - img_url: images/post_images/primarybk/PBK-shoot-1.jpg
     width: half
   - img_url: images/post_images/primarybk/PBK-shoot-2.jpg
     paragraph: |
       The client wanted something a little more homespun than typical stock photos, so I shot a series of her working, using her own tools, to lend authenticity to the photography and give her content to use across platforms.
+    invert: invert
   - img_url: images/post_images/primarybk/PBK-shoot-5.jpg
     width: threequarters
+    invert: invert
   - img_url: images/post_images/primarybk/PBK-shoot-4.jpg
     anchor: right
     width: onequarter 
+    invert: invert
 ---
 
 

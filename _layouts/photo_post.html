@@ -28,19 +28,20 @@ layout: "default"
 {% capture alt %}{{ image.title }}{% endcapture %}
 
     {% if path contains 'mp4' or path contains 'webm' %}
+  
  <video loop muted autoplay playsinline>
         <source src="{{ path | strip_html }}" type="{% if path contains 'mp4' %}video/mp4{% else %}video/webm{% endif %}">
-</video>  
+         </video>  
     {% else %}
 
     {% if forloop.index > 3 %}
-    
-    <img data-src="{% include img_src.html %}" data-srcset="{% include img_srcset.html %}" sizes="80vw" class="lazyload gallery-item" />
-    
+     <a href="{% include img_src.html %}" class="expand{% if image.invert %} invert{% endif %}">
+    <img data-src="{% include img_src.html %}" data-srcset="{% include img_srcset.html %}" sizes="80vw" class="lazyload gallery-item" alt="{{ image.title }}" />
+    </a>
     {% else %}
-    
-    <img srcset="{% include img_srcset.html %}" src="{% include img_src.html %}"  sizes="80vw" class="gallery-item" />  
-    
+  <a href="{% include img_src.html %}" class="expand{% if image.invert %} invert{% endif %}">
+    <img alt="{{ image.title }}" srcset="{% include img_srcset.html %}" src="{% include img_src.html %}"  sizes="80vw" class="gallery-item" />  
+  </a>  
     {% endif %}
     
 {% endif %}

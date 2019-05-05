@@ -14,12 +14,12 @@ images:
       The former packaging for this product was a large folding gift box with a front flap, offering a lot of space to show the product and tell the story, but added significant costs and did not allow for any small-scale production runs due to its unique construction. I was tasked with updating not only the style of the packaging artwork, but the construction as well.
       
       After exploring numerous options for presentaion, we settled that an outer sleeve / inner gift box design/ This allowed for easy customization of the sleeve for special orders and corporate clients, while keeping a unified inner box that could be printed in masse and used on future orders, regardless of sleeve artwork. 
-      
-      The outer design keeps to LSTN's overall brand strategy to let the product stand on its own, using white backgrounds and minimal typography / graphical elements, letting the product stand out. A spot UV finish further sets the product apart from the rest of the packaging.
   - img_url: images/post_images/lstn-packaging/troubadour-packaging-2.jpg
     width: half
   - img_url: images/post_images/lstn-packaging/troubadour-packaging-3.jpg
     width: half
+    paragraph: |
+      The outer design keeps to LSTN's overall brand strategy to let the product stand on its own, using white backgrounds and minimal typography / graphical elements, letting the product stand out. A spot UV finish further sets the product apart from the rest of the packaging.
   - img_url: images/post_images/lstn-packaging/troubadour-packaging-4.jpg
     paragraph: |
       The Troubadour packaging accomplished three main goals&#58; Tell the LSTN story of giving hearing aids, present the product and accessories in an appealing, compact manner, and hit a target budget to keep costs as low as possible. 
