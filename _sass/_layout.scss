@@ -81,7 +81,12 @@ article {width: 100%; grid-column: 2 / span 4;
         &.category {grid-column: 2 / -1;}
     }
    .post & { @include small {grid-column: 1 / -1;}}
-    
+    .page & {
+        p {
+            &:first-of-type {margin-top: 2rem;}
+        }
+        hr {margin: 2rem auto;}
+    }
     p {}
 }
 

@@ -39,6 +39,7 @@
     <img srcset="{{ site.photourl }}images/page_images/about.jpg?nf_resize=fit&w=600 600w, {{ site.photourl }}images/page_images/about.jpg?nf_resize=fit&w=300 300w,  {{ site.photourl }}images/page_images/about.jpg?nf_resize=fit&w=1000 1000w,  {{ site.photourl }}images/page_images/about.jpg 2x" src="{{ site.photourl }}images/page_images/about.jpg?nf_resize=fit&w=600&h=600"  sizes="(max-width: 550px) 0vw, 40vw" /> 
 
             </div></li>
+                {% comment %}
 <li class="menu-item"><a href="{{ '/blog' | prepend: site.baseurl }}">Blog</a>
                {% for post in site.posts limit: 1  %}
         {% for image in post.images limit: 1 %} 
@@ -60,6 +61,7 @@
         {% endfor %}
     {% endfor %}
                 </li>
+                {% endcomment %}
 			</ul>
 		</nav>
 

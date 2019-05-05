@@ -7,14 +7,19 @@ categories: photography featured
 cover_color: sage
 order: 3
 images:
+  - img_url: images/post_images/composites/desert_skies.jpg
   - img_url: images/post_images/composites/comp-1.jpg
-    blockquote: Combining images together to create something new.
+    blockquote: These images are composities, using both photos I have taken and stock images.
   - img_url: images/post_images/composites/comp-2.jpg
     width: half
     anchor: left
   - img_url: images/post_images/composites/comp-3.jpg
     width: half
   - img_url: images/post_images/composites/comp-4.jpg
+  - img_url: images/post_images/composites/MF-AETHER-5.gif
+    width: half
+  - img_url: images/post_images/composites/desert_skies.jpg
+    width: half
 ---
 
 
