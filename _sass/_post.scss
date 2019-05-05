@@ -27,24 +27,36 @@
                 
                 &.embiggen {overflow: scroll;}
                 
-        }
-            .gallery-item { object-fit: cover;height: 500px;
-                @include prefix(transition, all .5s linear, webkit moz ms o);z-index: 1;
-                &.embiggen { height: 100vh; max-height: 100vh; z-index: 4;@include prefix(transition, all .5s linear, webkit moz ms o);
-                 /*   &.dos {width: 133%;}
-                    &.tres {width: 133%;}
-                    &.cuatro {width: 133%;} */
+                .expand {
+                    &:after {content: " ";  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAQAAABu4E3oAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfjBQUDNy10pP7WAAAA8ElEQVQ4y83Uz0sCQRQA4G91EzND10qCWCIiCIKwg9AvukoF+X9Hh+hQFHiIKEI6lApdzO0iHYpyvPVOc5hv3rw3j4mExIyGRGak6jEfRPjw5kWsqRxGMgOvijZdkQvMwoo9l+5FoSTVdOFBJIqDwKod554w1A8Ba9qWx+u80mSwrq0eXDE2nFmcBixoqU0DKChOB/5dxP584J9jOWvfu8Hv5PuMlRzp64ZfqexYQzRpW+Er07wT2yEn744nqOLUVlh3EgUkDnTchJHMSOLQrbuwgmOZJalrndAe5VS1dPXU1cJ+grzEnEwqVfFsOJl8ApPxKVa3FH1WAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDE5LTA1LTA1VDAzOjU1OjQwKzAwOjAwPj9IkQAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxOS0wNS0wNVQwMzo1NTo0MCswMDowME9i8C0AAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAAAAElFTkSuQmCC); background-repeat: no-repeat;opacity: 0; padding: 1rem 2rem; text-align: center; width: 25px; height: 25px; position: absolute; bottom: 1rem; left: 1rem; @include prefix(transition, .2s all ease-in-out, ms moz webkit o);}
+                    
+                    &.invert {&:after{filter: invert(100%);}}
+                    
+                    @include hocus {
+                        cursor: zoom-in;
+                        &:after {opacity: 1;}
+                    }
                 }
-        } // end gallery item
+                
+        }
+        .gallery-item { object-fit: cover;height: 500px;z-index: 1;} // end gallery item
         .caption {position: absolute; opacity: 0; transition-delay: 1.3s; z-index: -1; @include prefix(transition, .6s ease-in-out, webkit ms o moz); background-color: rgba($bg, .7);padding: 1rem; top: 10%; right: 0;
             &.reveal {opacity: 1; z-index: 4;}
         }
         
         
-        aside { float: left;width: 40%;font-weight: bold;margin: 1rem 0 1rem -2rem;
+        aside { 
+            
+            float: left;font-weight: bold;margin: 1rem 0 1rem -2rem;width: 100%;
+            
+            &:first-of-type {width: 60%;
+            
             @include huge {width: 60%;}
             @include tablet {width: 60%;}
             @include medium {width: 100%; margin: 0rem 0 2rem;}
+            
+            }
+            
             
             &.right {float: right; margin: 1rem -2rem 1rem 0;}
             &.full {float: none; margin: 2rem auto; width: 100%; max-width: 1200px;}
