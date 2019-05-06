@@ -49,7 +49,9 @@
                 }
                 
                 .lazyload{object-fit: scale-down;}
-                .lazyloaded {object-fit: cover;}
+                .lazyloaded {object-fit: cover;
+                &[src*="mf-img-preloader.gif"] {object-fit: scale-down;}
+                }
                 
         }
         .gallery-item { object-fit: cover;height: 500px;z-index: 1;
