@@ -19,7 +19,7 @@ permalink: /design/
 {% capture alt %}{{ image.title }}{% endcapture %}
 
     {% if path contains 'mp4' or path contains 'webm' %}
- <video loop muted autoplay playsinline webkit-playsinline>
+ <video loop muted autoplay playsinline webkit-playsinline poster="{{ path | strip_html }}">
         <source src="{{ path | strip_html }}" type="{% if path contains 'mp4' %}video/mp4{% else %}video/webm{% endif %}">
 </video>  
     {% else %}
