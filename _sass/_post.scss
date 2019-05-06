@@ -9,6 +9,16 @@
         > * {margin:0 auto; grid-column: 1 / -1; z-index: 4; padding: .5rem;}
         &:first-child {z-index: initial;}
 
+        
+        .videoWrapper {position: relative;padding-bottom: 56.25%; /* 16:9 */padding-top: 25px;height: 0;width: 75%;margin: 0 auto;overflow: hidden;
+    
+        iframe, object {position: absolute;top: 0;left: 0;width: 100%;height: 100%;}
+
+            @include tablet {width: 100%;}
+    
+        } // end videoWrapper
+
+        
         blockquote, p, h3 {grid-column: span 12;scroll-snap-type: y mandatory;}
             .imagewrap {position: relative; scroll-snap-align: start; overflow: hidden;z-index: 1; width: 100%; padding: 0;
                 
@@ -38,11 +48,13 @@
                     }
                 }
                 
-                .lazyload {object-fit:scale-down;}
+                .lazyload{object-fit: scale-down;}
                 .lazyloaded {object-fit: cover;}
                 
         }
-        .gallery-item { object-fit: cover;height: 500px;z-index: 1;} // end gallery item
+        .gallery-item { object-fit: cover;height: 500px;z-index: 1;
+        &.lazyload {object-fit: scale-down;}
+        } // end gallery item
         .caption {position: absolute; opacity: 0; transition-delay: 1.3s; z-index: -1; @include prefix(transition, .6s ease-in-out, webkit ms o moz); background-color: rgba($bg, .7);padding: 1rem; top: 10%; right: 0;
             &.reveal {opacity: 1; z-index: 4;}
         }
@@ -126,6 +138,7 @@
     }
     
 } //end grid class
+
 
 .next-post {width: 100%;background-color: #FAE9FA;min-height: 200px;position: absolute;left: 0;margin-top: 10rem; z-index: 9;
   @include flexbox;
