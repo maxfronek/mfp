@@ -3,7 +3,7 @@ layout: photo_post
 title:  "Primary Bookkeeping"
 date:   2017-11-24 14:58:52 -0700
 author: Max Fronek
-categories: design branding web featured
+categories: design branding web
 excerpt: Branding and Web Design for a bookkeeping startup.
 cover_color: dark-blue
 order: 4

@@ -12,7 +12,7 @@ layout: "default"
 
     <section class="images">
 {% if page.video %}
-     <video loop muted autoplay playsinline>
+     <video loop muted autoplay playsinline webkit-playsinline>
         <source src="{{ page.video | strip_html }}" type="{% if page.video contains 'mp4' %}video/mp4{% else %}video/webm{% endif %}">
 </video>    
 {% endif %}
@@ -71,12 +71,14 @@ layout: "default"
     
     <section class="end-matter">
     <time
-  >{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if
+  >{{ page.date | date: "%B %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if
   page.meta %} • {{ page.meta }}{% endif %}</time
-><ul>
+>
+        {% comment %} Removing page categorie links for now
+        <ul>
         {% for category in page.categories %}<li><a href="{{ site.url }}/category/{{ category | remove: ',' }}" title="">{{ category }}</a></li>{% endfor %}
         </ul>
-  
+        {% endcomment %}
 
     </section>
     

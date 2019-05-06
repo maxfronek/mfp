@@ -30,7 +30,7 @@
     @include medium {top:  2.2rem;left: 10px; width: 25px;}
     @include small {
         &.is-visible {
-        .menu-bg {background-color: #fafafa; width: 40px; height: 31px; margin-left: -8px; @include prefix(box-shadow, 1px 4px 6px 1px rgba(150,150,150,.2), webkit moz); @include prefix(transition, all .2s ease-in-out, ms webskit o moz);}
+        .menu-bg {background-color: #fafafa; width: 35px; height: 31px; margin-left: -8px; @include prefix(box-shadow, 1px 4px 6px 1px rgba(150,150,150,.2), webkit); @include prefix(transition, all .2s ease-in-out, ms webskit o moz);}
             
         .patty {}
         }
@@ -42,7 +42,7 @@
     .patty {
 	display: block;
 	position: absolute;
-	width: 100%;
+	width: 80%;
 	height: 2px;
 	left: 0;
 	top: 14px;

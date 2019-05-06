@@ -41,7 +41,13 @@ nav.addEventListener('click', showMenu, false);
 
 // show / hide menu on scroll (mobile only)
 
+var scollMonitor = function() {console.log(pageYOffset + 'px')};
+
 let scrollPos = 0;
+
+window.addEventListener('scroll', function() {
+  document.getElementById('showScroll').innerHTML = pageYOffset + 'px';
+});
 
 function checkPosition() {
   let windowY = window.scrollY;
@@ -106,6 +112,7 @@ if (document.querySelector("menu").classList.contains("show")) {
 };
 var closeInfo = document.getElementById('close-info'),
     hideAbout = function() {
+    logo.classList.remove('fixed');    
     aboutContent.classList.remove('show');
     aboutAlt.classList.toggle('extra');
     document.querySelector('body').classList.remove('lock');

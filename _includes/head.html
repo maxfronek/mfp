@@ -11,5 +11,6 @@
     rel="canonical"
     href="{{ page.url | replace:'index.html','' | prepend: site.url }}"
   />
-{% include plugins.html %}
+<!-- this is just getting the file that GULP makes combining all JS plugins -->    
+<script type="text/javascript" src="{{ '/scripts/plugins.js' }}"></script>
 </head>

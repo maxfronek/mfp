@@ -49,11 +49,13 @@ $orange--complement: $powder-blue;
 
 
 .white {background-color: $bg;
-    &.footer-links, &.next-post {background-color: $bg;}
+    &.footer-links {background-color: $bg;}
+    &.next-post {background-color: rgba($bg, .5);}
     &.content {h1, h2, h3{color: darken($light, 30%); }ul li, time {color: darken($light, 50%);} }
 }
 .sand {background-color: $light;
-    &.footer-links, &.next-post {background-color: $light;}
+    &.footer-links {background-color: $light;}
+    &.next-post {background-color: rgba($light, .75);}
     &.content {h1, h2, h3{color: darken($light, 30%); }}
 }
 .pink {background-color: $pink;
@@ -67,7 +69,8 @@ $orange--complement: $powder-blue;
     }
     blockquote {color: $pink--dark; border-color: $pink--light;}
     p {color: darken($pink--dark, 20%);}
-    &.footer-links, &.next-post {background-color: $pink;}
+    &.footer-links {background-color: $pink;}
+    &.next-post {background-color: rgba($pink, .75);}
 }
 .grey {background-color: $grey--dark;
     h1, h2, h3 {color: $grey--light !important;}
@@ -79,10 +82,12 @@ $orange--complement: $powder-blue;
     }
     blockquote {color: $grey--light; border-color: $grey--complement;}
     p {color: lighten($grey--light, 20%);}
-    &.footer-links, &.next-post {background-color: $pink;}
+    &.footer-links {background-color: $grey;} 
+    &.next-post {background-color: rgba($grey, .75);}
 }
 .powder-blue {background-color: $powder-blue;
-    &.footer-links, &.next-post {background-color: $powder-blue;}
+    &.footer-links {background-color: $powder-blue;} 
+    &.next-post {background-color: rgba($powder-blue, .75);}
     h1, h2, h3 {color: $powder-blue--dark !important;}
     &.content {h1, h2, h3 {color: $powder-blue--dark}ul li, time {color: $powder-blue--dark;} }
     .hamburger {
@@ -95,7 +100,8 @@ $orange--complement: $powder-blue;
     p {color: darken($powder-blue--dark, 20%);}
 }
 .sage {background-color: $sage;
-    &.footer-links, &.next-post {background-color: $sage;}
+    &.footer-links  {background-color: $sage;}
+    &.next-post {background-color: rgba($sage, .75);}
         h1, h2, h3 {color: $sage--dark !important;}
   &.content {h1, h2, h3 {color: $sage--dark}ul li, time {color: $light;} }
         .hamburger {
@@ -109,7 +115,9 @@ $orange--complement: $powder-blue;
     
 }
 .dark-blue { background-color: $dark-blue;
-    &.footer-links, &.next-post {background-color: $dark-blue;
+    &.footer-links {background-color: $dark-blue; span {color: $dark-blue--complement;}
+    }
+    &.next-post {background-color: rgba($dark-blue, .75);
         span {color: $dark-blue--complement;}
     }
     
@@ -125,7 +133,8 @@ $orange--complement: $powder-blue;
     p {color: lighten($dark-blue--light, 20%);}
 }
 .teal { background-color: $teal;
-    &.footer-links, &.next-post {background-color: $teal;}
+    &.footer-links {background-color: $teal;}
+    &.next-post {background-color: rgba($teal, .75);}
       h1, h2, h3 {color: $teal--dark !important;}
   &.content {h1, h2, h3 {color: $teal--dark}ul li, time {color: $light;} }
            .hamburger {
@@ -139,7 +148,8 @@ $orange--complement: $powder-blue;
 }
 
 .red { background-color: $red;
-    &.footer-links, &.next-post {background-color: $red; 
+    &.footer-links {background-color: $red; }
+    &.next-post {background-color: rgba($red, .75); 
         span {color: $light;}
         p {color: $red--light;}
     }
@@ -161,7 +171,8 @@ $orange--complement: $powder-blue;
 
 
 .orange { background-color: $orange;
-    &.footer-links, &.next-post {background-color: $orange; 
+    &.footer-links {background-color: $orange; }
+    &.next-post {background-color: rgba($orange, .75); 
         span {color: $light;}
         p {color: $orange--light;}
     }
