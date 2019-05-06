@@ -53,7 +53,8 @@
                 
         }
         .gallery-item { object-fit: cover;height: 500px;z-index: 1;
-        &.lazyload {object-fit: scale-down;}
+        &.lazyload, &[src*="mf-img-preloader.gif"] {object-fit: scale-down;}
+            
         } // end gallery item
         .caption {position: absolute; opacity: 0; transition-delay: 1.3s; z-index: -1; @include prefix(transition, .6s ease-in-out, webkit ms o moz); background-color: rgba($bg, .7);padding: 1rem; top: 10%; right: 0;
             &.reveal {opacity: 1; z-index: 4;}
