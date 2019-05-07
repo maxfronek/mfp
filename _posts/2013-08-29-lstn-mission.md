@@ -9,8 +9,8 @@ feature_color: white
 cover_color: powder-blue
 order: 5
 images:
-  - img_url: images/post_images/lstn-mission/lstn-mission-1.mp4
-    paragraph: I have been documenting LSTN Sound Co's charity missions since the very first one in 2013. I've been lucky enough to travel the world with them, and see how they've helped more than 30,000 people receive hearing aids through their partnership with Starkey Hearing Foundation. Seeing the impact that their cause has on people's lives drives me to do the best job I can, and I enjoy every minute of being on the ground with them.
+  - img_url: images/post_images/lstn-mission/lstn-mission-1-short.mp4
+    paragraph: I have been documenting LSTN Sound Co's charity missions since their first in 2013. I've been lucky enough to travel the world with them and see how they've helped more than 30,000 people receive hearing aids through their partnership with Starkey Hearing Foundation. The impact that their cause has on people's lives drives me to do the best job I can, and I enjoy every minute of being on the ground working with them.
   - img_url: images/post_images/lstn-mission/eldoret-2.jpg
     width: half 
     title: Eldoret, Kenya, 2018
@@ -23,7 +23,7 @@ images:
   - img_url: images/post_images/lstn-mission/arequipa-2.jpg
     width: half
     title: Arequipa, Peru, 2017
-    paragraph: The mission videos I've created for LSTN have generated over 100 thousand views, ad have shared the story of mission across national television and the internet.
+    paragraph: The mission videos I've created for LSTN have received more than 100 thousand views and have shared the story of LSTN across national television and the internet. A few of the videos are shown below.
 ---
 
 <div class="videoWrapper">

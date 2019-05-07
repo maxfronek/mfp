@@ -3,7 +3,7 @@
 layout: page
 title: About Me
 permalink: /about/
-alt_title: Hi, I'm Max.
+alt_title: I'm Max.
 images:
   - img_url: images/page_images/about.jpg
     alt: This is me in 2018, but I still look like this. Just with longer hair now.
@@ -17,7 +17,7 @@ I've had a passion for design and photography for as long as I can remember. I l
 
 ---
 
-My photography has been featured in numerous press outlets, and has been presented for advertising content in formats from magazines to billboards. Some places you may have seen my product photos include The Wall Street Journal, GQ, Esquire, Playboy, Gizmodo, Popsugar, and more. It has been used in everything from product packaging to billboards.
+My photography has been featured in numerous press outlets, and has been presented for advertising content in formats from magazines to billboards. Some places you may have seen my product photos include The Wall Street Journal, Vogue, GQ, Esquire, Playboy, Gizmodo, Forbes, and more. It has been used in everything from product packaging to billboards.
 
 ---
 

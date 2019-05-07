@@ -1,7 +1,7 @@
 ---
 layout: photo_post
 title:  "LSTN Sound Co Packaging"
-date:   2019-01-01 18:12:48 -0700
+date:   2017-08-10 18:12:48 -0700
 author: Max Fronek
 categories: design lstn packaging
 excerpt: Packaging Design for Headphones, Earbuds and Speakers
