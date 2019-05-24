@@ -9,6 +9,7 @@ cover_color: orange
 order: 5
 images:
   - img_url: images/post_images/deep-valley/DV-pour.mp4
+    poster: images/post_images/deep-valley/dv-12-B.jpg
     title:
     width: full
     paragraph: | 

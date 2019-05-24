@@ -19,7 +19,8 @@ layout: default
 {% capture alt %}{{ image.title }}{% endcapture %}
 
     {% if path contains 'mp4' or path contains 'webm' %}
- <video loop muted autoplay playsinline poster="{{ path | strip_html }}">
+                {% capture poster %}{{ image.poster | prepend: site.photourl }}{% endcapture %}
+ <video loop muted autoplay playsinline webkit-playsinline src="{{ path | strip_html }}" poster="{{ poster | strip_html }}{{ site.img_sizes.small }}" class="lazy">
         <source src="{{ path | strip_html }}" type="{% if path contains 'mp4' %}video/mp4{% else %}video/webm{% endif %}">
 </video>  
     {% else %}
@@ -28,7 +29,7 @@ layout: default
     
 {% endif %}
 <div class="content{% if post.cover_color %} {{ post.cover_color }}{% elsif post.feature_color %} {{ post.feature_color }}{% else %} white{% endif %}">
-             <a href="{{ post.url | prepend: site.url }}" title="{{post.title }}"><h2>{{ post.title }}</h2>
+             <a href="{{ post.url | prepend: site.url }}" title="{{post.title }}"><h2>{{ post.title | truncate: 20 }}</h2>
                  <time>{{ post.date | date: "%B %Y" }}</time>
                  <ul>     {% for category in post.categories %}{% unless category == 'featured' %}<li>{{ category }}</li>{% endunless %}{% endfor %}</ul>
 

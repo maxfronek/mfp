@@ -28,15 +28,15 @@ layout: "default"
 {% capture alt %}{{ image.title }}{% endcapture %}
 
     {% if path contains 'mp4' or path contains 'webm' %}
-  
- <video loop muted autoplay playsinline poster="{{ path | strip_html }}">
+   {% capture poster %}{{ image.poster | prepend: site.photourl }}{% endcapture %}
+ <video loop muted autoplay playsinline poster="{{ poster | strip_html }}{{ image.img_url | prepend: site.photourl }}{{ site.img_sizes.grande }}">
         <source src="{{ path | strip_html }}" type="{% if path contains 'mp4' %}video/mp4{% else %}video/webm{% endif %}">
          </video>  
     {% else %}
 
     {% if forloop.index > 3 %}
      <a href="{{ image.img_url | prepend: site.photourl }}" class="expand{% if image.invert %} invert{% endif %}">
-    <img src="{{ site.photourl }}/images/mf-img-preloader.gif" data-src="{% include img_src.html %}" data-srcset="{% include img_srcset.html %}" sizes="80vw" class="lazyload gallery-item" alt="{{ image.title }}" />
+    <img src="{{ site.photourl }}/images/mf-img-preloader-L.gif" data-src="{% include img_src.html %}" data-srcset="{% include img_srcset.html %}" sizes="80vw" class="lazyload gallery-item" alt="{{ image.title }}" />
     </a>
     {% else %}
   <a href="{{ image.img_url | prepend: site.photourl }}" class="expand{% if image.invert %} invert{% endif %}">

@@ -148,62 +148,10 @@ for (var i = 0; i < galItem.length; i++) {
 }
 
 
-/*
-
-
-var link = document.getElementsByClassName("list-link"),
-    listItem = document.getElementsByClassName("list-item"),
-    photo = document.getElementsByClassName("list-image");
-    
-    reveal = function() {
-        photo[i].classList.toggle('show');
-      //  alert('hovered over ' + photo);
-};
-
-for (var i = 0; i < link.length; i++) {
-    link[i].addEventListener('mouseover', reveal, false);
-    link[i].addEventListener('mouseout', reveal, false);
-    // photo[i].addEventListener('mouseover', reveal, false);
-} 
-*/
-
-// photo post niceties
-/*
-var photo = document.querySelector('.gallery-item'),
-    main = document.querySelector('main');
-
-photo.onclick = function(){
-    this.classList.toggle('embiggen');
-   // setTimeout(function(){main.classList.toggle('embiggen');}, 300;);
-    console.log('A Noble Spirit, Indeed');
-}*/
-
 var classname = document.getElementsByClassName("gallery-item"),
     w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0),
     h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0); 
 
-// enlarge images on posts 
-/*
-var embiggen = function() {
-    this.classList.toggle('embiggen');
-    this.sizes = "200vw"
-    var parent = this.parentNode,
-        caption = parent.childNodes[3];
-    parent.classList.toggle('embiggen');
-    caption.classList.toggle('reveal');
-    // setTimeout(function(){parent.scrollIntoView({behavior: "smooth", block: "end"});}, 550);
-
-    //this.style.height = h + "px";
-   // this.style.width = w + "px";
-  //  alert("width:" + w + "px, height:" + h + "px");
-};
-
-
-for (var i = 0; i < classname.length; i++) {
-    classname[i].addEventListener('click', embiggen, false);
-};
-
-*/
 
 var menuItem = menu.getElementsByClassName("menu-item"),
     menuInfo = function() {
@@ -214,21 +162,46 @@ var menuItem = menu.getElementsByClassName("menu-item"),
     menuImage.classList.toggle('show');
 };
 
-
-
 for (var i = 0; i < menuItem.length; i++) {
     menuItem[i].addEventListener('mouseover', menuInfo, false);
     menuItem[i].addEventListener('mouseleave', menuInfo, false);
 };
 
 
+// lazyloading code for videos
+    
+  var lazyVideos = [].slice.call(document.querySelectorAll("video.lazy"));
 
+  if ("IntersectionObserver" in window) {
+    var lazyVideoObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(video) {
+        if (video.isIntersecting) {
+          for (var source in video.target.children) {
+            var videoSource = video.target.children[source];
+            if (typeof videoSource.tagName === "string" && videoSource.tagName === "SOURCE") {
+              videoSource.src = videoSource.dataset.src;
+            }
+          }
+
+          video.target.load();
+          video.target.classList.remove("lazy");
+          lazyVideoObserver.unobserve(video.target);
+        }
+      });
+    });
+
+    lazyVideos.forEach(function(lazyVideo) {
+      lazyVideoObserver.observe(lazyVideo);
+    });
+  };
+
+// instantiate animation on scroll
 
 sal({
     threshold: .7,
 });
 
-
+// make lightboxes happen
 
 new LuminousGallery(
         document.querySelectorAll(".expand"),
@@ -242,7 +215,7 @@ new LuminousGallery(
         }
       );
     
-
+// masonry gallerys if needed
 
 Macy({ 
         container: "#masonry",
@@ -253,5 +226,3 @@ Macy({
     }
   }
     });
-
-
