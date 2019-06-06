@@ -195,11 +195,29 @@ for (var i = 0; i < menuItem.length; i++) {
     });
   };
 
+
+
+    Macy({ 
+        container: "#masonry",
+        waitForImages: true,
+        columns: 2,
+    breakAt: {
+        550: {
+          columns: 1
+    }
+  }
+    });
+
+console.log('masonry has been run')
+
+
 // instantiate animation on scroll
 
 sal({
     threshold: .7,
 });
+
+
 
 // make lightboxes happen
 
@@ -214,15 +232,16 @@ new LuminousGallery(
           }
         }
       );
-    
-// masonry gallerys if needed
+ 
 
-Macy({ 
-        container: "#masonry",
-        columns: 2,
-    breakAt: {
-        550: {
-          columns: 1
-    }
-  }
-    });
+    
+
+
+
+
+    
+
+
+
+
+
