@@ -29,8 +29,6 @@ images:
     width: half
   - img_url: images/post_images/lstn-packaging/Bolt-Packaging-2.jpg
     width: half
-    paragraph: |
-      The design philosophy extends to LSTN's other products as well. The product is allowed to stand on its own, with simple white backgrounds, minimal typography, and a black and white color scheme. This si deliberate, as LSTN's competitors in the consumer electronics market often use flashy colors and cheap plastics
 
 ---
 
