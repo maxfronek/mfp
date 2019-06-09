@@ -17,5 +17,25 @@
   </body> 
           
 <script type="text/javascript" src="/scripts/mf.js"></script>
+    
+{% if page.url == '/' or page.url == '/photography/' or page.url == '/design/' or page.url == '/blog/' %}
+    <script>
+    var macy = Macy({ 
+        container: "#masonry",
+        waitForImages: true,
+        columns: 2,
+    breakAt: {
+        550: {
+          columns: 1
+    }
+  }
+    });
 
+macy.on(macy.constants.EVENT_IMAGE_COMPLETE, function (ctx) {
+ // console.log('all images have loaded, reinialize macy');
+    setTimeout(function(){macy.reInit();}, 500);
+
+});
+    </script>
+{% endif %}
 </html>

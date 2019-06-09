@@ -195,11 +195,11 @@ for (var i = 0; i < menuItem.length; i++) {
     });
   };
 
-
+/*
 
     Macy({ 
         container: "#masonry",
-        waitForImages: true,
+        waitForImages: false,
         columns: 2,
     breakAt: {
         550: {
@@ -210,7 +210,7 @@ for (var i = 0; i < menuItem.length; i++) {
 
 console.log('masonry has been run')
 
-
+*/
 // instantiate animation on scroll
 
 sal({

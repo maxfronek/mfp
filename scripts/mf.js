@@ -222,7 +222,6 @@ for (var i = 0; i < menuItem.length; i++) {
 
 
 
-
 sal({
     threshold: .7,
 });
@@ -240,17 +239,5 @@ new LuminousGallery(
           }
         }
       );
-    
-
-
-Macy({ 
-        container: "#masonry",
-        columns: 2,
-    breakAt: {
-        550: {
-          columns: 1
-    }
-  }
-    });
 
 
