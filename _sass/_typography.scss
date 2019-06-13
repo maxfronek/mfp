@@ -79,7 +79,7 @@ blockquote {font-family: $sub-heading-font;font-size: 1.4rem; text-align: left; 
     @include tablet {font-size: 1.2rem;}
 }
 
-.heading {font-family: $sub-heading-font;border-top: 2px solid $header; border-bottom: 2px solid $header; padding: 2rem 0; margin-left: 0; font-size: 1.8rem; font-weight: 400; letter-spacing: .05rem;
+.heading {font-family: $sub-heading-font;padding: 2rem 0; margin-left: 0; font-size: 1.4rem; font-weight: 200; letter-spacing: .9rem; text-transform: uppercase; border-top: 1px solid $heading-font-color;
     @include medium {font-size: 1.2rem;padding: .5rem 0; }
     }
 

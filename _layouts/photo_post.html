@@ -23,7 +23,7 @@ layout: "default"
         <h3 class="{{ thecycle }} heading">{{ image.heading }}</h3>
         {% endif %}
     
-<div class="imagewrap {% if image.width %}{{ image.width }}{% endif %} {% if image.anchor %}{{ image.anchor }}{% endif %}" {% if forloop.index > 3 %} data-sal="fade" data-sal-delay="100"  data-sal-duration="250" data-sal-easing="ease-in" {% endif %} >
+<div class="imagewrap {% if image.width %}{{ image.width }}{% endif %} {% if image.anchor %}{{ image.anchor }}{% endif %} {% if image.offset %}{{ image.offset }}{% endif %}" {% if forloop.index > 3 %} data-sal="fade" data-sal-delay="100"  data-sal-duration="250" data-sal-easing="ease-in" {% endif %} >
         {% capture path %}{{ image.img_url | prepend: site.photourl }}{% endcapture %}
 {% capture alt %}{{ image.title }}{% endcapture %}
 
@@ -53,9 +53,7 @@ layout: "default"
      {% if image.blockquote or image.paragraph %}   
         <div class="extras">
         {% if image.blockquote %}
-            <aside class="pullquote {{ thecycle }} {% unless image.paragraph %}full{% endunless %}">
-            <blockquote>{{ image.blockquote }}</blockquote>
-            </aside>        
+            <blockquote class="quote-only {{ thecycle }}">{{ image.blockquote | newline_to_br }}</blockquote>
         {% endif %}
         {% if image.paragraph %}
         <p class="">{{ image.paragraph | newline_to_br }}</p>

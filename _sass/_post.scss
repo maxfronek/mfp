@@ -1,7 +1,7 @@
 .grid {
     display: grid; grid-template-columns: 1fr 1fr 1fr 1fr;
         
-    figure {@include flexbox; @include justify-content(center); @include flex-direction(column); z-index:2; margin: 0; grid-column: span 4;
+    figure, .post-heading {@include flexbox; @include justify-content(center); @include flex-direction(column); z-index:2; margin: 0; grid-column: span 4;
         h2 {margin-bottom: 2rem; text-transform: capitalize;}
         p, time {text-align: center; width: 80%; margin: 0rem auto 4rem; text-transform: capitalize;}
     }
@@ -20,7 +20,18 @@
 
         
         blockquote, p, h3 {grid-column: span 12;scroll-snap-type: y mandatory;}
-            .imagewrap {position: relative; scroll-snap-align: start; overflow: hidden;z-index: 1; width: 100%; padding: 0;
+        blockquote {
+            &.quote-only {
+            max-width: 70%; margin: 2rem;
+            &.right {margin-left: 30%}
+
+        @include medium {max-width: 100%;
+            &.right {margin-left: 0%}
+        }
+            }
+        }
+        .heading {margin-top: 8rem;}
+            .imagewrap {position: relative; scroll-snap-align: start; overflow: hidden;z-index: 1; width: 100%; padding: 0; height: 100%;
                 
                         &.left { img {object-position: 25%% 50%;} }
                         &.right {  img {object-position: 75% 50%;} }
@@ -28,11 +39,21 @@
                
                 
                 &.full {grid-column: span 12;}
-                &.threequarters {grid-column: span 9;}
-                &.half {grid-column: span 6;}
-                &.onequarter {grid-column: span 3;}
-                &.twothirds {grid-column: span 8;}
-                &.onethird {grid-column: span 4;}
+                &.threequarters {grid-column: span 9;
+                    &.offset {grid-column: 4 / span 9;}
+                }
+                &.half {grid-column: span 6;
+                    &.offset {grid-column: 7 / span 6;}
+                }
+                &.onequarter {grid-column: span 3;
+                    &.offset {grid-column: 10 / span 3;}
+                }
+                &.twothirds {grid-column: span 8;
+                    &.offset {grid-column: 5 / span 8;}
+                }
+                &.onethird {grid-column: span 4;
+                    &.offset {grid-column: 11 / span 4;}
+                }
    
                 
                 &.embiggen {overflow: scroll;}
@@ -48,6 +69,8 @@
                     }
                 }
                 
+                video, img {height: 100%; width: 100%;}
+
                 .lazyload{object-fit: scale-down;}
                 .lazyloaded {object-fit: cover;
                 &[src*="mf-img-preloader.gif"] {object-fit: scale-down;}
@@ -74,7 +97,6 @@
             @include medium {width: 100%; margin: 0rem 0 2rem;}
             
             }
-            
             
             &.right {float: right; margin: 1rem -2rem 1rem 0;}
             &.full {float: none; margin: 2rem auto; width: 100%; max-width: 1200px;}
@@ -115,7 +137,9 @@
                 &.half,
                 &.onequarter,
                 &.twothirds,
-                &.onethird {grid-column: span 12;}
+                &.onethird {grid-column: span 12;
+                    &.offset {grid-column: span 12;}
+                }
                 
                 img {height: 100%;}
                 

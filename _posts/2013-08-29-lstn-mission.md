@@ -1,6 +1,6 @@
 ---
 layout: photo_post
-title:  "LSTN Mission Documentary Footage"
+title:  "LSTN Documentary Filming"
 date:   2013-08-29 12:10:53 -0700
 author: Max Fronek
 categories: photography video lstn featured
