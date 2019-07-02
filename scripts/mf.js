@@ -3,7 +3,8 @@
 var nav = document.querySelector('#hamburger'),
     menu = document.getElementsByTagName('menu')[0],
     logo = document.getElementById('logo'),
-    header = document.querySelector('header');
+    header = document.querySelector('header'),
+    homepageInfo = document.getElementById('homepage-info');
 
 
 nav.onmouseover = function(){
@@ -53,13 +54,18 @@ function checkPosition() {
     // Scrolling DOWN
     nav.classList.add('is-hidden');
     nav.classList.remove('is-visible');
+    homepageInfo.classList.add('hide');
   }    
   scrollPos = windowY;
   if (scrollPos < 100) { 
      // at top of window 
     nav.classList.add('is-visible');
     nav.classList.remove('is-hidden');
-  }      
+  }
+  if (scrollPos < 10) { 
+    // for homepage main title disappearance
+   homepageInfo.classList.remove('hide');
+ }      
 };
 
 function debounce(func, wait = 10, immediate = true) {
@@ -181,28 +187,85 @@ var classname = document.getElementsByClassName("gallery-item"),
     w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0),
     h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0); 
 
-// enlarge images on posts 
-/*
-var embiggen = function() {
-    this.classList.toggle('embiggen');
-    this.sizes = "200vw"
-    var parent = this.parentNode,
-        caption = parent.childNodes[3];
-    parent.classList.toggle('embiggen');
-    caption.classList.toggle('reveal');
-    // setTimeout(function(){parent.scrollIntoView({behavior: "smooth", block: "end"});}, 550);
+// change document BG color when scrolling past elements.  NOTE: make sure CSS is ordered properly, and keep one use per color per page. big thanks to Beverly Hooten for making the base code: http://blog.fofwebdesign.co.uk/41-add-classes-to-an-element-when-scrolled-into-viewport
 
-    //this.style.height = h + "px";
-   // this.style.width = w + "px";
-  //  alert("width:" + w + "px, height:" + h + "px");
-};
+    (function(){
+      function debounce(fn, ms) { // https://remysharp.com/2010/07/21/throttling-function-calls
+        var time = null;
+        return function() {
+          var a = arguments, t = this;
+          clearTimeout(time);
+          time = setTimeout(function() { fn.apply(t, a); }, ms);
+          }
+        }
+      function throttle(fn, ms) { // Ryan Taylor comment - https://remysharp.com/2010/07/21/throttling-function-calls
+        var time, last = 0;
+        return function() {
+          var a = arguments, t = this, now = +(new Date), exe = function() { last = now; fn.apply(t, a); };
+          clearTimeout(time);
+          (now >= last + ms) ? exe() : time = setTimeout(exe, ms);
+          }
+        }
+      function hasClass(el, cls) {
+        if (el.className.match('(?:^|\\s)'+cls+'(?!\\S)')) { return true; } 
+        }
+      function addClass(el, cls) {
+        if (!el.className.match('(?:^|\\s)'+cls+'(?!\\S)')) { el.className += ' '+cls; } 
+        }
+      function delClass(el, cls) {
+        el.className = el.className.replace(new RegExp('(?:^|\\s)'+cls+'(?!\\S)'),'');
+        }
+    
+      document.documentElement.className += ' js'; // adds class="js" to <html> element
+    
+      function elementFromTop(elemTrigger, elemTarget, classToAdd, distanceFromTop, unit) {
+        var winY = window.innerHeight || document.documentElement.clientHeight, 
+            elTriggerLength = elemTrigger.length, 
+            elTargetLength, distTop, distPercent, distPixels, distUnit, elTarget, i, j;
+        for (i = 0; i < elTriggerLength; ++i) {
+          elTarget = document.querySelectorAll('.'+elemTarget);
+          elTargetLength = elTarget.length;
+          distTop = elemTrigger[i].getBoundingClientRect().top;
+          distPercent = Math.round((distTop / winY) * 100);
+          distPixels = Math.round(distTop);
+          distUnit = unit == 'percent' ? distPercent : distPixels;
+          if (distUnit <= distanceFromTop) {
+            if (!hasClass(elemTrigger[i], elemTarget)) {
+              for (j = 0; j < elTargetLength; ++j) {
+                if (!hasClass(elTarget[j], classToAdd)) { addClass(elTarget[j], classToAdd); }
+                }
+              } else {
+              if (!hasClass(elemTrigger[i], classToAdd)) { addClass(elemTrigger[i], classToAdd); }
+              }
+            } else {
+            delClass(elemTrigger[i], classToAdd);
+            if (!hasClass(elemTrigger[i], elemTarget)) {
+              for (j = 0; j < elTargetLength; ++j) { delClass(elTarget[j], classToAdd); }
+              }
+            }
+          }
+        }
+      // params:  trigger element, target element class, classes to add to target element, trigger element distance from top, unit ('percent' or 'pixels')
+      // usage:   elementFromTop(elemTrigger, elemTarget, classToAdd, distanceFromTop, unit);
+    
+      window.addEventListener('scroll', throttle(function() {
+
+    elementFromTop(document.querySelectorAll('.change-to-red'),  'bg', 'bg--red',  100, 'pixels'); // as top of element hits top of viewport
+    elementFromTop(document.querySelectorAll('.change-to-blue'),  'bg', 'bg--blue',  100, 'pixels'); 
+    elementFromTop(document.querySelectorAll('.change-to-green'),  'bg', 'bg--green',  100, 'pixels'); 
+    elementFromTop(document.querySelectorAll('.change-to-grey'),  'bg', 'bg--grey',  100, 'pixels'); 
+    elementFromTop(document.querySelectorAll('.change-to-pink'),  'bg',  'bg--pink',  100, 'pixels'); 
+    elementFromTop(document.querySelectorAll('.change-to-amethyst'),  'bg', 'bg--amethyst',  100, 'pixels');  
+
+        }, 100), false);
+    
+      window.addEventListener('resize', debounce(function() {
+        elementFromTop(document.querySelectorAll('.change-to-red'),  'bg',       'red',  0, 'pixels'); // as top of element hits top of viewport
+        }, 100), false);
+    })();
+    
 
 
-for (var i = 0; i < classname.length; i++) {
-    classname[i].addEventListener('click', embiggen, false);
-};
-
-*/
 
 var menuItem = menu.getElementsByClassName("menu-item"),
     menuInfo = function() {

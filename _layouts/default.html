@@ -2,10 +2,18 @@
 <html>
   {% include head.html %}
 
-  <body {% if page.is_post and post.feature_color %}style="background-color: #{{ post.feature_color }}"{% endif %}>
+  <body class="bg "  {% comment %}Removing feature color for now cause I dont want it interfering with anything fun in the JS {% if page.is_post and post.feature_color %}style="background-color: #{{ post.feature_color }}"{% endif %}{% endcomment %}>
     {% include header.html %}
     {% include menu.html %}
     <main class="{% if page.is_post %}post{% elsif page.is_page and page.url != '/' %}page{% elsif page.url == '/' %}index{% else %}no-class{% endif %}">
+
+      {% if page.url == '/' %}
+      <section class="homepage-info" id="homepage-info">
+                  <h1 class="homepage-title">Max Fronek</h1>
+                  <p>Design / Photography</p>
+      </section>
+      {% endif %}
+
       <article {% if page.url == '/blog/' %}class="blog"{% elsif page.url == '/photography/' or page.url == '/design/' or page.url contains '/category/' %}class="category"{% endif %}>
         {{ content }}
       </article>
@@ -25,7 +33,7 @@
         waitForImages: true,
         columns: 2,
     breakAt: {
-        550: {
+        768: {
           columns: 1
     }
   }

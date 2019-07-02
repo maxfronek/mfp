@@ -12,13 +12,17 @@ $yellow: #d3d99e;
 $sand: #eceadd;
 $red: #893434;
 $orange: #ed7a33;
+$amethyst: #b0a1e6;
+
 
 $pink--dark: darken($pink, 20%);
 $pink--light: lighten($pink, 10%);
+$pink--background: transparentize($pink, .75);
 $pink--complement: $dark-blue;
 
 $grey--dark: darken($grey, 20%);
 $grey--light: lighten($grey, 20%);
+$grey--background: transparentize($grey, .85);
 $grey--complement: $sage;
 
 $powder-blue--dark: darken($powder-blue, 20%);
@@ -40,6 +44,7 @@ $teal--complement: $sage;
 
 $red--dark: darken($red, 20%);
 $red--light: lighten($red, 40%);
+$red--background: transparentize($red, .75);
 $red--complement: $powder-blue;
 
 
@@ -47,6 +52,14 @@ $orange--dark: darken($orange, 20%);
 $orange--light: lighten($orange, 40%);
 $orange--complement: $powder-blue;
 
+
+$amethyst--dark: darken($amethyst, 20%);
+$amethyst--light: lighten($amethyst, 40%);
+$amethyst--background: transparentize($amethyst, .75);
+$amethyst--complement: $powder-blue;
+
+$blue--background: transparentize($powder-blue, .67);
+$green--background: transparentize($sage, .8);
 
 .white {background-color: $bg;
     &.footer-links {background-color: $bg;}
@@ -192,6 +205,28 @@ $orange--complement: $powder-blue;
     
 }
 
+.amethyst { background-color: $amethyst;
+    &.footer-links {background-color: $amethyst; }
+    &.next-post {background-color: rgba($amethyst, .75); 
+        span {color: $light;}
+        p {color: $amethyst--light;}
+    }
+      h1, h2, h3 {color: $amethyst--light !important;}
+  &.content {
+      h1, h2, h3 {color: $amethyst--light}
+      ul li, time {color: $amethyst--light;}    
+    }
+           .hamburger {
+        .patty {background-color: $amethyst--dark;}
+    }
+    .mtof {
+        span {background: $amethyst--light;}
+    }
+    blockquote {color: $amethyst--dark; border-color: $amethyst--complement;}
+    p {color: lighten($amethyst--dark, 20%);}
+    
+}
+
 
 aside {h1, h2, h3 {&.title {
             &.white { 
@@ -213,3 +248,18 @@ aside {h1, h2, h3 {&.title {
                      h1, h2, h3{color: $powder-blue;}
             }
         }}}
+
+  .bg {
+
+    &--red {background-color: $red--background;}
+    &--blue {background-color: $blue--background;}
+    &--green {background-color: $green--background;}
+    &--grey {background-color: $grey--background;}
+    &--pink {background-color: $pink--background;}
+    &--amethyst {background-color: $amethyst--background;}
+
+
+
+    &--white {background-color: #fff;}
+
+  }      

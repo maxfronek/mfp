@@ -16,13 +16,28 @@ images:
   - img_url: images/post_images/primarybk/pbk-website-1.jpg
     width: half
     invert: invert
+    heading: Web
+    change_bg: blue
   - img_url: images/post_images/primarybk/pbk-website-2.jpg
     width: half 
     paragraph: |
       The website maintains a conversational tone throughout, and provides a lighter tone than other, more conservative bookkeepers. The format is cleanly laid out, and is easily expandable for any changing needs the client may have.
+  - img_url: images/post_images/primarybk/iPad_PBK-Menu.mp4
+    width: threequarters
+    offset: offset
+    poster: 
+  - img_url: images/post_images/primarybk/pbk-website-1.jpg
+    width: half
+  - img_url: images/post_images/primarybk/PBK-brand-book-1.jpg
+    width: half
+    invert: invert
+    heading: Branding   
+  - img_url: images/post_images/primarybk/PBK-brand-book-2.jpg
+    width: half
   - img_url: images/post_images/primarybk/PBK-shoot-3.jpg
     width: half
     invert: invert
+    heading: Photoshoot
   - img_url: images/post_images/primarybk/PBK-shoot-1.jpg
     width: half
   - img_url: images/post_images/primarybk/PBK-shoot-2.jpg

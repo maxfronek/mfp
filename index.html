@@ -5,14 +5,28 @@ layout: default
 <h1 class="title">{{ site.title | replace: " ", "<br />" }}</h1>
 
 <p>{{ site.description }}</p>
+<section class="homepage-info">
+        <div>
+                <h1 class="homepage-title">Max Fronek</h1>
+                <p>Design / Photography</p>
+        </div>
+    </section>
 {% endcomment %}
+
 <section class="images home" id="masonry">
 {% assign posts = site.posts | sort: 'order' %} 
 {% for post in posts  %}
-{% for category in post.categories %}
-{% if category contains 'featured' %}
 
-          {% for image in post.images limit: 1 %}    
+{% comment %}
+Remove this comment to show only posts in the 'Featured' category on the homepage. Also remove the comment further down linked with #removeforsorting
+ for category in post.categories 
+ if category contains 'featured' 
+{% endcomment %}
+
+          {% for image in post.images limit: 1 %} 
+          
+          
+
   {% capture thecycle %}{% cycle 'alpha', 'bravo', 'charlie', 'delta'  %}{% endcapture %}
            <div class="image {{ thecycle }} {% if image.anchor %}{{ image.anchor }}{% endif %}"  >
         {% capture path %}{{ image.img_url }}{% endcapture %}
@@ -28,18 +42,22 @@ layout: default
     <img srcset="{% include img_srcset.html %}" src="{% include img_src.html %}"  sizes="(max-width: 550px) 100vw, 40vw" />  
     
 {% endif %}
+
 <div class="content{% if post.cover_color %} {{ post.cover_color }}{% elsif post.feature_color %} {{ post.feature_color }}{% else %} white{% endif %}">
-             <a href="{{ post.url | prepend: site.url }}" title="{{post.title }}"><h2>{{ post.title | truncate: 20 }}</h2>
-                 <time>{{ post.date | date: "%B %Y" }}</time>
+             <a href="{{ post.url | prepend: site.url }}" title="{{post.title }}"><h2>{{ post.title | truncatewords: 2, "" }}</h2>
+               <!--  <time>{{ post.date | date: "%B %Y" }}</time> -->
                  <ul>     {% for category in post.categories %}{% unless category == 'featured' %}<li>{{ category }}</li>{% endunless %}{% endfor %}</ul>
 
     </a>  
          </div>
-               
+<div class="mobile-title"><h4>{{ post.title }}</h4></div>            
         </div>    
  {% endfor %}     
 
-    
-{% endif %}
-{% endfor %}{% endfor %}
+{% comment %} #removeforsorting
+Remove these comments allong with the above
+ endif 
+ endfor 
+{% endcomment %}
+{% endfor %}
 </section>

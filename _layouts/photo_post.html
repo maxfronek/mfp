@@ -23,7 +23,8 @@ layout: "default"
         <h3 class="{{ thecycle }} heading">{{ image.heading }}</h3>
         {% endif %}
     
-<div class="imagewrap {% if image.width %}{{ image.width }}{% endif %} {% if image.anchor %}{{ image.anchor }}{% endif %} {% if image.offset %}{{ image.offset }}{% endif %}" {% if forloop.index > 3 %} data-sal="fade" data-sal-delay="100"  data-sal-duration="250" data-sal-easing="ease-in" {% endif %} >
+<div class="imagewrap {% if image.width %}{{ image.width }}{% endif %} {% if image.anchor %}{{ image.anchor }}{% endif %} {% if image.offset %}{{ image.offset }}{% endif %} 
+{% if image.change_bg %}change-to-{{ image.change_bg }}{% endif %}" {% if forloop.index > 3 %} data-sal="fade" data-sal-delay="100"  data-sal-duration="250" data-sal-easing="ease-in" {% endif %} >
         {% capture path %}{{ image.img_url | prepend: site.photourl }}{% endcapture %}
 {% capture alt %}{{ image.title }}{% endcapture %}
 
@@ -66,20 +67,19 @@ layout: "default"
         {{ content }}
         
     </section> 
-    
+    {% comment %}
     <section class="end-matter">
     <time
   >{{ page.date | date: "%B %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if
   page.meta %} • {{ page.meta }}{% endif %}</time
 >
-        {% comment %} Removing page categorie links for now
+        page category links
         <ul>
         {% for category in page.categories %}<li><a href="{{ site.url }}/category/{{ category | remove: ',' }}" title="">{{ category }}</a></li>{% endfor %}
         </ul>
-        {% endcomment %}
 
     </section>
-    
+    {% endcomment %}
 </div>
 {% if page.next_in_category.url != nil %}
 	<a href="{{ page.next_in_category.url }}" class="next-link">

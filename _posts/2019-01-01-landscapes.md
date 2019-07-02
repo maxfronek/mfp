@@ -34,6 +34,7 @@ images:
     width: half
     title: Machu Pichu, Peru, 2017
     invert: invert
+    change_bg: green
   - img_url: images/post_images/landscapes/santorini.jpg
     width: half    
     title: Santorini, Greece, 2007

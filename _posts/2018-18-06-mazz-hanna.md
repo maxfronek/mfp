@@ -23,6 +23,7 @@ images:
     anchor: left
     width: half
     heading: Product Labels and Packaging
+    change_bg: pink
   - img_url: images/post_images/mazzhanna/MH-4.jpg
     anchor: left
     width: half
@@ -62,6 +63,7 @@ images:
     title: Mazz Hanna uses square business cards for a unique and memorable feel.
     width: half
     heading: Print Materials
+    change_bg: amethyst
   - img_url: images/post_images/mazzhanna/MH-cards-2.jpg
     title: Multiple color variations link the business card to the product design
     width: half

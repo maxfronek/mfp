@@ -27,6 +27,7 @@ images:
   - img_url: images/post_images/portraits/portrait-5.jpg
     width: onethird
     title: Christine, Headshots, 2015
+    change_bg: blue
   - img_url: images/post_images/portraits/portrait-2.jpg
     width: onethird
     title: Jackson for LSTN Sound Co, 2015
