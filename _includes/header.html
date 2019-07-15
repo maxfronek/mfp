@@ -32,13 +32,14 @@
 <span class="k-bottom"></span>
 </a>
     
-    <a class="me" id="me" href="javascript:void(0);">Me</a>
+  {% comment %}  <a class="me" id="me" href="javascript:void(0);">Me</a>   {% endcomment %}
     
 </header>
 
-
+{% comment %}
 <section id="about" class="about">
     <a class="close-info" id="close-info">Close</a>
 <p>{{ site.description | newline_to_br }}</p>
     <p class="email">Available for freelance:<br /><a href="mailto:mf@maxfronek.com?subject=Design%20Inquiry" title="Email Max Fronek" target="_blank">{{ site.email }}</a></p>
 </section>
+{% endcomment %}

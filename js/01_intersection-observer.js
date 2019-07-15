@@ -738,4 +738,4 @@ function getParentNode(node) {
 window.IntersectionObserver = IntersectionObserver;
 window.IntersectionObserverEntry = IntersectionObserverEntry;
 
-};());
+});

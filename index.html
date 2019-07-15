@@ -13,8 +13,8 @@ layout: default
     </section>
 {% endcomment %}
 
-<section class="images home" id="masonry">
-{% assign posts = site.posts | sort: 'order' %} 
+<section class="images home hide" id="masonry">
+{% assign posts = site.posts | sort: 'order' %} {% assign count = 250 %}
 {% for post in posts  %}
 
 {% comment %}
@@ -28,7 +28,8 @@ Remove this comment to show only posts in the 'Featured' category on the homepag
           
 
   {% capture thecycle %}{% cycle 'alpha', 'bravo', 'charlie', 'delta'  %}{% endcapture %}
-           <div class="image {{ thecycle }} {% if image.anchor %}{{ image.anchor }}{% endif %}"  >
+  {% assign count = count | plus: 50 %}
+           <div class="image {{ thecycle }} {% if image.anchor %}{{ image.anchor }}{% endif %}" data-sal="fade"  data-sal-delay="{{ count }}"  data-sal-duration="150" data-sal-easing="ease-in" >
         {% capture path %}{{ image.img_url }}{% endcapture %}
 {% capture alt %}{{ image.title }}{% endcapture %}
 
@@ -51,7 +52,9 @@ Remove this comment to show only posts in the 'Featured' category on the homepag
     </a>  
          </div>
 <div class="mobile-title"><h4>{{ post.title }}</h4></div>            
-        </div>    
+        </div> 
+
+        {% if count >= 500 %}{% assign count = 0 %}{% endif %}   
  {% endfor %}     
 
 {% comment %} #removeforsorting

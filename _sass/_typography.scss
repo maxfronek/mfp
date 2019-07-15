@@ -23,13 +23,24 @@ a {
 }
 
 
-p {font-family: $font-style; font-size: 1.2rem; letter-spacing: .07rem; font-weight: 300; margin: 0 auto 2rem; max-width: 900px;
+p, ul, ol {font-family: $font-style; font-size: 1.2rem; letter-spacing: .07rem; font-weight: 300; margin: 0 auto 2rem; max-width: 900px;}
+p {
     &.left {margin: 0 0 2rem;}
 
     a {text-decoration: none; @include prefix(box-shadow, 0px -10px 0px rgba($link-underline-color, .3) inset, webkit);
         @include hocus {@include prefix(box-shadow, 0px -30px 0px rgba($link-underline-color, .3) inset, webkit);}
     }
 }
+
+// basic list style settings
+ul {
+    list-style: none;
+    li {margin-bottom: 1rem; position: relative;
+    &::before {content: "—"; position: absolute; left: -2rem;}
+    }
+
+}
+
 
 code {  
     background-color: darken($light, 20%);padding: .5rem;
@@ -122,6 +133,7 @@ figure {
     .end-matter {
          ul {
             li { text-transform: uppercase; letter-spacing: .035rem;
+                &::before {content: "";}
                 a {@include prefix(box-shadow, 0px -10px 0px rgba($link-underline-color, .3) inset, webkit);
         @include hocus {@include prefix(box-shadow, 0px -30px 0px rgba($link-underline-color, .3) inset, webkit);}
     }
@@ -133,6 +145,7 @@ menu {
     nav {
         ul {
             li {
+                &::before {content: "";}
                 a {font-family: $sub-heading-font;color: $mf-green; text-transform: uppercase; letter-spacing: .5rem; font-size: 1.6rem; background-image: linear-gradient(to right, $heading-font-color 50%, transparent 50%); background-size: 201% 1px; background-repeat: no-repeat; background-position: right top; font-weight: 200;
                     @include hocus {color: $heading-font-color; background-position: left top;}
                     @include medium {font-size: 1.1rem;}

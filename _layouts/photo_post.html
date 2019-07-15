@@ -5,14 +5,14 @@ layout: "default"
 <div class="grid">
     
     <figure>
-    <h2 class="title">{{ page.title }}</h2>
-   {% if page.excerpt %}<p>{{ page.excerpt }}</p>{% endif %}  
+    <h2 class="title" data-sal="fade" data-sal-delay="100"  data-sal-duration="250" data-sal-easing="ease-in">{{ page.title }}</h2>
+   {% if page.excerpt %}<p data-sal="fade" data-sal-delay="250"  data-sal-duration="250" data-sal-easing="ease-in">{{ page.excerpt }}</p>{% endif %}  
     </figure>
     
 
     <section class="images">
 {% if page.video %}
-     <video loop muted autoplay playsinline webkit-playsinline>
+     <video loop muted autoplay playsinline webkit-playsinline data-sal="fade" data-sal-delay="450"  data-sal-duration="250" data-sal-easing="ease-in">
         <source src="{{ page.video | strip_html }}" type="{% if page.video contains 'mp4' %}video/mp4{% else %}video/webm{% endif %}">
 </video>    
 {% endif %}
@@ -23,7 +23,7 @@ layout: "default"
         <h3 class="{{ thecycle }} heading">{{ image.heading }}</h3>
         {% endif %}
     
-<div class="imagewrap {% if image.width %}{{ image.width }}{% endif %} {% if image.anchor %}{{ image.anchor }}{% endif %} {% if image.offset %}{{ image.offset }}{% endif %} 
+<div data-sal="fade" data-sal-delay="450"  data-sal-duration="250" data-sal-easing="ease-in" class="imagewrap {% if image.width %}{{ image.width }}{% endif %} {% if image.anchor %}{{ image.anchor }}{% endif %} {% if image.offset %}{{ image.offset }}{% endif %} 
 {% if image.change_bg %}change-to-{{ image.change_bg }}{% endif %}" {% if forloop.index > 3 %} data-sal="fade" data-sal-delay="100"  data-sal-duration="250" data-sal-easing="ease-in" {% endif %} >
         {% capture path %}{{ image.img_url | prepend: site.photourl }}{% endcapture %}
 {% capture alt %}{{ image.title }}{% endcapture %}

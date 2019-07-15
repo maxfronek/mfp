@@ -9,20 +9,23 @@ order: 3
 images:
   - img_url: images/post_images/composites/comp-3.jpg
     invert: invert
-    width: half
+    width: half 
   - img_url: images/post_images/composites/brooklyn.jpg
     width: half
+    offset: offset
     invert: invert
-    blockquote: These images are created from both photos I have taken and stock images.
+    paragraph: |
+      These images are an artistic expression created from photos I have taken, enhanced with other elements to play-up the whimsical nature of each image. They were created for various clients as social media content.
+  - img_url: images/post_images/composites/banff-composite.jpg
+    width: onethird        
   - img_url: images/post_images/composites/comp-1.jpg
-    width: half
-    anchor: left
+    width: onethird
     invert: invert
   - img_url: images/post_images/composites/comp-2.jpg
-    width: half
+    width: onethird
     invert: invert
-  - img_url: images/post_images/composites/comp-4.jpg
-    invert: invert
+  - img_url: images/post_images/composites/Mountain-Aurora-B.jpg
+    invert: invert    
   - img_url: images/post_images/composites/MF-AETHER-5.gif
     width: half
     invert: invert

@@ -22,7 +22,7 @@
         blockquote, p, h3 {grid-column: span 12;scroll-snap-type: y mandatory;}
         blockquote {
             &.quote-only {
-            max-width: 70%; margin: 2rem;
+            margin: 2rem auto; max-width: 900px;
             &.right {margin-left: 30%}
 
         @include medium {max-width: 100%;
@@ -30,7 +30,7 @@
         }
             }
         }
-        .heading {margin-top: 8rem;}
+        .heading {margin-top: 4rem;}
             .imagewrap {position: relative; scroll-snap-align: start; overflow: hidden;z-index: 1; width: 100%; padding: 0; height: 100%;
                 
                         &.left { img {object-position: 25%% 50%;} }

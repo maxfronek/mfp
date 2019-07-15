@@ -8,20 +8,16 @@ images:
   - img_url: images/page_images/about.jpg
     alt: This is me in 2018, but I still look like this. Just with longer hair now.
 ---
-
-{% for image in page.images %}
-<img class="about-image" src="{{ image.img_url | prepend: site.photourl }}{{ site.img_sizes.small }}" srcset="{{ image.img_url | prepend: site.photourl }}{{ site.img_sizes.small }} 300w, {{ image.img_url | prepend: site.photourl }}{{ site.img_sizes.medium }} 480w, {{ image.img_url | prepend: site.photourl | append: site.img_sizes.grande }} 600w" sizes="80vw" alt="{{ image.alt }}" />
-{% endfor %}
-I've had a passion for design and photography for as long as I can remember. I love finding the perfect way to present information and solve problems creatively. I work with various clients to achieve their short- and long-term needs, focusing mainly on product branding, product and packaging development, marketing, and corporate identity. [Let’s chat about how we can elevate your brand together](mailto:mf@maxfronek.com?subject=Design%20Inquiry). 
-
+{% for image in page.images %}<img class="about-image" src="{{ image.img_url | prepend: site.photourl }}{{ site.img_sizes.small }}" srcset="{{ image.img_url | prepend: site.photourl }}{{ site.img_sizes.small }} 300w, {{ image.img_url | prepend: site.photourl }}{{ site.img_sizes.medium }} 480w, {{ image.img_url | prepend: site.photourl | append: site.img_sizes.grande }} 600w" sizes="80vw" alt="{{ image.alt }}" data-sal="fade" data-sal-delay="250"  data-sal-duration="250" data-sal-easing="ease-in" />{% endfor %}
+<p data-sal="fade" data-sal-delay="450"  data-sal-duration="250" data-sal-easing="ease-in">
+I've had a passion for design and photography for as long as I can remember. I love finding the perfect way to present information and solve problems creatively. I work with various clients to achieve their short- and long-term needs, focusing mainly on product branding, product and packaging development, marketing, and corporate identity. <a href="mailto:mf@maxfronek.com?subject=Design%20Inquiry" target="_blank" title="Email Me for a Quote">Let’s chat about how we can elevate your brand together</a>.</p>
 
 ---
-
 My photography has been featured in numerous press outlets, and has been presented for advertising content in formats from magazines to billboards. Some places you may have seen my product photos include The Wall Street Journal, Vogue, GQ, Esquire, Playboy, Gizmodo, Forbes, and more.
 
 ---
 
-### Skills &<br /> Software
+### Proficiencies
 
 ##### Adobe Creative Suite
 Photoshop, Lightroom, Illustrator, InDesign, Premiere, After Effects, Audition

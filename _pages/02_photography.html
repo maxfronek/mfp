@@ -5,7 +5,7 @@ permalink: /photography/
 ---
 <h1 class="category-title">{{ page.title }}</h1>
 <section class="images" id="masonry">
-{% assign posts = site.posts | sort: 'order' %} 
+{% assign posts = site.posts | sort: 'order' %}  {% assign count = 250 %}
 {% for post in posts %}
 {% for category in post.categories %}
 {% if category contains 'photography' %}
@@ -13,8 +13,8 @@ permalink: /photography/
     
     {% for image in post.images limit: 1 %}    
   {% capture thecycle %}{% cycle 'alpha', 'bravo', 'charlie', 'delta'  %}{% endcapture %}
-       
-           <div class="image {{ thecycle }} {% if image.anchor %}{{ image.anchor }}{% endif %}"  >
+       {% assign count = count | plus: 50 %}
+           <div class="image {{ thecycle }} {% if image.anchor %}{{ image.anchor }}{% endif %}" data-sal="fade"  data-sal-delay="{{ count }}"  data-sal-duration="150" data-sal-easing="ease-in"  >
         {% capture path %}{{ image.img_url  | prepend: site.photourl }}{% endcapture %}
 {% capture alt %}{{ image.title }}{% endcapture %}
 

@@ -8,10 +8,13 @@
     <main class="{% if page.is_post %}post{% elsif page.is_page and page.url != '/' %}page{% elsif page.url == '/' %}index{% else %}no-class{% endif %}">
 
       {% if page.url == '/' %}
-      <section class="homepage-info" id="homepage-info">
-                  <h1 class="homepage-title">Max Fronek</h1>
-                  <p>Design / Photography</p>
+      <section class="masthead" id="homepage-info">
+           <h1 class="homepage-title" data-sal="fade" data-sal-delay="100"  data-sal-duration="250" data-sal-easing="ease-in">Max Fronek</h1>
+           <p data-sal="fade" data-sal-delay="250"  data-sal-duration="250" data-sal-easing="ease-in" >Design / Photography</p>
+           <p data-sal="fade" data-sal-delay="500"  data-sal-duration="250" data-sal-easing="ease-in">I am a creative professional able to help clients achieve their short- and long-term design needs. My primary skills are branding, product and packaging development, web design, and photography. Below are some of my favorite projects.</p>
+
       </section>
+
       {% endif %}
 
       <article {% if page.url == '/blog/' %}class="blog"{% elsif page.url == '/photography/' or page.url == '/design/' or page.url contains '/category/' %}class="category"{% endif %}>
@@ -26,8 +29,33 @@
           
 <script type="text/javascript" src="/scripts/mf.js"></script>
     
+    {% if page.url == '/' %}
+    <script>
+    
+    var homepageInfo = document.getElementById('homepage-info');
+    function checkHomePosition() {
+        let windowY = window.scrollY;
+        if (windowY < scrollPos) { } else {
+    homepageInfo.classList.add('hide');
+        }
+        scrollPos = windowY;
+        if (scrollPos < 10) { 
+    // for homepage main title disappearance
+   homepageInfo.classList.remove('hide');
+ }      
+    };
+
+
+    </script>
+    {% endif %}
+
 {% if page.url == '/' or page.url == '/photography/' or page.url == '/design/' or page.url == '/blog/' %}
     <script>
+
+imagesLoaded( document.querySelector('#masonry'), function() {
+  console.log('Images have been loaded');
+  document.getElementById('masonry').classList.remove('hide');
+
     var macy = Macy({ 
         container: "#masonry",
         waitForImages: true,
@@ -44,6 +72,11 @@ macy.on(macy.constants.EVENT_IMAGE_COMPLETE, function (ctx) {
     setTimeout(function(){macy.reInit();}, 500);
 
 });
+
+})
+
+
+
     </script>
 {% endif %}
 </html>

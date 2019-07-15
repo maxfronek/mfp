@@ -10,42 +10,27 @@ images:
   - img_url: images/post_images/portraits/portrait-7.jpg
     width: half
     title: Kendrick Lamar at Outsidelands, 2016
-  - img_url: images/post_images/portraits/portrait-3.jpg
+  - img_url: images/post_images/portraits/portrait-5.jpg
     width: half
-    title: Jackson for LSTN Sound Co, 2015
+    title: Christine, Headshots, 2015    
   - img_url: images/post_images/portraits/portrait-14.jpg
     width: half
     title: Megan for LSTN Sound Co, 2015
-  - img_url: images/post_images/portraits/portrait-15.jpg
-    width: half
-    title: Jackson for LSTN Sound Co, 2015
-  - img_url: images/post_images/portraits/portrait-9.jpg
-    title: Lemmy, 2016
+  - img_url: images/post_images/portraits/portrait-13.jpg
+    title: Melissa + Sergio's Engagement, 2016 
+    width: twothirds
+    offset: offset   
   - img_url: images/post_images/portraits/portrait-21.jpg
-    width: onethird
+    width: half
     title: Amy + Johnny's Wedding, 2015
-  - img_url: images/post_images/portraits/portrait-5.jpg
-    width: onethird
-    title: Christine, Headshots, 2015
     change_bg: blue
   - img_url: images/post_images/portraits/portrait-2.jpg
-    width: onethird
+    width: half
+    offset: offset
     title: Jackson for LSTN Sound Co, 2015
-  - img_url: images/post_images/portraits/portrait-8.jpg
-    width: half
-    title: Kendrick Lamar at Outsidelands, 2016
-  - img_url: images/post_images/portraits/portrait-13.jpg
-    width: half
-    title: Melissa + Sergio's Engagement, 2016
-  - img_url: images/post_images/portraits/portrait-4.jpg
-    width: onethird
-    title: Christine, Headshots, 2015
   - img_url: images/post_images/portraits/portrait-6.jpg
-    width: onethird
+    width: half
     title: Lemmy and his Owner, 2015
-  - img_url: images/post_images/portraits/portrait-20.jpg
-    width: onethird
-    title: Nell + Kelsey's Wedding, 2014
   - img_url: images/post_images/portraits/portrait-12.jpg
     title: Melissa + Sergio's Engagement, 2016
   - img_url: images/post_images/portraits/portrait-16.jpg
