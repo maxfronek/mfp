@@ -9,6 +9,11 @@ layout: "default"
    {% if page.excerpt %}<p data-sal="fade" data-sal-delay="250"  data-sal-duration="250" data-sal-easing="ease-in">{{ page.excerpt }}</p>{% endif %}  
     </figure>
     
+    <div class="chapter-markers">
+          <div class="progress-container">
+    <div class="progress-bar" id="myBar"></div>
+  </div>
+    </div>
 
     <section class="images">
 {% if page.video %}
@@ -25,14 +30,20 @@ layout: "default"
     
 <div data-sal="fade" data-sal-delay="450"  data-sal-duration="250" data-sal-easing="ease-in" class="imagewrap {% if image.width %}{{ image.width }}{% endif %} {% if image.anchor %}{{ image.anchor }}{% endif %} {% if image.offset %}{{ image.offset }}{% endif %} 
 {% if image.change_bg %}change-to-{{ image.change_bg }}{% endif %}" {% if forloop.index > 3 %} data-sal="fade" data-sal-delay="100"  data-sal-duration="250" data-sal-easing="ease-in" {% endif %} >
-        {% capture path %}{{ image.img_url | prepend: site.photourl }}{% endcapture %}
+       {% if image.img_url contains 'youtube' or image.img_url contains 'vimeo' %}{% capture path %}{{ image.img_url }}{% endcapture %} {% else %}
+        {% capture path %}{{ image.img_url | prepend: site.photourl }}{% endcapture %}{% endif %}
 {% capture alt %}{{ image.title }}{% endcapture %}
 
     {% if path contains 'mp4' or path contains 'webm' %}
    {% capture poster %}{{ image.poster | prepend: site.photourl }}{% endcapture %}
- <video loop muted autoplay playsinline poster="{{ poster | strip_html }}{{ site.img_sizes.grande }}">
+ <video loop muted autoplay playsinline poster="{{ poster | strip_html }}{{ site.img_sizes.grande }}" {% if forloop.index == 1 %}class="post-leader"{% endif %}>
         <source src="{{ path | strip_html }}" type="{% if path contains 'mp4' %}video/mp4{% else %}video/webm{% endif %}">
-         </video>  
+         </video> 
+
+    {% elsif path contains 'youtube' or path contains 'vimeo' %}
+<div class="videoWrapper">
+    <iframe width="560" height="315" src="{{ path }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
     {% else %}
 
     {% if forloop.index > 3 %}
@@ -41,7 +52,7 @@ layout: "default"
     </a>
     {% else %}
   <a href="{{ image.img_url | prepend: site.photourl }}" class="expand{% if image.invert %} invert{% endif %}">
-    <img alt="{{ image.title }}" srcset="{% include img_srcset.html %}" src="{% include img_src.html %}"  sizes="80vw" class="gallery-item" />  
+    <img alt="{{ image.title }}" srcset="{% include img_srcset.html %}" src="{% include img_src.html %}"  sizes="80vw" class="gallery-item {% if forloop.index == 1 %} post-leader{% endif %}" />  
   </a>  
     {% endif %}
     
@@ -110,6 +121,34 @@ layout: "default"
     // this function runs when the DOM is ready, i.e. when the document has been parsed
     colorize();
 });
+document.getElementById("myBar").style.backgroundColor = color;
+window.onscroll = function() {chapterize()};
+
+
+function chapterize() {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  document.getElementById("myBar").style.width = scrolled + "%";
+} 
+
+
+// Playing with fun chapter marker stuff but let's put it away now. 
+/*
+
+
+var chapterMarkers = document.getElementsByClassName("heading"); // Do not use a period here!
+var values = Array.prototype.map.call(chapterMarkers, function(el) {
+    return el.innerHTML;
+});
+var chapterLocation = document.querySelector(".progress-container");
+console.log(chapterLocation);
+values.forEach(function(el) {
+    console.log(el);
+    chapterLocation.append("el")
+})
+
+*/
 
    
         

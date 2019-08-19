@@ -34,6 +34,7 @@ behance_username: _mf
 
 # Build settings
 environment: production
+permalink: /:title
 sass:
   sass_dir: _sass
 include: ['_pages']

@@ -33,6 +33,7 @@ linkedin_username: maxfronek
 behance_username: _mf
 
 # Build settings
+permalink: /:title
 environment: development
 sass:
   sass_dir: _sass

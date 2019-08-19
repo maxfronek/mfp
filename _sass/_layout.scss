@@ -78,6 +78,8 @@ time {
   margin: 0 auto;
 }
 
+hr {margin: 2rem auto; max-width: 900px; width: 100%; border: 0px solid transparent; border-top: 1px solid darken($bg, 50%); }
+
 article {width: 100%; grid-column: 2 / span 4;
     @include small {grid-column: 1 / -1;
         &.category {grid-column: 2 / -1;}

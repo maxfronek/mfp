@@ -255,7 +255,7 @@ for (var i = 0; i < menuItem.length; i++) {
 
 
 sal({
-    threshold: .7,
+    threshold: .1,
 });
 
 

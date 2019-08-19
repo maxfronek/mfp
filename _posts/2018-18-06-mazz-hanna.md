@@ -62,7 +62,7 @@ images:
   - img_url: images/post_images/mazzhanna/MH-cards-1.jpg
     title: Mazz Hanna uses square business cards for a unique and memorable feel.
     width: half
-    heading: Print Materials
+    heading: Collateral
     change_bg: amethyst
   - img_url: images/post_images/mazzhanna/MH-cards-2.jpg
     title: Multiple color variations link the business card to the product design
@@ -79,12 +79,17 @@ images:
     #start branding
   - img_url: images/post_images/mazzhanna/MH-brand-guide-1.jpg
     width: half
-    heading: Branding
   - img_url: images/post_images/mazzhanna/MH-brand-guide-2.jpg
     width: half       
   - img_url: images/post_images/mazzhanna/MH-brand-guide-3.jpg
 
 ---
 
-##### High-vibe Beauty
+#### What I Did:
+**Web Design:**  
+Front-End (Shopify), Email templates (Mailchimp)  
+**Graphic Design:**  
+Packaging, Collateral, Product Labeling, Typography  
+**Product Photography**  
+
 Visit [Mazz Hanna Wellness](http://mazzhanna.com)

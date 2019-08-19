@@ -24,7 +24,7 @@ images:
   - img_url: images/post_images/lstn-mission/arequipa-2.jpg
     width: half
     title: Arequipa, Peru, 2017
-    paragraph: The mission videos I've created for LSTN have received more than 100 thousand views and have shared the story of LSTN across national television and the internet. A few of the videos are shown below.
+    paragraph: The mission videos I've created for LSTN have collectively received more than a hundred thousand views and have shared the story of LSTN across national television and the internet. A few of the videos are shown below.
 ---
 
 <div class="videoWrapper">
@@ -39,5 +39,15 @@ images:
  <iframe width="560" height="315" src="https://www.youtube.com/embed/YQRDacHWa-k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>   
 </div>
 
+
+#### What I Did  
+
+**Camera Operation**  
+**Editing**   
+**Event Photography**
+
+***
+
+See more work I've done for LSTN [here](/lstn).  
 [LSTN Sound Co on YouTube](https://www.youtube.com/lstnheadphones)
 

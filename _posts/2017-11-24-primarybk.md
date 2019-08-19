@@ -21,35 +21,35 @@ images:
   - img_url: images/post_images/primarybk/pbk-website-2.jpg
     width: half 
     paragraph: |
-      The website maintains a conversational tone throughout, and provides a lighter tone than other, more conservative bookkeepers. The format is cleanly laid out, and is easily expandable for any changing needs the client may have.
+      The website maintains a conversational tone throughout, providing a lighter personality than other, more conservative bookkeepers. The format is cleanly laid out, and is easily expandable for any changing needs the client may have.
   - img_url: images/post_images/primarybk/iPad_PBK-Menu.mp4
     width: threequarters
     offset: offset
     poster: 
-  - img_url: images/post_images/primarybk/pbk-website-1.jpg
-    width: half
+  - img_url: images/post_images/primarybk/pbk-website-3.jpg
   - img_url: images/post_images/primarybk/PBK-brand-book-1.jpg
     width: half
     invert: invert
     heading: Branding   
   - img_url: images/post_images/primarybk/PBK-brand-book-2.jpg
     width: half
+  - img_url: images/post_images/primarybk/PBK-letterhead.jpg   
+    anchor: top   
+    title: A sample contract on Primary Bookkeeping letterhead 
+  - img_url: images/post_images/primarybk/PBK-stationary.jpg    
+    title: Examples of Primary Bookkeeping's business stationary. 
   - img_url: images/post_images/primarybk/PBK-shoot-3.jpg
     width: half
     invert: invert
-    heading: Photoshoot
+    heading: Photography
   - img_url: images/post_images/primarybk/PBK-shoot-1.jpg
     width: half
   - img_url: images/post_images/primarybk/PBK-shoot-2.jpg
     paragraph: |
-      The client wanted something a little more homespun than typical stock photos, so I shot a series of her working, using her own tools, to lend authenticity to the photography and give her content to use across platforms.
+      The client wanted something a little more personal than typical stock photos, so we shot a series of her working with her own tools.
     invert: invert
   - img_url: images/post_images/primarybk/PBK-shoot-5.jpg
-    width: threequarters
-    invert: invert
-  - img_url: images/post_images/primarybk/PBK-shoot-4.jpg
-    anchor: right
-    width: onequarter 
+    width: twothirds
     invert: invert
 ---
 

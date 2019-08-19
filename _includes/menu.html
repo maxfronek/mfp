@@ -8,7 +8,9 @@
     
         {% capture link_cat %}{{- page.title | downcase -}}{% endcapture %}
         {% assign category = site.categories[link_cat] %}
-        {% for post in category limit: 1  %}
+        {% for post in category  %}
+        {% if post.title contains "Sheswai" %}{% continue %}
+        {% else %}
         {% for image in post.images limit: 1 %} 
         <div class="image-preview">
           
@@ -26,6 +28,8 @@
 {% endif %}
             </div>
         {% endfor %}
+        {% break %}
+            {% endif %}
     {% endfor %}
     {% if page.is_page %}
     {% for image in page.images limit: 1 %}

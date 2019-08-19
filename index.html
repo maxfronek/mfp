@@ -16,7 +16,9 @@ layout: default
 <section class="images home hide" id="masonry">
 {% assign posts = site.posts | sort: 'order' %} {% assign count = 250 %}
 {% for post in posts  %}
-
+{% if post.title contains "Deep Valley" %}
+{% continue %}
+{% else %}
 {% comment %}
 Remove this comment to show only posts in the 'Featured' category on the homepage. Also remove the comment further down linked with #removeforsorting
  for category in post.categories 
@@ -45,7 +47,7 @@ Remove this comment to show only posts in the 'Featured' category on the homepag
 {% endif %}
 
 <div class="content{% if post.cover_color %} {{ post.cover_color }}{% elsif post.feature_color %} {{ post.feature_color }}{% else %} white{% endif %}">
-             <a href="{{ post.url | prepend: site.url }}" title="{{post.title }}"><h2>{{ post.title | truncatewords: 2, "" }}</h2>
+             <a href="{{ post.url | prepend: site.url }}" title="{{post.title }}"><h2>{% if post.title contains 'LSTN' %}{{ post.title | truncatewords: 3, "" }}{% else %}{{ post.title | truncatewords: 2, "" }}{% endif %}</h2>
                <!--  <time>{{ post.date | date: "%B %Y" }}</time> -->
                  <ul>     {% for category in post.categories %}{% unless category == 'featured' %}<li>{{ category }}</li>{% endunless %}{% endfor %}</ul>
 
@@ -56,7 +58,7 @@ Remove this comment to show only posts in the 'Featured' category on the homepag
 
         {% if count >= 500 %}{% assign count = 0 %}{% endif %}   
  {% endfor %}     
-
+{% endif %}
 {% comment %} #removeforsorting
 Remove these comments allong with the above
  endif 

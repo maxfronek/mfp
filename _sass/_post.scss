@@ -69,7 +69,10 @@
                     }
                 }
                 
-                video, img {height: 100%; width: 100%;}
+                video, img {height: 100%; width: 100%; max-height: none;
+                    &.post-leader {max-height: 500px;}
+                
+                }
 
                 .lazyload{object-fit: scale-down;}
                 .lazyloaded {object-fit: cover;
@@ -167,6 +170,27 @@
 } //end grid class
 
 
+
+.chapter-markers {
+
+    position: fixed; left: 0; top: 0px; width: 100%;z-index: 9;
+
+    .progress-container {
+    height: 4px;
+    width: 100%;
+    background: rgba(50,50,50,.25);
+  }
+  
+
+  .progress-bar {
+    height: 4px;
+    background: $powder-blue;
+    width: 0%;
+  }
+
+}
+
+
 .next-post {width: 100%;background-color: #FAE9FA;min-height: 200px;position: absolute;left: 0;margin-top: 10rem; z-index: 9;
   @include flexbox;
   @include justify-content(center);
@@ -182,3 +206,5 @@
     }
     
 }
+
+
