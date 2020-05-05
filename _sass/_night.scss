@@ -1,0 +1,53 @@
+@media (prefers-color-scheme: dark) {
+
+body {background-color: #161c18; color: #aaa;}
+
+menu {background-color: #444;}
+menu nav ul li a {color: #aaa;}
+
+
+
+h1, h2, h3 {color: #aaa;}
+a {color: #aaa;}
+
+footer a img {filter: invert(85%);}
+
+// MF logo 
+
+.mtof .m-left, .mtof .m-right, .mtof .x-left, .mtof .x-right, .mtof .a-left, .mtof .a-right, .mtof .a-cross {background-color: #ccc;}
+
+.hamburger .patty, .hamburger.close .patty {background: #ccc;} 
+
+
+
+
+// images
+
+.images .image img, .images .image video {opacity: .7;}
+.grid .images .imagewrap video.post-leader, .grid .images .imagewrap img.post-leader, .grid .images .imagewrap video, .grid .images .imagewrap img {opacity: .7;}
+
+// lightbox settings
+.lum-lightbox {background: #161c18;}
+.lum-lightbox-inner {background-image: none;}
+.lum-lightbox-inner img {opacity: .7;}
+.lum-lightbox-inner .lum-lightbox-caption {color: #aaa;}
+.lum-gallery-button {filter: invert(90%);}
+.lum-close-button {filter: invert(0%);}
+
+
+
+// color schemes
+
+.bg.white {background-color: #161c18;}
+
+.orange.next-post {backsground-color: rgba(237, 122, 51, 0.35);}
+.sand.next-post {background-color: rgba(236, 234, 221, 0.1);}
+.powder-blue.next-post {background-color: rgba(142, 173, 209, 0.25);
+p {color: #aaa;}
+}
+.pink.next-post {background-color: rgba(233, 194, 213, 0.15);}
+
+// this bracket closes the dark mode media query
+  }
+
+

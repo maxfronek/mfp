@@ -21,6 +21,8 @@
     rel="canonical"
     href="{{ page.url | replace:'index.html','' | prepend: site.url }}"
   />
+<!-- polyfill for intersection observer -->
+<script type="text/javascript" src="/scripts/intersection-observer.js"></script>
 <!-- this is just getting the file that GULP makes combining all JS plugins -->    
 <script type="text/javascript" src="{{ '/scripts/plugins.js' }}"></script>
     

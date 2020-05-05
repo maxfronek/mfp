@@ -317,7 +317,7 @@ footer {
   @include flexbox; @include flex-direction(row);@include align-items(center);  @include justify-content(center);  
   padding: 40px;
     hr {width: 100%; position: absolute; top: unset; margin-top: -5px;z-index: -1; border: 0px solid transparent; border-top: 1px solid $heading-font-color;}
-    .footer-links {background-color: $bg; padding: 0 2rem; z-index: 1;
+    .footer-links {/*background-color: $bg;*/ padding: 0 2rem; z-index: 1; margin-top: 2rem;
       &.photo-post-footer {background-color: transparent !important;}
     }
     a {
