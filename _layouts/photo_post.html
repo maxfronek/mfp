@@ -36,10 +36,9 @@ layout: "default"
 
     {% if path contains 'mp4' or path contains 'webm' %}
    {% capture poster %}{{ image.poster | prepend: site.photourl }}{% endcapture %}
- <video loop muted autoplay playsinline poster="{{ poster | strip_html }}{{ site.img_sizes.grande }}" {% if forloop.index == 1 %}class="post-leader"{% endif %}>
+ <video loop muted autoplay webkit-playsinline playsinline poster="{{ poster | strip_html }}{{ site.img_sizes.grande }}" {% if forloop.index == 1 %}class="post-leader"{% endif %}>
         <source src="{{ path | strip_html }}" type="{% if path contains 'mp4' %}video/mp4{% else %}video/webm{% endif %}">
          </video> 
-
     {% elsif path contains 'youtube' or path contains 'vimeo' %}
 <div class="videoWrapper">
     <iframe width="560" height="315" src="{{ path }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

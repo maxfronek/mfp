@@ -217,21 +217,26 @@ sal({
     threshold: .7,
 });
 
-
-
+window.addEventListener('load', function(event) {
+ 
+  
 // make lightboxes happen
 
 new LuminousGallery(
-        document.querySelectorAll(".expand"),
-        {
-          arrowNavigation: true
-        },
-        {
-          caption: function(trigger) {
-            return trigger.querySelector("img").getAttribute("alt");
-          }
-        }
-      );
+  document.querySelectorAll(".expand"),
+  {
+    arrowNavigation: true,
+    sourceAttribute: "data-lum-url",
+  },
+  {
+    caption: function(trigger) {
+      return trigger.querySelector("img").getAttribute("alt");
+    }
+  }
+);
+
+}); 
+
  
 
     

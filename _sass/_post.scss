@@ -169,11 +169,17 @@
     
 } //end grid class
 
+// resume page-specific styles
+.page article {
+    .job-title,  h3.job-title {margin-bottom: 0rem;}
+    .job-location, h5.job-location {margin-bottom: 1rem;}
+}
+
 
 
 .chapter-markers {
 
-    position: fixed; left: 0; top: 0px; width: 100%;z-index: 9;
+    position: fixed; left: 0; bottom: 0px; width: 100%;z-index: 9;
 
     .progress-container {
     height: 4px;
@@ -184,7 +190,7 @@
 
   .progress-bar {
     height: 4px;
-    background: $powder-blue;
+    background: $main;
     width: 0%;
   }
 

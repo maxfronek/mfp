@@ -219,7 +219,7 @@ video {object-fit: cover; width: 100%; max-height: 500px;}
 // homepage intro pargraph display
 
 .masthead {
-  opacity: 1;/* background-color: $bg; */ z-index: 4; width: 85%; max-width: 650px; grid-column: 1 / -1; margin: 0 auto; height: auto; 
+  opacity: 1;/* background-color: $bg; */ z-index: 4; width: 85%; max-width: 800px; grid-column: 1 / -1; margin: 0 auto; height: auto; 
  @include prefix(transition, all .3s ease-in-out, ms moz o webkit);
 
  // &:after {content: " "; width: 100%; height: 100%; position: absolute; top: 0; left: 0; background-color: $link-underline-color; opacity: .3; mix-blend-mode: multiply;}
