@@ -26,6 +26,15 @@ footer a img {filter: invert(85%);}
 .images .image img, .images .image video {opacity: .7;}
 .grid .images .imagewrap video.post-leader, .grid .images .imagewrap img.post-leader, .grid .images .imagewrap video, .grid .images .imagewrap img {opacity: .7;}
 
+// contact / about page
+
+.contact-me {
+  a {border-color: $link-hover-color;
+  @include hocus {border-color: $bg;}
+  }
+}
+
+
 // lightbox settings
 .lum-lightbox {background: #161c18;}
 .lum-lightbox-inner {background-image: none;}

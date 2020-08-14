@@ -179,15 +179,16 @@
 
     display: flex; flex-direction: row; max-width: 900px; margin: 4rem auto 10rem;
 
-    a {padding-right: 2rem; margin-right: 2rem; border-top: 1px solid $link-hover-color; padding-top: .5rem; font-size: 1.6rem; 
+    a { margin-right: 2rem; @include prefix(box-shadow, 0px -15px 0px rgba($link-underline-color, .3) inset, webkit);
+     padding-top: .5rem; font-size: 1.6rem; 
     @include hocus {
-        border-color: $bg;
+        @include prefix(box-shadow, 0px -40px 0px rgba($link-underline-color, .3) inset, webkit);
     }
     }
 
     @include medium {
         flex-direction: column;
-        a { padding-bottom: 2rem; width: max-content;}
+        a { padding-bottom: 0rem; padding-right: 0; width: max-content;}
     }
 
 

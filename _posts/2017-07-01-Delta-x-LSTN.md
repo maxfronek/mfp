@@ -6,7 +6,7 @@ author: Max Fronek
 categories: design product featured
 excerpt: A Partnership with the Worlds Largest Airline
 cover_color: red
-order: 3
+order: 2
 images:
   - img_url: images/post_images/lstn/lstn-delta-5.jpg
     title: Image provided by Delta Air Lines  
