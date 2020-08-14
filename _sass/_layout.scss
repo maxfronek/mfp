@@ -86,7 +86,7 @@ article {width: 100%; grid-column: 2 / span 4;
     }
    .post & { @include small {grid-column: 1 / -1;}}
     .page & {
-        .about-image {max-width: 600px; margin: 0 auto 2rem; display: block;}
+        .about-image {max-width: 600px; margin: 0 auto 2rem; display: block; max-height: 300px;}
         p {
             &:first-of-type {margin-top: 2rem;}
         }

@@ -175,7 +175,23 @@
     .job-location, h5.job-location {margin-bottom: 1rem;}
 }
 
+.contact-me {
 
+    display: flex; flex-direction: row; max-width: 900px; margin: 4rem auto 10rem;
+
+    a {padding-right: 2rem; margin-right: 2rem; border-top: 1px solid $link-hover-color; padding-top: .5rem; font-size: 1.6rem; 
+    @include hocus {
+        border-color: $bg;
+    }
+    }
+
+    @include medium {
+        flex-direction: column;
+        a { padding-bottom: 2rem; width: max-content;}
+    }
+
+
+}
 
 .chapter-markers {
 
