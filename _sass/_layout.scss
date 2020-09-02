@@ -437,7 +437,7 @@ main {
             -webkit-text-stroke-color: white;
  
 
-            @include small {font-size: 2rem;}
+            @include small {font-size: 2rem; padding: 0 1rem;}
 
               } // end figure h2
 
