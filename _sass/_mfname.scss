@@ -72,6 +72,18 @@
 	background: #ca9a2c;
 	opacity: 1;
 }
+
+.playground & {
+
+    .m-left,
+    .m-right,
+    .x-left,
+    .x-right,
+    .a-left { background: rgba(white, .5); }
+
+}
+
+
 } // end mf-logo
 
 
@@ -694,7 +706,8 @@ position: absolute;
 .mtof {
     border: none;
 	position: fixed;
-    top: 5rem;
+   // top: 5rem;
+    top: 1.75rem;
     right: 75px;
 	display: block;
 	padding: 0;
@@ -708,7 +721,7 @@ position: absolute;
     @include justify-content(center);
     
     @include tablet {top: 3.25rem; right: 60px;}
-    @include medium {top: 1rem; right: unset; left: 50%; margin-left: -21px; position: absolute;
+    @include medium {top: .5rem; right: unset; left: 50%; margin-left: -21px; position: absolute;
         //right: 60px;left: unset;
     }
     
@@ -896,7 +909,7 @@ position: absolute;
  .x-left {transform: rotate(-90deg) scaleY(1.05) translateX(19px) translateY(10px)}
  .x-right {transform: rotate(-35deg) translateX(2px) translateY(2px) scaleY(.715)}
 
- .a-left {transform: rotate(0deg) scaleY(0.68) translateY(-7px) translateX(-5px)}
+ .a-left {transform: rotate(90deg) scaleY(0.5) translateY(-7px) translateX(8px)}
  .a-right {transform: rotate(180deg) translateY(-2px) translateX(2px) scaleY(.95);}
  .a-cross {transform: rotate(-180deg) scaleX(.7) translateY(2px) translateX(10px);}
 
@@ -905,7 +918,7 @@ position: absolute;
  .r-diag {opacity: 1; transform: rotate(-130deg) scaleX(.76) translateX(-2px);}
  .r-circle {opacity: 1; background: transparent; border-color: #ca9a2c;  border-left-color: transparent;}
 
- .e-left-1 { opacity: 1; -webkit-transform: translateX(12.5px) translateY(4.5px) scaleY(.96); transform: translateX(12.5px) translateY(4.5px) scaleY(.96);
+ .e-left-1 { opacity: 1; -webkit-transform: translateX(12.5px) translateY(4.5px) scaleY(1.25); transform: translateX(12.5px) translateY(4.5px) scaleY(1.25);
 }
  .e-left-2 {}
  .e-center {opacity: 1; -webkit-transform: rotate(0deg) translateX(-3px) translateY(0px) scaleX(.7); transform: rotate(0deg) translateX(-3px) translateY(0px) scaleX(.7);}
@@ -922,6 +935,29 @@ position: absolute;
     transform: rotate(49deg) translateY(0px) translateX(-1px) scaleX(.95);}
 
     } // end ftime
+
+
+    .playground & {
+
+        .m-left,
+        .m-right,
+        .x-left,
+        .x-right,
+        .a-right,
+        .a-left { background: rgba(white, .5); }
+
+        @include hocus { 
+            
+            .m-left,
+            .m-right,
+            .x-left,
+            .x-right,
+            .a-right,
+            .a-left { background: #ca9a2c; }
+
+        }
+    
+    }
 
 
 } // end mtof

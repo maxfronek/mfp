@@ -1,0 +1,1 @@
+{% if post.cover_color %} {{ post.cover_color | append: "--text" }}{% elsif post.feature_color %} {{ post.feature_color | append: "--text"  }}{% else %} white--text{% endif %}

@@ -21,9 +21,31 @@
     rel="canonical"
     href="{{ page.url | replace:'index.html','' | prepend: site.url }}"
   />
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
 <!-- polyfill for intersection observer -->
 <script type="text/javascript" src="/scripts/intersection-observer.js"></script>
 <!-- this is just getting the file that GULP makes combining all JS plugins -->    
 <script type="text/javascript" src="{{ '/scripts/plugins.js' }}"></script>
     
+    <!-- fixes animations if javascript is disabled -->
+<noscript>
+  <style type="text/css">
+    [data-sal|='fade'] {
+      opacity: 1;
+    }
+
+    [data-sal|='slide'],
+    [data-sal|='zoom'] {
+      opacity: 1;
+      transform: none;
+    }
+
+    [data-sal|='flip'] {
+      transform: none;
+    }
+  </style>
+</noscript>
+
 </head>

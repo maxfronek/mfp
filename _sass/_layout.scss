@@ -304,6 +304,180 @@ video {object-fit: cover; width: 100%; max-height: 500px;}
 } // end images
 
 
+
+
+// full-page homepage styles
+
+.playground {
+  .mtof {top: 1.75rem;}
+  .hamburger {top: 2.5rem;}
+
+  @include medium {
+    .mtof {top: .5rem;}
+    .hamburger {top: 1.5rem;}
+  }
+
+}
+
+.index-full {margin-top: 0; padding: 0; display: flex; 
+
+  article {width: 100%;}
+  .homepage-blurb {margin-top: 2rem;}
+
+
+}
+
+.homepage-single {margin-top: 0; height: 100vh;
+
+  .masthead {position: absolute; width: 100%; max-width: none;text-align: center;margin-top: 3rem;
+
+        h1 {color: white; font-size: 1.2rem;}  
+
+        @include medium {margin-top: calc(1rem + 75px);
+        
+          h1 {line-height: 1.4; font-size: 1rem;}
+
+        }
+
+      }
+
+      @include medium {margin-top: -75px;}
+
+
+}
+
+.swiper-slide {
+
+  .image {position: relative; height: 100vh; min-height: 600px;
+
+    img {max-height: none; min-height: 100%;}
+
+    .mobile-title {opacity: 0; display: none; width: 100%; position: relative; bottom: 0; left: 0; margin-bottom: 1rem; color: #fff; text-align: center; @include prefix(transition, .2s all ease-in-out, ms o webkit moz); z-index: -1;
+      h4 {font-weight: 200;}
+
+  @include tablet {opacity: 1; z-index: 3; display: block;}
+  }
+  
+    .content {position: absolute; @include prefix(transition, all .2s ease-in-out, webkit moz ms o); left: 0rem; top: 0rem; min-height: calc(100% - 2rem); height: 100%; width: 100%; padding: 1rem;  text-align: center; background-image: linear-gradient(rgba(50,50,50,.25) 0%, rgba(50,50,50,.5) 33%, rgba(50,50,50,.5) 67%, rgba(50,50,50,.25) 100%);  @include flexbox; @include justify-content(center); @include align-items(center);@include flex-direction(column);
+    
+
+      a { color: white; 
+      
+          &.see-more {text-transform: uppercase; letter-spacing: .5rem;}
+
+      }
+            
+      h2 {font-family: $sub-heading-font; text-transform:uppercase; font-size: 3rem; font-weight: 700; letter-spacing: .3rem;
+        color: white; padding: .25rem 1rem 0;
+        -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: white;
+        @include prefix(transition, .2s all ease-in-out, ms o moz webkit);
+          
+            @include hocus {
+
+             -webkit-text-stroke-color: transparent; -webkit-text-fill-color: white;
+      
+            }
+
+            @include medium {font-size: 2rem; }
+            @include small {word-break: break-word;}
+          
+
+      }
+
+      .excerpt {color: white; text-align: left;
+      
+        @include medium {text-align: center; padding: 0 2rem;}
+
+      }
+
+      ul {padding: 0; color: white; position: absolute; bottom: 2rem; right: 6rem; font-size: .8rem; text-align: right;
+        text-orientation: sideways;writing-mode: sideways-rl;
+          li {display: inline; list-style: none; margin: 0 0 1rem;
+              &:before {content: " ";}
+              &:after {content: "/"; margin-top: 1rem;}
+              &:last-of-type {&:after {content: "";}
+              }    
+
+              a {
+                @include hocus {opacity: .6;}
+              }
+
+          }
+
+          @include medium {display: none;}
+
+      } // end ul
+
+     
+
+    
+    } // end swiper-slide image content
+  
+  } // end swiper-slide image
+
+} // styles for swiper on homepage (XPERIMENTAL)
+
+
+// New post styles 9-2020
+
+
+main {
+  &.post {display: flex; padding: 0 6rem; margin-top: 0;
+  
+    .grid .images .imagewrap {
+      &:first-of-type { min-height: 100vh; position: relative; width: calc(100% + 12rem); margin-left: -6rem;
+      img {max-height: 100vh;}
+      figure {position: absolute; z-index: 2; height: 100%; width: 100%; top: 0; left: 0; background-image: linear-gradient(rgba(50,50,50,.25) 0%, rgba(50,50,50,.5) 33%, rgba(50,50,50,.5) 67%, rgba(50,50,50,.25) 100%); 
+          h2 { font-family: $sub-heading-font; text-transform:uppercase; font-size: 3rem; font-weight: 700; letter-spacing: .3rem;
+            color: white; padding: .25rem 1rem 0;
+            -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: white;
+ 
+
+            @include small {font-size: 2rem;}
+
+              } // end figure h2
+
+              p {color: white;
+              
+                @include small {font-size: .8rem;}
+
+              }
+              .blurb {margin-bottom: 0;}
+              .scroll-helper {position: absolute; width: 100%; max-width: none; bottom: 0;}
+
+        } // end imagewrap figure
+      } // end imagewrap:first-of-type
+
+
+      video.post-leader {max-height: 100vh;}
+
+    } // end imagewrap
+
+  
+  } // end main.post
+
+  @include medium {
+      width: 100%;
+    &.post {padding: 0 30px; margin-top: -75px;
+    
+      .grid .images .imagewrap {
+        &:first-of-type { 
+          width: calc(100% + 60px); margin-left: -30px;
+        }
+      }
+    }
+
+  }
+
+
+
+} // end new <main> styling
+
+
 // makes posts take featured background color if applicable
 
 

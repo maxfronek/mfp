@@ -3,11 +3,7 @@ layout: "default"
 ---
 <span id="feature_color" data-color="{% if page.feature_color %}{{ page.feature_color }}{% else %}white{% endif %}"></span>
 <div class="grid">
-    
-    <figure>
-    <h2 class="title" data-sal="fade" data-sal-delay="100"  data-sal-duration="250" data-sal-easing="ease-in">{{ page.title }}</h2>
-   {% if page.excerpt %}<p data-sal="fade" data-sal-delay="250"  data-sal-duration="250" data-sal-easing="ease-in">{{ page.excerpt }}</p>{% endif %}  
-    </figure>
+
     
     <div class="chapter-markers">
           <div class="progress-container">
@@ -28,7 +24,7 @@ layout: "default"
         <h3 class="{{ thecycle }} heading">{{ image.heading }}</h3>
         {% endif %}
     
-<div data-sal="fade" data-sal-delay="450"  data-sal-duration="250" data-sal-easing="ease-in" class="imagewrap {% if image.width %}{{ image.width }}{% endif %} {% if image.anchor %}{{ image.anchor }}{% endif %} {% if image.offset %}{{ image.offset }}{% endif %} 
+<div data-sal="fade" data-sal-delay="450"  data-sal-duration="250" data-sal-easing="ease-in" class="imagewrap {% if image.width and forloop.index != 1 %}{{ image.width }}{% endif %} {% if image.anchor %}{{ image.anchor }}{% endif %} {% if image.offset %}{{ image.offset }}{% endif %} 
 {% if image.change_bg %}change-to-{{ image.change_bg }}{% endif %}" {% if forloop.index > 3 %} data-sal="fade" data-sal-delay="100"  data-sal-duration="250" data-sal-easing="ease-in" {% endif %} >
        {% if image.img_url contains 'youtube' or image.img_url contains 'vimeo' %}{% capture path %}{{ image.img_url }}{% endcapture %} {% else %}
         {% capture path %}{{ image.img_url | prepend: site.photourl }}{% endcapture %}{% endif %}
@@ -39,6 +35,15 @@ layout: "default"
  <video loop muted autoplay webkit-playsinline playsinline poster="{{ poster | strip_html }}{{ site.img_sizes.grande }}" {% if forloop.index == 1 %}class="post-leader"{% endif %}>
         <source src="{{ path | strip_html }}" type="{% if path contains 'mp4' %}video/mp4{% else %}video/webm{% endif %}">
          </video> 
+             {% if forloop.index == 1 %} 
+
+    <figure>
+    <h2 class="title" data-sal="slide-up" data-sal-delay="600"  data-sal-duration="500" data-sal-easing="ease-in">{{ page.title }}</h2>
+   {% if page.excerpt %}<p data-sal="slide-up" data-sal-delay="900"  data-sal-duration="500" data-sal-easing="ease-in" class="blurb">{{ page.excerpt }}</p>{% endif %}  
+    <p class="scroll-helper" data-sal="slide-up" data-sal-delay="1500"  data-sal-duration="500" data-sal-easing="ease-in">&darr;</p>
+    </figure>
+
+     {% endif %}
     {% elsif path contains 'youtube' or path contains 'vimeo' %}
 <div class="videoWrapper">
     <iframe width="560" height="315" src="{{ path }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -50,9 +55,18 @@ layout: "default"
     <img src="{{ site.photourl }}/images/mf-img-preloader-L.gif" data-src="{% include img_src.html %}" data-srcset="{% include img_srcset.html %}" sizes="80vw" class="lazyload gallery-item" alt="{{ image.title }}" />
     </a>
     {% else %}
-  <a href="{{ image.img_url | prepend: site.photourl }}" class="expand{% if image.invert %} invert{% endif %}">
+  {% unless forloop.index == 1 %}<a href="{{ image.img_url | prepend: site.photourl }}" class="expand{% if image.invert %} invert{% endif %}">{% endunless %}
     <img alt="{{ image.title }}" srcset="{% include img_srcset.html %}" src="{% include img_src.html %}"  sizes="80vw" class="gallery-item {% if forloop.index == 1 %} post-leader{% endif %}" />  
-  </a>  
+    {% if forloop.index == 1 %} 
+
+    <figure>
+    <h2 class="title" data-sal="slide-up" data-sal-delay="600"  data-sal-duration="500" data-sal-easing="ease-in">{{ page.title }}</h2>
+   {% if page.excerpt %}<p data-sal="slide-up" data-sal-delay="900"  data-sal-duration="500" data-sal-easing="ease-in" class="blurb">{{ page.excerpt }}</p>{% endif %}  
+    <p class="scroll-helper" data-sal="slide-up" data-sal-delay="1500"  data-sal-duration="500" data-sal-easing="ease-in">&darr;</p>
+    </figure>
+
+     {% endif %}
+  {% unless forloop.index == 1 %}</a>  {% endunless %}
     {% endif %}
     
 {% endif %}
@@ -62,7 +76,7 @@ layout: "default"
         
         </div>
      {% if image.blockquote or image.paragraph %}   
-        <div class="extras">
+        <div class="extras" {% if forloop.index == 1 %}id="article-start"{% endif %}>
         {% if image.blockquote %}
             <blockquote class="quote-only {{ thecycle }}">{{ image.blockquote | newline_to_br }}</blockquote>
         {% endif %}
@@ -130,6 +144,33 @@ function chapterize() {
   var scrolled = (winScroll / height) * 100;
   document.getElementById("myBar").style.width = scrolled + "%";
 } 
+
+// easing functions http://goo.gl/5HLl8
+Math.easeInOutQuad = function (t, b, c, d) {
+  t /= d/2;
+  if (t < 1) {
+    return c/2*t*t + b
+  }
+  t--;
+  return -c/2 * (t*(t-2) - 1) + b;
+};
+
+Math.easeInCubic = function(t, b, c, d) {
+  var tc = (t/=d)*t*t;
+  return b+c*(tc);
+};
+
+Math.inOutQuintic = function(t, b, c, d) {
+  var ts = (t/=d)*t,
+  tc = ts*t;
+  return b+c*(6*tc*ts + -15*ts*ts + 10*tc);
+};
+
+// requestAnimationFrame for Smart Animating http://goo.gl/sx5sts
+var requestAnimFrame = (function(){
+  return  window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || function( callback ){ window.setTimeout(callback, 1000 / 60); };
+})();
+
 
 
 // Playing with fun chapter marker stuff but let's put it away now. 

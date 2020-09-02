@@ -2,31 +2,20 @@
 <html>
   {% include head.html %}
 
-  <body class="bg "  {% comment %}Removing feature color for now cause I dont want it interfering with anything fun in the JS {% if page.is_post and post.feature_color %}style="background-color: #{{ post.feature_color }}"{% endif %}{% endcomment %}>
+  <body class="bg playground"  {% comment %}Removing feature color for now cause I dont want it interfering with anything fun in the JS {% if page.is_post and post.feature_color %}style="background-color: #{{ post.feature_color }}"{% endif %}{% endcomment %}>
     {% include header.html %}
     {% include menu.html %}
-    <main class="{% if page.is_post %}post{% elsif page.is_page and page.url != '/' %}page{% elsif page.url == '/' %}index{% else %}no-class{% endif %}">
+    <main class="{% if page.is_post %}post{% elsif page.is_page and page.url != '/' and page.url != "/playground/" %}page{% elsif page.url == '/' %}index-full{% else %}no-class{% endif %}">
 
-      {% if page.url == '/' %}
-      <section class="masthead" id="homepage-info">
-           <h1 class="homepage-title" data-sal="fade" data-sal-delay="100"  data-sal-duration="250" data-sal-easing="ease-in">Max Fronek</h1>
-           {% comment %}<p data-sal="fade" data-sal-delay="250"  data-sal-duration="250" data-sal-easing="ease-in" >Design / Photography</p>{% endcomment %}
-           <p data-sal="fade" data-sal-delay="350"  data-sal-duration="250" data-sal-easing="ease-in">{% comment %}I am a design generalist who helps clients achieve their short- and long-term goals. My primary skills are branding, product and packaging design, front-end web development, and photography. I am currently the Art Director at Small Dog Creative in Santa Clarita, CA. Below are some of my favorite projects.{% endcomment %}
-           I've had a passion for design for as long as I can remember. I love finding new and innovative methods of presenting information and creatively addressing market and client challenges.
-           </p>
-
-      </section>
-
-      {% endif %}
 
       <article {% if page.url == '/blog/' %}class="blog"{% elsif page.url == '/photography/' or page.url == '/design/' or page.url contains '/category/' %}class="category"{% endif %}>
         {{ content }}
       </article>
 
     </main>
-      
+      {% unless page.url == "/" %}
             {% include footer.html %}
-
+    {% endunless %}
   </body> 
           
 <script type="text/javascript" src="/scripts/mf.js"></script>
@@ -77,6 +66,36 @@ macy.on(macy.constants.EVENT_IMAGE_COMPLETE, function (ctx) {
 
 })
 
+
+var mySwiper = new Swiper('.swiper-container', {
+  // Optional parameters
+  loop: true,
+  mousewheel: true,
+  freeMode: true,
+  freeModeSticky: true,
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+        renderBullet: function (index, className) {
+          return '<span data-sal="slide-up" data-sal-delay="' + ((index + 1)*1000 ) + '" data-sal-duration="500" class="' + className + '">' + '0' + (index + 1) + '</span>';
+        },
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  // And if we need scrollbar
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+})
+
+sal();
 
 
     </script>

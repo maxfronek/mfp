@@ -1,18 +1,15 @@
 --- 
-layout: full-homepage
+layout: full-homepage 
+title: Playground
+permalink: /playground/
 ---
+
 {% comment %}
-<h1 class="title">{{ site.title | replace: " ", "<br />" }}</h1>
-
-<p>{{ site.description }}</p>
-<section class="homepage-info">
-        <div>
-                <h1 class="homepage-title">Max Fronek</h1>
-                <p>Design / Photography</p>
-        </div>
+<section id="homepage-info" class="masthead">
+<h1 class="homepage-title">{{ site.title | append: " Design" }}</h1>
     </section>
-{% endcomment %}
 
+{% endcomment %}
 
 <section class="homepage-single">
 <section id="homepage-info" class="masthead"><h1 class="homepage-title">{{ site.title | append: " Design" }}</h1></section>
@@ -47,7 +44,7 @@ layout: full-homepage
 {% endif %}
 
 <div class="content {% comment %}{% if post.cover_color %} {{ post.cover_color }}{% elsif post.feature_color %} {{ post.feature_color }}{% else %} white{% endif %} {% endcomment %}">
-             <a data-sal="slide-up" data-sal-repeat="true" data-sal-delay="250" data-sal-duration="500" href="{{ post.url | prepend: site.url }}" title="{{ post.title }}" ><h2 class="{% include feature_color.html %}">{% if post.title contains 'LSTN' or post.title contains "Accessory" %}{{ post.title | truncatewords: 3, "" }}{% else %}{{ post.title | truncatewords: 2, "" }}{% endif %}</h2></a>
+             <a data-sal="slide-up" data-sal-repeat="true" data-sal-delay="250" data-sal-duration="500" href="{{ post.url | prepend: site.url }}" title="{{ post.title }}" ><h2 class="{% include feature_color.html %}">{% if post.title contains 'LSTN' %}{{ post.title | truncatewords: 3, "" }}{% else %}{{ post.title | truncatewords: 2, "" }}{% endif %}</h2></a>
                <!--  <time>{{ post.date | date: "%B %Y" }}</time> -->
                {% if post.excerpt != blank %}<p class="excerpt" data-sal="slide-up" data-sal-repeat="true" data-sal-delay="450" data-sal-duration="500">{{ post.excerpt }}</p> {% endif %}
 {% comment %}<a href="{{ post.url | prepend: site.url }}" title="{{ post.title }}" class="see-more" data-sal="slide-up" data-sal-delay="450" data-sal-duration="500" data-sal-once="false">See More</a>{% endcomment %}
@@ -86,3 +83,68 @@ layout: full-homepage
 </section>
 
 
+<section class="homepage-blurb">
+<p>{{ site.description }}</p>
+</section>
+
+
+<section class="images home" id="masonry">
+{% assign posts = site.posts | sort: 'order' %} {% assign count = 250 %}
+{% for post in posts offset: 5  %}
+{% if post.title contains "Deep Valley" %}
+{% continue %}
+{% else %}
+{% comment %}
+Remove this comment to show only posts in the 'Featured' category on the homepage. Also remove the comment further down linked with #removeforsorting
+ for category in post.categories 
+ if category contains 'featured' 
+{% endcomment %}
+
+          {% for image in post.images limit: 1 %} 
+          
+          
+
+  {% capture thecycle %}{% cycle 'alpha', 'bravo', 'charlie', 'delta'  %}{% endcapture %}
+  {% assign count = count | plus: 50 %}
+           <div class="image {{ thecycle }} {% if image.anchor %}{{ image.anchor }}{% endif %}" data-sal="fade"  data-sal-delay="{{ count }}"  data-sal-duration="150" data-sal-easing="ease-in" >
+        {% capture path %}{{ image.img_url }}{% endcapture %}
+{% capture alt %}{{ image.title }}{% endcapture %}
+
+    {% if path contains 'mp4' or path contains 'webm' %}
+                {% capture poster %}{{ image.poster | prepend: site.photourl }}{% endcapture %}
+ <video loop muted autoplay playsinline webkit-playsinline src="{{ path | strip_html }}" poster="{{ poster | strip_html }}{{ site.img_sizes.grande }}" class="lazy">
+        <source src="{{ path | strip_html }}" type="{% if path contains 'mp4' %}video/mp4{% else %}video/webm{% endif %}">
+</video>  
+    {% else %}
+
+    <img srcset="{% include img_srcset.html %}" src="{% include img_src.html %}"  sizes="(max-width: 550px) 100vw, 40vw" />  
+    
+{% endif %}
+
+<div class="content {% if post.cover_color %} {{ post.cover_color }}{% elsif post.feature_color %} {{ post.feature_color }}{% else %} white{% endif %}">
+             <a href="{{ post.url | prepend: site.url }}" title="{{post.title }}"><h2>{% if post.title contains 'LSTN' %}{{ post.title | truncatewords: 3, "" }}{% else %}{{ post.title | truncatewords: 2, "" }}{% endif %}</h2>
+               <!--  <time>{{ post.date | date: "%B %Y" }}</time> -->
+                 <ul>     {% for category in post.categories %}{% unless category == 'featured' %}<li>{{ category }}</li>{% endunless %}{% endfor %}</ul>
+
+    </a>  
+         </div>
+<div class="mobile-title"><h4>{{ post.title }}</h4></div>            
+        </div> 
+
+        {% if count >= 500 %}{% assign count = 0 %}{% endif %}   
+ {% endfor %}     
+{% endif %}
+{% comment %} #removeforsorting
+Remove these comments allong with the above
+ endif 
+ endfor 
+{% endcomment %}
+{% endfor %}
+</section>
+
+
+
+<script>
+
+
+</script>
