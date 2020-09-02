@@ -40,8 +40,10 @@
     </script>
     {% endif %}
 
-{% if page.url == '/' or page.url == '/photography/' or page.url == '/design/' or page.url == '/blog/' or page.url == '/playground/' %}
-    <script>
+{% if page.url == '/photography/' or page.url == '/design/' or page.url == '/blog/' %}
+
+<script>
+
 
 imagesLoaded( document.querySelector('#masonry'), function() {
   console.log('Images have been loaded');
@@ -65,6 +67,16 @@ macy.on(macy.constants.EVENT_IMAGE_COMPLETE, function (ctx) {
 });
 
 })
+
+</script>
+
+{% endif %}
+
+
+
+{% if page.url == '/' or page.url == '/photography/' or page.url == '/design/' or page.url == '/blog/' or page.url == '/playground/' %}
+    <script>
+
 
 
 var mySwiper = new Swiper('.swiper-container', {
@@ -97,9 +109,15 @@ var mySwiper = new Swiper('.swiper-container', {
 
 )
 
+
+
+
 sal();
+
 
 
     </script>
 {% endif %}
+
+
 </html>

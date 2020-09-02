@@ -5,7 +5,7 @@ date:   2019-02-21 11:18:12 -0700
 author: Max Fronek
 categories: photography featured
 cover_color: grey
-order: 3
+order: 3.5
 images:
   - img_url: images/post_images/composites/comp-3.jpg
     invert: invert

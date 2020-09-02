@@ -5,7 +5,7 @@ date:   2017-07-05 18:12:48 -0700
 author: Max Fronek
 categories: photography portraits headshots
 cover_color: pink
-order: 3
+order: 4
 images:
   - img_url: images/post_images/portraits/portrait-7.jpg
     width: half

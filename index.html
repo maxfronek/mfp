@@ -47,7 +47,7 @@ layout: full-homepage
 {% endif %}
 
 <div class="content {% comment %}{% if post.cover_color %} {{ post.cover_color }}{% elsif post.feature_color %} {{ post.feature_color }}{% else %} white{% endif %} {% endcomment %}">
-             <a data-sal="slide-up" data-sal-repeat="true" data-sal-delay="250" data-sal-duration="500" href="{{ post.url | prepend: site.url }}" title="{{ post.title }}" ><h2 class="{% include feature_color.html %}">{% if post.title contains 'LSTN' or post.title contains "Accessory" %}{{ post.title | truncatewords: 3, "" }}{% else %}{{ post.title | truncatewords: 2, "" }}{% endif %}</h2></a>
+             <a data-sal="slide-up" data-sal-repeat="true" data-sal-delay="250" data-sal-duration="500" href="{{ post.url | prepend: site.url }}" title="{{ post.title }}" ><h2 class="{% include feature_color.html %}">{% if post.title contains 'LSTN' or post.title contains "Accessory" %}{{ post.title | truncatewords: 3, "" }}{% elsif post.title contains "World May Hear" %}{{ post.title | truncatewords: 5, "" }}{% else %}{{ post.title | truncatewords: 2, "" }}{% endif %}</h2></a>
                <!--  <time>{{ post.date | date: "%B %Y" }}</time> -->
                {% if post.excerpt != blank %}<p class="excerpt" data-sal="slide-up" data-sal-repeat="true" data-sal-delay="450" data-sal-duration="500">{{ post.excerpt }}</p> {% endif %}
 {% comment %}<a href="{{ post.url | prepend: site.url }}" title="{{ post.title }}" class="see-more" data-sal="slide-up" data-sal-delay="450" data-sal-duration="500" data-sal-once="false">See More</a>{% endcomment %}
@@ -85,4 +85,38 @@ layout: full-homepage
 
 </section>
 
+{% comment %}
+<script>
 
+
+
+window.addEventListener('load', function() {
+
+let hundoP = window.innerHeight,
+    width = window.innerWidth
+
+function lockMobileViewportHeight() {
+
+if (width > 500) { 
+  document.getElementsByTagName('html')[0].style.cssText = " ";
+  console.log('Window Height is Unlocked');
+
+} else {
+  document.getElementsByTagName('html')[0].style.cssText = "height: " + hundoP + "px";
+  console.log('Window Height is Locked to ' + hundoP + 'px');
+
+}
+
+ } 
+
+lockMobileViewportHeight();
+window.addEventListener('resize', function () { lockMobileViewportHeight(); }, false);
+
+
+
+});
+
+
+</script>
+
+{% endcomment %}

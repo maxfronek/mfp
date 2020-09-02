@@ -309,6 +309,9 @@ video {object-fit: cover; width: 100%; max-height: 500px;}
 // full-page homepage styles
 
 .playground {
+  @include medium {overflow: hidden; max-height: 88vh;}
+
+
   .mtof {top: 1.75rem;}
   .hamburger {top: 2.5rem;}
 
@@ -350,7 +353,8 @@ video {object-fit: cover; width: 100%; max-height: 500px;}
 
   .image {position: relative; height: 100vh; min-height: 600px;
 
-    img {max-height: none; min-height: 100%;}
+    img, video {max-height: none; min-height: 100%;}
+
 
     .mobile-title {opacity: 0; display: none; width: 100%; position: relative; bottom: 0; left: 0; margin-bottom: 1rem; color: #fff; text-align: center; @include prefix(transition, .2s all ease-in-out, ms o webkit moz); z-index: -1;
       h4 {font-weight: 200;}
@@ -386,9 +390,9 @@ video {object-fit: cover; width: 100%; max-height: 500px;}
 
       }
 
-      .excerpt {color: white; text-align: left;
+      .excerpt {color: white; text-align: center;
       
-        @include medium {text-align: center; padding: 0 2rem;}
+        @include medium { padding: 0 2rem;}
 
       }
 
@@ -406,6 +410,7 @@ video {object-fit: cover; width: 100%; max-height: 500px;}
 
           }
 
+          @include tablet-up {right: 2rem; bottom: 0;}
           @include medium {display: none;}
 
       } // end ul
@@ -422,6 +427,15 @@ video {object-fit: cover; width: 100%; max-height: 500px;}
 
 // New post styles 9-2020
 
+@keyframes scrollHelper {
+
+0% {transform: translateY(-101%)}
+40% {transform: translateY(0)}
+80% {transform: translateY(101%)}
+100% {transform: translateY(101%)}
+
+
+}
 
 main {
   &.post {display: flex; padding: 0 6rem; margin-top: 0;
@@ -447,9 +461,29 @@ main {
 
               }
               .blurb {margin-bottom: 0;}
-              .scroll-helper {position: absolute; width: 100%; max-width: none; bottom: 0;}
+              .scroll-helper {position: absolute; width: 100%; max-width: none; bottom: 0; color: transparent; overflow: hidden;
+  
+
+                &:after {
+                  content: " ";  display: block;
+                  animation: all 3s ease-in-out; animation-iteration-count: infinite; animation-name: scrollHelper;
+                  width: 2px; height: 100%; background-color: white; margin-left: -1px;
+                  position: absolute; left: 50%; top: 0;
+
+                }
+              @include medium {font-size: 2rem;}
+              }
 
         } // end imagewrap figure
+
+        @include medium {
+          max-height: 88vh;
+
+          img, video {max-height: 88vh;}
+          figure {max-height: 88vh;}
+
+        }
+
       } // end imagewrap:first-of-type
 
 

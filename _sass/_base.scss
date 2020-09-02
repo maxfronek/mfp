@@ -241,6 +241,13 @@ $short: 767px;
   }
 }
 
+
+@mixin tablet-up {
+  @media (max-width: #{$big}) {
+    @content;
+  }
+}
+
 @mixin tween {
   @media (max-width: #{$tween}) {
     @content;

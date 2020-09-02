@@ -1,13 +1,13 @@
 ---
 layout: photo_post
-title:  "LSTN Documentary Filming"
+title:  "So The World May Hear"
 date:   2013-08-29 12:10:53 -0700
 author: Max Fronek
 categories: photography video lstn featured
-excerpt: Photo and video work documenting charity missions around the globe
+excerpt: Documenting Hearing Missions Around the Globe for LSTN &times; Starkey Hearing Foundation
 feature_color: white
 cover_color: powder-blue
-order: 5
+order: 3
 images:
   - img_url: images/post_images/lstn-mission/lstn-mission-1-short.mp4
     poster: images/post_images/lstn-mission/eldoret-2.jpg
