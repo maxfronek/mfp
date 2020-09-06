@@ -196,7 +196,7 @@
 
 .chapter-markers {
 
-    position: fixed; left: 0; bottom: 0px; width: 100%;z-index: 9;
+    position: fixed; left: 0; bottom: 0px; width: 100%;z-index: 9; display: none;
 
     .progress-container {
     height: 4px;

@@ -3,6 +3,6 @@ layout: "default"
 is_page: true 
 ---
 
-<h2 class="title" data-sal="fade" data-sal-delay="50"  data-sal-duration="250" data-sal-easing="ease-in">{% if page.alt_title %}{{ page.alt_title }}{% else %}{{ page.title }}{% endif %}</h2>
-
+<h2 class="title" data-sal="slide-up" data-sal-delay="50"  data-sal-duration="250" data-sal-easing="ease-in">{% if page.alt_title %}{{ page.alt_title }}{% else %}{{ page.title }}{% endif %}</h2>
+{% if page.sub_title %}<p class="subtitle" data-sal="slide-up" data-sal-delay="250"  data-sal-duration="250" data-sal-easing="ease-in">{{ page.sub_title }}</p>{% endif %}
 {{ content }}

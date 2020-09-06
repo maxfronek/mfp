@@ -275,42 +275,42 @@ aside {h1, h2, h3 {&.title {
 
         h2 { 
 
-            &.powder-blue--text {  @include prefix(box-shadow, 0px -20px 0px rgba($powder-blue, .3) inset, webkit);
-                @include hocus {@include prefix(box-shadow, 0px -90px 0px rgba($powder-blue, 1) inset, webkit);}
+            &.powder-blue--text {  @include prefix(box-shadow, $homepage-title-link-unhover rgba($powder-blue, .3) inset, webkit);
+                @include hocus {@include prefix(box-shadow, $homepage-title-link-hover rgba($powder-blue, 1) inset, webkit);}
             }
         
-            &.pink--text {  @include prefix(box-shadow, 0px -20px 0px rgba($pink, .3) inset, webkit);
-                @include hocus {@include prefix(box-shadow, 0px -90px 0px rgba($pink, 1) inset, webkit);}
+            &.pink--text {  @include prefix(box-shadow, $homepage-title-link-unhover rgba($pink, .3) inset, webkit);
+                @include hocus {@include prefix(box-shadow, $homepage-title-link-hover rgba($pink, 1) inset, webkit);}
             }
         
-            &.grey--text {  @include prefix(box-shadow, 0px -20px 0px rgba($grey, .3) inset, webkit);
-                @include hocus {@include prefix(box-shadow, 0px -90px 0px rgba($grey, 1) inset, webkit);}
+            &.grey--text {  @include prefix(box-shadow, $homepage-title-link-unhover rgba($grey, .3) inset, webkit);
+                @include hocus {@include prefix(box-shadow, $homepage-title-link-hover rgba($grey, 1) inset, webkit);}
             }
         
-            &.sage--text {  @include prefix(box-shadow, 0px -20px 0px rgba($sage, .3) inset, webkit);
-                @include hocus {@include prefix(box-shadow, 0px -90px 0px rgba($sage, 1) inset, webkit);}
+            &.sage--text {  @include prefix(box-shadow, $homepage-title-link-unhover rgba($sage, .3) inset, webkit);
+                @include hocus {@include prefix(box-shadow, $homepage-title-link-hover rgba($sage, 1) inset, webkit);}
             }
         
-            &.teal--text {  @include prefix(box-shadow, 0px -20px 0px rgba($teal, .3) inset, webkit);
-                @include hocus {@include prefix(box-shadow, 0px -90px 0px rgba($teal, 1) inset, webkit);}
+            &.teal--text {  @include prefix(box-shadow, $homepage-title-link-unhover rgba($teal, .3) inset, webkit);
+                @include hocus {@include prefix(box-shadow, $homepage-title-link-hover rgba($teal, 1) inset, webkit);}
             }
-            &.dark-blue--text {  @include prefix(box-shadow, 0px -20px 0px rgba($dark-blue, .3) inset, webkit);
-                @include hocus {@include prefix(box-shadow, 0px -90px 0px rgba($dark-blue, 1) inset, webkit);}
+            &.dark-blue--text {  @include prefix(box-shadow, $homepage-title-link-unhover rgba($dark-blue, .3) inset, webkit);
+                @include hocus {@include prefix(box-shadow, $homepage-title-link-hover rgba($dark-blue, 1) inset, webkit);}
             }
-            &.yellow--text {  @include prefix(box-shadow, 0px -20px 0px rgba($yellow, .3) inset, webkit);
-                @include hocus {@include prefix(box-shadow, 0px -90px 0px rgba($yellow, 1) inset, webkit);}
+            &.yellow--text {  @include prefix(box-shadow, $homepage-title-link-unhover rgba($yellow, .3) inset, webkit);
+                @include hocus {@include prefix(box-shadow, $homepage-title-link-hover rgba($yellow, 1) inset, webkit);}
             }
-            &.sand--text {  @include prefix(box-shadow, 0px -20px 0px rgba($sand, .3) inset, webkit);
-                @include hocus {@include prefix(box-shadow, 0px -90px 0px rgba($sand, .8) inset, webkit);}
+            &.sand--text {  @include prefix(box-shadow, $homepage-title-link-unhover rgba($sand, .3) inset, webkit);
+                @include hocus {@include prefix(box-shadow, $homepage-title-link-hover rgba($sand, .8) inset, webkit);}
             }
-            &.red--text {  @include prefix(box-shadow, 0px -20px 0px rgba($red, .3) inset, webkit);
-                @include hocus {@include prefix(box-shadow, 0px -90px 0px rgba($red, 1) inset, webkit);}
+            &.red--text {  @include prefix(box-shadow, $homepage-title-link-unhover rgba($red, .3) inset, webkit);
+                @include hocus {@include prefix(box-shadow, $homepage-title-link-hover rgba($red, 1) inset, webkit);}
             }
-            &.orange--text {  @include prefix(box-shadow, 0px -20px 0px rgba($orange, .3) inset, webkit);
-                @include hocus {@include prefix(box-shadow, 0px -90px 0px rgba($orange, 1) inset, webkit);}
+            &.orange--text {  @include prefix(box-shadow, $homepage-title-link-unhover rgba($orange, .3) inset, webkit);
+                @include hocus {@include prefix(box-shadow, $homepage-title-link-hover rgba($orange, 1) inset, webkit);}
             }
-            &.amethyst--text {  @include prefix(box-shadow, 0px -20px 0px rgba($amethyst, .3) inset, webkit);
-                @include hocus {@include prefix(box-shadow, 0px -90px 0px rgba($amethyst, 1) inset, webkit);}
+            &.amethyst--text {  @include prefix(box-shadow, $homepage-title-link-unhover rgba($amethyst, .3) inset, webkit);
+                @include hocus {@include prefix(box-shadow, $homepage-title-link-hover rgba($amethyst, 1) inset, webkit);}
             }
 
         } 

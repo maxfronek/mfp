@@ -23,7 +23,8 @@ a {
 }
 
 
-p, ul, ol {font-family: $font-style; font-size: 1.2rem; letter-spacing: .07rem; font-weight: 300; margin: 0 auto 2rem; max-width: 900px;}
+body, div, p, ul, ol {font-family: $font-style; font-size: 1.2rem; letter-spacing: .07rem; font-weight: 300; margin: 0 auto 2rem; }
+p, ul, ol {max-width: 900px;}
 p {
     &.left {margin: 0 0 2rem;}
 
@@ -93,6 +94,12 @@ blockquote {font-family: $sub-heading-font;font-size: 1.4rem; text-align: left; 
 strong, b {font-weight: 600;}
 em, i {font-style: italic;}
 
+code {max-width: 900px; display: inline-block; overflow: scroll; background-color: #e6e6e6;
+
+    @include medium {max-width: 300px;}
+}
+
+
 .heading {font-family: $sub-heading-font;padding: 2rem 0; margin-left: 0; font-size: 1.4rem; font-weight: 200; letter-spacing: .9rem; text-transform: uppercase; border-top: 1px solid $heading-font-color;
     @include medium {font-size: 1.2rem;padding: .5rem 0; }
     }
@@ -157,5 +164,7 @@ menu {
         }
     }
 }
+
+.subtitle {text-align: center; max-width: 900px; padding: 0 2rem; margin: 0 auto;}
 
 

@@ -22,6 +22,9 @@ $light: #eceadd;
 $mid: #878878;
 $header: #0a2216;
 
+$homepage-title-link-unhover: 0px -20px 0px;
+$homepage-title-link-hover: 0px -90px 0px;
+
 //mixins
 
 
@@ -278,6 +281,12 @@ $short: 767px;
   }
 }
 
+
+@mixin extra-short {
+  @media (max-height: "#{$medium}") {
+    @content;
+  }
+}
 
 @mixin short {
   @media (max-height: "#{$short}") {
