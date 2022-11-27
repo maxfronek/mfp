@@ -21,14 +21,14 @@ I've had a passion for design and photography for as long as I can remember. I l
 </section>
 
 I'm currently working full-time as the Creative Lead for Small Dog Creative in Santa Clarita, CA. I love the challenges of my role, elevating brands across verticals and creating stunning experiences regardless of the platform. Seeing a campaign through from concept to execution drives me to work harder every day and improve my work with every project. <!-- As such, my availability for freelance projects is limited. However, I encourage you to reach out about your project, as I'm always happy to offer advice, recommendations, and mentorship, even if we're unable to work together. -->
+I'm currently working full-time as the Creative Director of <a href="https://join.gohunt.com" target="_blank">GOHUNT</a> in Las Vegas, NV and am currently unavailable for freelance or one-off projects.<!-- SDC blurb I love the challenges of my role, elevating brands across verticals and creating stunning experiences regardless of the platform. Seeing a campaign through from concept to execution drives me to work harder every day and improve my work with every project. --> <!-- As such, my availability for freelance projects is limited. However, I encourage you to reach out about your project, as I'm always happy to offer advice, recommendations, and mentorship, even if we're unable to work together. -->
 
 My work has been featured in numerous press outlets, and has been presented in formats from magazines to billboards. Some places you may have seen my product photos include The Wall Street Journal, Vogue, GQ, Esquire, Playboy, Gizmodo, Forbes, and more.
 
 <div class="contact-me">
-
-<a href="{{ site.photourl }}images/pdfs/MFRONEK-Resume-2020.pdf">Resume</a>
+<!-- <a href="{{ site.photourl }}images/pdfs/MFRONEK-Resume-2020.pdf">Resume</a> -->
 <a href="https://www.linkedin.com/in/maxfronek/" target="_blank">LinkedIn</a>
-<a href="mailto:mf@maxfronek.com" target="_blank">Contact Me Directly</a>
+<!-- <a href="mailto:mf@maxfronek.com" target="_blank">Contact Me Directly</a> -->
 
 </div>
 
