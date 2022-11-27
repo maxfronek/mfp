@@ -20,7 +20,7 @@ images:
 I've had a passion for design and photography for as long as I can remember. I love finding new and innovative methods of presenting information, creating behavior changes and addressing market and client challenges creatively. My primary areas of expertise are branding, product and packaging development, and corporate identity. <a href="mailto:mf@maxfronek.com?subject=Design%20Inquiry" target="_blank" title="Email Me for a Quote">Let’s chat about how we can elevate your brand together</a>.</p> -->
 </section>
 
-I'm currently working full-time as the Creative Director of <a href="https://join.gohunt.com" target="_blank">GOHUNT</a> in Las Vegas, NV and am currently unavailable for freelance or one-off projects. However, I encourage you to reach out about your project, as I'm always happy to offer advice, recommendations, and mentorship, even if we're unable to work together.<!-- SDC blurb I love the challenges of my role, elevating brands across verticals and creating stunning experiences regardless of the platform. Seeing a campaign through from concept to execution drives me to work harder every day and improve my work with every project. --> <!-- As such, my availability for freelance projects is limited. -->
+I'm currently working full-time as the Creative Director of <a href="https://join.gohunt.com" target="_blank">GOHUNT</a> in Las Vegas, NV and am unavailable for freelance or one-off projects. 
 
 My work has been featured in numerous press outlets, and has been presented in formats from magazines to billboards. Some places you may have seen my product photos include The Wall Street Journal, Vogue, GQ, Esquire, Playboy, Gizmodo, Forbes, and more.
 
