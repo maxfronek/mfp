@@ -2,6 +2,14 @@ html {font-size: 100%;}
 
 body {}
 
+*::selection {
+    color: $bg;
+    background: $mf-green;
+  }
+
+  *::-moz-selection {
+
+  }
 
 a {
   color: $link-color;

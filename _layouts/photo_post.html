@@ -23,7 +23,8 @@ layout: "default"
     {% if image.heading %}
         <h3 class="{{ thecycle }} heading">{{ image.heading }}</h3>
         {% endif %}
-    
+
+{% unless image.img_url contains 'blank' %}
 <div {% unless forloop.index == 1 %}data-sal="fade" data-sal-delay="450"  data-sal-duration="250" data-sal-easing="ease-in"{% endunless %} class="imagewrap {% if image.width and forloop.index != 1 %}{{ image.width }}{% endif %} {% if image.anchor %}{{ image.anchor }}{% endif %} {% if image.offset %}{{ image.offset }}{% endif %} 
 {% if image.change_bg %}change-to-{{ image.change_bg }}{% endif %}" {% if forloop.index > 3 %} data-sal="fade" data-sal-delay="100"  data-sal-duration="250" data-sal-easing="ease-in" {% endif %} >
        {% if image.img_url contains 'youtube' or image.img_url contains 'vimeo' %}{% capture path %}{{ image.img_url }}{% endcapture %} {% else %}
@@ -43,12 +44,15 @@ layout: "default"
     <p class="scroll-helper" data-sal="slide-up" data-sal-delay="1500"  data-sal-duration="500" data-sal-easing="ease-in">&darr;</p>
     </figure>
 
-     {% endif %}
+     {% endif %}{% comment %} end if forloop.index == 1 {% endcomment  %}
     {% elsif path contains 'youtube' or path contains 'vimeo' %}
 <div class="videoWrapper">
     <iframe width="560" height="315" src="{{ path }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
-    {% else %}
+
+    {% else %}{% comment %}end if mp4 webm youtube or vimeo{% endcomment %}
+
+
 
     {% if forloop.index > 3 %}
      <a href="{{ image.img_url | prepend: site.photourl }}" class="expand{% if image.invert %} invert{% endif %}">
@@ -67,9 +71,10 @@ layout: "default"
 
      {% endif %}
   {% unless forloop.index == 1 %}</a>  {% endunless %}
-    {% endif %}
+    {% endif %}{% comment %} end if forloop.index > 3 {% endcomment %}
     
 {% endif %}
+{% endunless %} {% comment %}end skip images where URL is 'blank' {% endcomment %}
 {% if image.title %}
         <p class="caption">{{ alt }}</p>
 {% endif %}
@@ -84,7 +89,13 @@ layout: "default"
         <p class="">{{ image.paragraph | newline_to_br }}</p>
         {% endif %}
                         </div>
-      {% endif %}        
+      {% endif %}  
+      
+      {% if image.text_link %} 
+      <a href="{{ image.text_link_destination}}" target="_blank" title="{{ image.text_link }}">{{ image.text_link}}</a>
+      {% endif %}
+
+
 
 {% endfor %}
         

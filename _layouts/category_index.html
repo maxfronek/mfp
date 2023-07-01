@@ -45,7 +45,7 @@ is_category_page: true
 {% endif %}
 <div class="content{% if post.cover_color %} {{ post.cover_color }}{% elsif post.feature_color %} {{ post.feature_color }}{% else %} white{% endif %}">
              <a href="{{ post.url | prepend: site.url }}" title="{{post.title }}"><h2>{{ post.title }}</h2>
-                 <time>{{ post.date | date: "%b %-d, %Y" }}</time>
+               <!-- <time>{{ post.date | date: "%b %-d, %Y" }}</time> -->
     </a>  
          </div>
                
@@ -89,7 +89,7 @@ is_category_page: true
 {% endif %}
 <div class="content{% if post.cover_color %} {{ post.cover_color }}{% elsif post.feature_color %} {{ post.feature_color }}{% else %} white{% endif %}">
              <a href="{{ post.url | prepend: site.url }}" title="{{post.title }}"><h2>{{ post.title }}</h2>
-                 <time>{{ post.date | date: "%b %-d, %Y" }}</time>
+               <!-- <time>{{ post.date | date: "%b %-d, %Y" }}</time> -->
     </a>  
          </div>
                

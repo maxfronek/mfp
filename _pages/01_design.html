@@ -30,7 +30,7 @@ permalink: /design/
 {% endif %}
 <div class="content{% if post.cover_color %} {{ post.cover_color }}{% elsif post.feature_color %} {{ post.feature_color }}{% else %} white{% endif %}">
              <a href="{{ post.url | prepend: site.url }}" title="{{post.title }}"><h2>{% if post.title contains "LSTN" or post.title contains "Accessory" %}{{ post.title | truncatewords: 3, "" }}{% else %}{{ post.title | truncatewords: 2, "" }}{% endif %}</h2>
-                 <time>{{ post.date | date: "%B %Y" }}</time>
+                {% comment %} <time>{{ post.date | date: "%B %Y" }}</time> {% endcomment %}
     </a>  
          </div>
  <div class="mobile-title"><h4>{{ post.title }}</h4></div>                 

@@ -7,7 +7,7 @@ categories: design packaging branding featured
 excerpt: Branding, Web Design and Packaging for a CBD and Crystal Infused Beauty Line.
 feature_color: white
 cover_color: pink
-order: 1
+order: 1.5
 images:
   - img_url: images/post_images/mazzhanna/MH-1.jpg
     title: Packaging for Mazz Hanna's first 3 CBD-and-crystal infused beauty products
