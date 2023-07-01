@@ -7,7 +7,6 @@ Gemfile.lock
 /.sass-cache
 /_posts/demo_posts
 /assets
-/_drafts
 /photography
 /graphic design
 *.env
