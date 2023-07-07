@@ -6,11 +6,11 @@ author: Max Fronek
 excerpt: Biodegradable — Period.
 categories: design branding packaging
 cover_color: sage
-order: 100
+order: 1.8
 images:
-  - img_url: images/post_images/kindfully/kindfully-1.jpg
-    invert: invert
   - img_url: images/post_images/kindfully/kindfully-box-leaf.jpg
+    invert: invert
+  - img_url: images/post_images/kindfully/kindfully-1.jpg 
     invert: invert
     width: half
   - img_url: images/post_images/kindfully/kindfully-2.jpg

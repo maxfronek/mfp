@@ -1,3 +1,9 @@
+    
+    .post {
+        h4 {text-align: center;}
+    }
+
+
 .grid {
     display: grid; grid-template-columns: 1fr 1fr 1fr 1fr;
         
@@ -22,7 +28,7 @@
         blockquote, p, h3 {grid-column: span 12;scroll-snap-type: y mandatory;}
         blockquote {
             &.quote-only {
-            margin: 2rem auto; max-width: 900px;
+            margin: 2rem auto 1rem; max-width: 900px;
             &.right {margin-left: 30%}
 
         @include medium {max-width: 100%;
@@ -30,7 +36,16 @@
         }
             }
         }
-        .heading {margin-top: 4rem;}
+        .heading {margin-top: 4rem;
+        
+            &:before {
+                content: " ";
+                display: block;
+                height: 4rem;
+                margin: -4rem 0 0;
+              }
+
+        }
             .imagewrap {position: relative; scroll-snap-align: start; overflow: hidden;z-index: 1; width: 100%; padding: 0; height: 100%;
                 
                         &.left { img {object-position: 25%% 50%;} }
@@ -115,7 +130,7 @@
              }
         }
     }
-    
+
     
     @include medium {
   
@@ -228,6 +243,16 @@
         p {display: none;}
     }
     
+}
+
+
+.jump-links {
+    margin: 1rem auto; width: 100%; max-width: 900px;
+    &__title {font-size: 0.875rem; text-align: center; text-transform: uppercase; color: #8e8e92;} letter-spacing: 0.03rem; margin-bottom: 0.5rem;;
+    p {display: flex; justify-content: flex-start; align-items: center; gap: 1rem;}
+    a {flex: 0 1 auto;}
+
+
 }
 
 

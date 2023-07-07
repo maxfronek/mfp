@@ -1,3 +1,8 @@
+// smooth scrolling to anchor links babyyyy
+html {scroll-behavior:smooth}
+
+// resume normal scss shenanigans
+
 body {
   margin: 0;
   color: $font-color;
@@ -448,7 +453,7 @@ main {
   &.post {display: flex; padding: 0 6rem; margin-top: 0;
   
     .grid .images .imagewrap {
-      &:first-of-type { height: 50vh; position: relative; width: calc(100% + 12rem); margin-left: -6rem;
+      &:first-of-type { height: 50vh; min-height: 420px; position: relative; width: calc(100% + 12rem); margin-left: -6rem;
       img {max-height: 100vh;
       
         @media (min-width: 1601px) {

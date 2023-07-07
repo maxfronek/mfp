@@ -4,9 +4,9 @@ title:  "The Accessory Junkie"
 date:   2019-07-14 11:18:12 -0700
 author: Max Fronek
 excerpt: Exploring Packaging for Jewelry From Around the World
-categories: design packaging
+categories: packaging design
 cover_color: grey
-order: 1.5
+order: 2
 images:
   - img_url: images/post_images/taj/TAJ-Packaging-1.jpg
     width: full

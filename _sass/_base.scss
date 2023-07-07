@@ -8,6 +8,7 @@ $content-width: 1200px;
 $heading-font: 'futura-pt', 'Futura', sans-serif;
 $sub-heading-font: 'termina', 'futura pt', sans-serif;
 $font-style: 'futura-pt', 'Futura', sans-serif;
+$main-font: 'Inter', 'Helvetica', 'Arial', sans-serif;
 
 // colors
 $main: #ca9a2c;
@@ -238,6 +239,12 @@ $short: 767px;
   }
 }
 
+@mixin tablet-up {
+  @media (min-width: #{$tablet}) {
+    @content;
+  }
+}
+
 @mixin tablet {
   @media (max-width: #{$tablet}) {
     @content;
@@ -247,6 +254,12 @@ $short: 767px;
 
 @mixin tablet-up {
   @media (max-width: #{$big}) {
+    @content;
+  }
+}
+
+@mixin tween-up {
+  @media (min-width: #{$tween}) {
     @content;
   }
 }

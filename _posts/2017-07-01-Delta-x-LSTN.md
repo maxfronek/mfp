@@ -3,10 +3,10 @@ layout: photo_post
 title: "Delta &times; LSTN"
 date: 2017-07-01 18:12:48 -0700
 author: Max Fronek
-categories: design product featured
-excerpt: A Partnership with the Worlds Largest Airline
+categories: product partnership
+excerpt: A Partnership with the World's Largest Airline
 cover_color: red
-order: 1.5
+order: 1.6
 images:
   - img_url: images/post_images/lstn/lstn-delta-5.jpg
     title: Image provided by Delta Air Lines  

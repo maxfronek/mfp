@@ -13,9 +13,18 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+  {% if page.url == '/testbed/' %}
+    <meta name="robots" content="noindex,nofollow">
+  {% endif %}
+
+  <title>{% if page.title %}{{ page.title }} // Max Fronek Design{% else %}{{ site.title }}{% endif %}</title>
   <link rel="shortcut icon" type="image/png" href="{{ base.url }}/images/favicon.png"/>
+  <!-- fonts -->
   <link rel="stylesheet" href="https://use.typekit.net/wjg6eoc.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;800&display=swap" rel="stylesheet">
+  <!-- styles -->
   <link rel="stylesheet" href="{{ '/css/main.css' | prepend: site.baseurl }}">
   <link
     rel="canonical"

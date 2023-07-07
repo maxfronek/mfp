@@ -3,7 +3,7 @@ layout: photo_post
 title:  "Mazz Hanna Wellness"
 date:   2018-11-1 23:13:52 -0700
 author: Max Fronek
-categories: design packaging branding featured
+categories: packaging branding ux/ui design
 excerpt: Branding, Web Design and Packaging for a CBD and Crystal Infused Beauty Line.
 feature_color: white
 cover_color: pink

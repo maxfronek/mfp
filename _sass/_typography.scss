@@ -14,7 +14,7 @@ body {}
 a {
   color: $link-color;
   text-decoration: none;
-  font-weight: initial;
+  font-weight: inherit;
     @include prefix(transition, .2s all ease-in-out, webkit ms moz o);
     
     @include hocus {cursor: pointer;}
@@ -31,7 +31,12 @@ a {
 }
 
 
-body, div, p, ul, ol {font-family: $font-style; font-size: 1.2rem; letter-spacing: .07rem; font-weight: 300; margin: 0 auto 2rem; }
+body, div, p, ul, ol {font-family: $main-font; font-size: 1rem; letter-spacing: .02rem; font-weight: 300; margin: 0 auto 2rem; 
+
+    @include huge {font-size: 1.2rem; letter-spacing: 0.025rem;}
+    @include tablet {font-size: 0.875rem; letter-spacing: 0.0175rem;}
+
+}
 p, ul, ol {max-width: 900px;}
 p {
     &.left {margin: 0 0 2rem;}
@@ -57,7 +62,7 @@ code {
 
 h1, h2, h3 {
   font-family: $heading-font;
-  font-weight: 200;
+  font-weight: 400;
   color: $font-color;
   line-height: 1.1;  
   text-transform: capitalize;
@@ -80,7 +85,7 @@ h1 { font-size: 4rem;
 }
 
 h2 {font-size: 3rem;
-    &.title {font-family: $font-style; font-weight: 200; margin: -.9rem 0 0; font-weight: 200; @include flexbox; @include justify-content(center); 
+    &.title {font-family: $main-font; font-weight: 200; margin: -.9rem 0 0; font-weight: 200; @include flexbox; @include justify-content(center); 
         @include small {}
         aside & {font-size:2.6rem; color: $mf-green;}
     }
@@ -90,13 +95,13 @@ h4 {font-size: 1.2rem; text-transform: uppercase; letter-spacing: .35rem; font-w
 h5 {font-size: 1.2rem; text-transform: uppercase; letter-spacing: .25rem; font-weight: 300;}
 h6 {font-size: 1rem; font-weight: 700;}
 
-blockquote {font-family: $sub-heading-font;font-size: 1.4rem; text-align: left; margin: 0; padding-right: 2rem; font-weight: 200;
+blockquote {font-family: $sub-heading-font;font-size: 1.4rem; text-align: left; margin: 0; padding-right: 2rem; font-weight: 400; letter-spacing: 0.0375rem; line-height: 1.3; text-transform: lowercase;
     
     a {text-decoration: none; @include prefix(box-shadow, 0px -20px 0px rgba($link-underline-color, .3) inset, webkit);
         @include hocus {@include prefix(box-shadow, 0px -40px 0px rgba($link-underline-color, .3) inset, webkit);}
     }
     @include huge {font-size: 1.8rem;}
-    @include tablet {font-size: 1.2rem;}
+    @include tablet {font-size: 1.6rem;}
 }
 
 strong, b {font-weight: 600;}
@@ -176,3 +181,4 @@ menu {
 .subtitle {text-align: center; max-width: 900px; padding: 0 2rem; margin: 0 auto;}
 
 
+.text-link {}
