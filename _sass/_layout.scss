@@ -1,3 +1,8 @@
+// smooth scrolling to anchor links babyyyy
+html {scroll-behavior:smooth; overflow-x: hidden;}
+
+// resume normal scss shenanigans
+
 body {
   margin: 0;
   color: $font-color;
@@ -179,7 +184,7 @@ menu {
 }
 
 
-    &.show {opacity: 1;z-index: 10;}
+    &.show {opacity: 1;z-index: 99;}
     
     @include medium {
         @include justify-content(center);
@@ -263,11 +268,11 @@ video {object-fit: cover; width: 100%; max-height: 500px;}
         @include tablet {opacity: 1; z-index: 3; display: block;}
         }
 
-        .content {opacity: 0; z-index: 2; @include prefix(transition, all .2s ease-in-out, webkit moz ms o); position: absolute; left: 1rem; top: 1rem; min-height: calc(100% - 2rem); height: calc(100% - 2rem); width: calc(100% - 2rem); padding: 1rem;  text-align: center;
+        .content {opacity: 0; z-index: 2; @include prefix(transition, all .2s ease-in-out, webkit moz ms o); position: absolute; left: 1rem; top: 1rem; min-height: calc(100% - 2.5rem); height: calc(100% - 2.5rem); width: calc(100% - 2rem); padding: 1rem;  text-align: center;
             
             a {width: 100%; height: 100%; @include flexbox; @include justify-content(center); @include align-items(center);@include flex-direction(column); }
             
-            h2 {font-family: $font-style; text-transform:uppercase; font-size: 1.6rem; font-weight: 200; letter-spacing: .3rem;}
+            h2 {font-family: $font-style; text-transform:uppercase; font-size: 1.6rem; font-weight: 200; letter-spacing: .3rem; margin-bottom: 0;}
             
             ul {padding: 0;
                 li {display: inline; list-style: none;
@@ -379,7 +384,7 @@ video {object-fit: cover; width: 100%; max-height: 500px;}
       }
             
       h2 {font-family: $sub-heading-font; text-transform:uppercase; font-size: 3rem; font-weight: 700; letter-spacing: .3rem;
-        color: white; padding: .25rem 1rem 0;
+        color: white; padding: .25rem 1rem 0; 
         -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
         -webkit-text-stroke-width: 1px;
         -webkit-text-stroke-color: white;
@@ -448,16 +453,22 @@ main {
   &.post {display: flex; padding: 0 6rem; margin-top: 0;
   
     .grid .images .imagewrap {
-      &:first-of-type { min-height: 100vh; position: relative; width: calc(100% + 12rem); margin-left: -6rem;
-      img {max-height: 100vh;}
+      &:first-of-type { height: 50vh; min-height: 420px; position: relative; width: calc(100% + 12rem); margin-left: -6rem;
+      img {max-height: 100vh;
+      
+        @media (min-width: 1601px) {
+          padding: 4rem 6rem 2rem;
+        } // end 1601+ mq
+      
+      } // end :first-of-type img
       figure {position: absolute; z-index: 2; height: 100%; width: 100%; top: 0; left: 0; background-image: linear-gradient(rgba(50,50,50,.25) 0%, rgba(50,50,50,.5) 33%, rgba(50,50,50,.5) 67%, rgba(50,50,50,.25) 100%); 
-          h2 { font-family: $sub-heading-font; text-transform:uppercase; font-size: 3rem; font-weight: 700; letter-spacing: .3rem;
+          h1, h2 { font-family: $sub-heading-font; text-transform:uppercase; font-size: 3rem; font-weight: 700; letter-spacing: .3rem;
             color: white; padding: .25rem 1rem 0;
             -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
             -webkit-text-stroke-width: 1px;
             -webkit-text-stroke-color: white;
  
-
+            @include medium {font-size: 2.6rem; padding: 0 0.5rem;}
             @include small {font-size: 2rem; padding: 0 1rem;}
 
               } // end figure h2
@@ -481,15 +492,20 @@ main {
               @include medium {font-size: 2rem;}
               }
 
+              @media (min-width: 1601px) {
+                width: calc(100% - 12rem); height: calc(100% - 6rem); top: 4rem; left: 6rem;
+              } // end 1601+ mq
+
         } // end imagewrap figure
 
         @include medium {
-          max-height: 88vh;
+          max-height: 45vh; height: 45vh;
 
           img, video {max-height: 88vh;}
           figure {max-height: 88vh;}
 
         }
+
 
       } // end imagewrap:first-of-type
 
@@ -557,18 +573,18 @@ main {
 
 
 footer {
-  text-align: center;
-  @include flexbox; @include flex-direction(row);@include align-items(center);  @include justify-content(center);  
-  padding: 40px;
+  text-align: center; width: 100vw; background: $grey900;
+  @include flexbox; @include flex-direction(row);@include align-items(center);  @include justify-content(flex-start);  
+  padding: 0.5rem;
     hr {width: 100%; position: absolute; top: unset; margin-top: -5px;z-index: -1; border: 0px solid transparent; border-top: 1px solid $heading-font-color;}
-    .footer-links {/*background-color: $bg;*/ padding: 0 2rem; z-index: 1; margin-top: 2rem;
+    .footer-links {/*background-color: $bg;*/ padding: 0 2rem; z-index: 1; margin: 0.75rem 0 0.5rem;
       &.photo-post-footer {background-color: transparent !important;}
     }
     a {
         &:after {content: ""; margin-right: 1rem;}
         &:last-child {&:after {content: "";margin-right: 0rem;}}
             
-    img {width: 30px; @include prefix(transition, .2s all ease-in-out, ms moz webkit o);}
+    img {width: 30px; @include prefix(transition, .2s all ease-in-out, ms moz webkit o); filter: invert(0.85);}
         
       @include hocus {img { opacity: .6;}}
            @include medium { img {width: 25px;} }

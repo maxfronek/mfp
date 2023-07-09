@@ -71,7 +71,13 @@ $green--background: transparentize($sage, .8);
 }
 .sand {background-color: $light;
     &.footer-links {background-color: $light;}
-    &.next-post {background-color: rgba($light, .75);}
+    &.next-post {background-color: rgba($light, .75);
+    
+        h3 {color: $sage--dark;
+            -webkit-text-stroke-color: $sage--dark;}
+        p {color: $color_content_primary_A;}
+
+    }
     &.content {h1, h2, h3{color: darken($light, 30%); }}
 }
 .pink {background-color: $pink;
@@ -86,7 +92,12 @@ $green--background: transparentize($sage, .8);
     blockquote {color: $pink--dark; border-color: $pink--light;}
     p {color: darken($pink--dark, 20%);}
     &.footer-links {background-color: $pink;}
-    &.next-post {background-color: rgba($pink, .75);}
+    &.next-post {background-color: rgba($pink, .75);
+        h3 {color: $pink--dark;
+            -webkit-text-stroke-color: $pink--dark;
+        }
+        p {color: $color_content_primary_A;}
+    }
 }
 .grey {background-color: $grey--dark;
     h1, h2, h3 {color: $grey--light !important;}
@@ -134,10 +145,11 @@ $green--background: transparentize($sage, .8);
     &.footer-links {background-color: $dark-blue; span {color: $dark-blue--complement;}
     }
     &.next-post {background-color: rgba($dark-blue, .75);
-        span {color: $dark-blue--complement;}
+        span {color: $color_content_primary_B;}
     }
     
-      h1, h2, h3 {color: $dark-blue--light !important;}
+      h1, h2 {color: $dark-blue--light !important;}
+        h3 {color: $color_content_primary_B;}
   &.content {h1, h2, h3 {color: $dark-blue--light} ul li, time {color: $dark-blue--light;} }
            .hamburger {
         .patty {background-color: $dark-blue--light;}

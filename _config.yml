@@ -13,7 +13,7 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Max Fronek
+title: Max Fronek Design
 email: mf@maxfronek.com
 description: |
   I’ve been in love with design my entire life. Finding the perfect way to present information and solving problems creatively is a passion of mine.

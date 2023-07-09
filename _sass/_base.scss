@@ -8,8 +8,9 @@ $content-width: 1200px;
 $heading-font: 'futura-pt', 'Futura', sans-serif;
 $sub-heading-font: 'termina', 'futura pt', sans-serif;
 $font-style: 'futura-pt', 'Futura', sans-serif;
+$main-font: 'Inter', 'Helvetica', 'Arial', sans-serif;
 
-// colors
+// colors (OLD, keep for posterity cause i don't want to refactor anything yet)
 $main: #ca9a2c;
 $bg: #fafafa;
 $mf-green: #0a2216;
@@ -17,13 +18,51 @@ $font-color: #404040;
 $link-color: #404040;
 $heading-font-color: #ca9a2c;
 $link-hover-color: rgba($heading-font-color, .5);
-$link-underline-color: #4fb2e4;
+// $link-underline-color: #4fb2e4;
+$link-underline-color: #39a96b;
 $light: #eceadd;
 $mid: #878878;
 $header: #0a2216;
 
 $homepage-title-link-unhover: 0px -20px 0px;
 $homepage-title-link-hover: 0px -90px 0px;
+
+
+// colors NEW AND IMPROVED
+
+// index
+
+$grey0: #FFFFFF;
+$grey25: #fafafa;
+$grey50: #f2f2f2;
+$grey100: #e0e0e0;
+$grey400: #a4a4a4;
+$grey500: #8e8e92;
+$grey600: #404040;
+$grey900: #1c1c1d;
+$grey1000: #000000; 
+
+$gold500: #CA9A2C;
+
+$green200: #cae2d0;
+$green400: #39a96b;
+$green800: #0A2216;
+
+$blue200: #4FB2E4;
+
+$primary500: $gold500;
+
+// semantic 
+
+$color_content_primary_A: $grey600;
+$color_content_primary_B: $grey25;
+$color_content_secondary: $grey500;
+
+$color_content_primary_A__interactive: $grey400;
+$color_content_primary_B__interactive: $grey400;
+$color_content_secondary__interactive: $grey600;
+
+
 
 //mixins
 
@@ -238,6 +277,12 @@ $short: 767px;
   }
 }
 
+@mixin tablet-up {
+  @media (min-width: #{$tablet}) {
+    @content;
+  }
+}
+
 @mixin tablet {
   @media (max-width: #{$tablet}) {
     @content;
@@ -247,6 +292,12 @@ $short: 767px;
 
 @mixin tablet-up {
   @media (max-width: #{$big}) {
+    @content;
+  }
+}
+
+@mixin tween-up {
+  @media (min-width: #{$tween}) {
     @content;
   }
 }

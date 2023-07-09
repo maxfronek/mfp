@@ -17,13 +17,46 @@ layout: "default"
         <source src="{{ page.video | strip_html }}" type="{% if page.video contains 'mp4' %}video/mp4{% else %}video/webm{% endif %}">
 </video>    
 {% endif %}
+
         
 {% for image in page.images %}
 {% capture thecycle %}{% cycle 'left', 'right' %}{% endcapture %}
     {% if image.heading %}
-        <h3 class="{{ thecycle }} heading">{{ image.heading }}</h3>
+        <h3 class="{{ thecycle }} heading" id="{{ image.heading }}">{{ image.heading }}</h3>
         {% endif %}
-    
+
+        {% if image.img_url == 'gallery' %}
+
+
+        <div class="swiper {{ image.gallery_id }}" data-galleryId="{{ image.gallery_id }}">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+
+            {% for item in image.gallery_images %}
+
+              <div class="swiper-slide">
+                <a href="{{ item.path | prepend: site.photourl }}" class="expand{% if item.invert %} invert{% endif %}">
+                <img src="{{ item.path }}" alt="{{ item.alt }}" {% if item.border %}style="border: 1px solid #8e8e92;"{% endif %} />
+                </a>
+              </div>
+
+
+            {% endfor %}
+          </div>
+          <!-- If we need pagination -->
+          <div class="swiper-pagination"></div>
+        
+          <div class="swiper-button-prev lum-previous-button"></div>
+          <div class="swiper-button-next lum-next-button"></div>
+
+        </div>
+
+
+        {% else %}
+
+{% unless image.img_url contains 'blank' %}
+
 <div {% unless forloop.index == 1 %}data-sal="fade" data-sal-delay="450"  data-sal-duration="250" data-sal-easing="ease-in"{% endunless %} class="imagewrap {% if image.width and forloop.index != 1 %}{{ image.width }}{% endif %} {% if image.anchor %}{{ image.anchor }}{% endif %} {% if image.offset %}{{ image.offset }}{% endif %} 
 {% if image.change_bg %}change-to-{{ image.change_bg }}{% endif %}" {% if forloop.index > 3 %} data-sal="fade" data-sal-delay="100"  data-sal-duration="250" data-sal-easing="ease-in" {% endif %} >
        {% if image.img_url contains 'youtube' or image.img_url contains 'vimeo' %}{% capture path %}{{ image.img_url }}{% endcapture %} {% else %}
@@ -35,58 +68,109 @@ layout: "default"
  <video loop muted autoplay webkit-playsinline playsinline poster="{{ poster | strip_html }}{{ site.img_sizes.grande }}" {% if forloop.index == 1 %}class="post-leader"{% endif %}>
         <source src="{{ path | strip_html }}" type="{% if path contains 'mp4' %}video/mp4{% else %}video/webm{% endif %}">
          </video> 
-             {% if forloop.index == 1 %} 
+    {% if forloop.index == 1 %} 
 
-    <figure>
-    <h2 class="title" data-sal="slide-up" data-sal-delay="600"  data-sal-duration="500" data-sal-easing="ease-in">{{ page.title }}</h2>
-   {% if page.excerpt %}<p data-sal="slide-up" data-sal-delay="900"  data-sal-duration="500" data-sal-easing="ease-in" class="blurb">{{ page.excerpt }}</p>{% endif %}  
-    <p class="scroll-helper" data-sal="slide-up" data-sal-delay="1500"  data-sal-duration="500" data-sal-easing="ease-in">&darr;</p>
-    </figure>
+        <figure>
+        <h2 class="title" data-sal="slide-up" data-sal-delay="600"  data-sal-duration="500" data-sal-easing="ease-in">{{ page.title }}</h2>
+      {% if page.excerpt %}<p data-sal="slide-up" data-sal-delay="900"  data-sal-duration="500" data-sal-easing="ease-in" class="blurb">{{ page.excerpt }}</p>{% endif %}  
+        <p class="scroll-helper" data-sal="slide-up" data-sal-delay="1500"  data-sal-duration="500" data-sal-easing="ease-in">&darr;</p>
+        </figure>
 
-     {% endif %}
+    {% endif %}{% comment %} end if forloop.index == 1 {% endcomment  %}
+
     {% elsif path contains 'youtube' or path contains 'vimeo' %}
-<div class="videoWrapper">
-    <iframe width="560" height="315" src="{{ path }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
-    {% else %}
+    <div class="videoWrapper">
+        <iframe width="560" height="315" src="{{ path }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    {% else %}{% comment %}end if mp4 webm youtube or vimeo{% endcomment %}
 
     {% if forloop.index > 3 %}
      <a href="{{ image.img_url | prepend: site.photourl }}" class="expand{% if image.invert %} invert{% endif %}">
     <img src="{{ site.photourl }}/images/mf-img-preloader-L.gif" data-src="{% include img_src.html %}" data-srcset="{% include img_srcset.html %}" sizes="80vw" class="lazyload gallery-item" alt="{{ image.title }}" />
     </a>
+
     {% else %}
-  {% unless forloop.index == 1 %}<a href="{{ image.img_url | prepend: site.photourl }}" class="expand{% if image.invert %} invert{% endif %}">{% endunless %}
-    <img alt="{{ image.title }}" srcset="{% include img_srcset.html %}" src="{% include img_src.html %}"  sizes="80vw" class="gallery-item {% if forloop.index == 1 %} post-leader{% endif %}" />  
+
+
+    {% unless forloop.index == 1 %}<a href="{{ image.img_url | prepend: site.photourl }}" class="expand{% if image.invert %} invert{% endif %}">{% endunless %}
+      <img alt="{{ image.title }}" srcset="{% include img_srcset.html %}" src="{% include img_src.html %}"  sizes="80vw" class="gallery-item {% if forloop.index == 1 %} post-leader{% endif %}" style="{% if image.position %}{{ image.position | prepend: 'object-position: ' }}{% endif %}" />  
     {% if forloop.index == 1 %} 
 
     <figure>
-    <h2 class="title" data-sal="slide-up" data-sal-delay="600"  data-sal-duration="500" data-sal-easing="ease-in">{{ page.title }}</h2>
-   {% if page.excerpt %}<p data-sal="slide-up" data-sal-delay="900"  data-sal-duration="500" data-sal-easing="ease-in" class="blurb">{{ page.excerpt }}</p>{% endif %}  
-    <p class="scroll-helper" data-sal="slide-up" data-sal-delay="1500"  data-sal-duration="500" data-sal-easing="ease-in">&darr;</p>
+    <h1 class="title" data-sal="slide-up" data-sal-delay="0"  data-sal-duration="500" data-sal-easing="ease-in">{{ page.title }}</h1>
+   {% if page.excerpt %}<p data-sal="slide-up" data-sal-delay="200"  data-sal-duration="500" data-sal-easing="ease-in" class="blurb">{{ page.excerpt }}</p>{% endif %}  
+    <p class="scroll-helper" data-sal="slide-up" data-sal-delay="600"  data-sal-duration="500" data-sal-easing="ease-in">&darr;</p>
     </figure>
 
-     {% endif %}
-  {% unless forloop.index == 1 %}</a>  {% endunless %}
+
+
+     {% endif %}{% comment %} end first image only {% endcomment %}
+
+    {% unless forloop.index == 1 %}</a>  {% endunless %}
+    {% endif %}{% comment %} end if forloop.index > 3 {% endcomment %}
+  {% endif %}
+
+
+          {% if image.title and image.show_caption %}
+                  <p class="caption">{{ alt }}</p>
+          {% endif %}
+
+</div>
+
+
+
+    {% endunless %} {% comment %}end skip images where URL is 'blank' {% endcomment %} 
+
+    {% endif %} {% comment %} end if NOT gallery {% endcomment %}
+
+    {% if image.blockquote or image.paragraph %}   
+    <div class="extras" {% if forloop.index == 1 %}id="article-start"{% endif %}>
+    {% if image.blockquote %}
+        <blockquote class="quote-only {{ thecycle }}">{{ image.blockquote | newline_to_br }}</blockquote>
     {% endif %}
-    
-{% endif %}
-{% if image.title %}
-        <p class="caption">{{ alt }}</p>
-{% endif %}
-        
-        </div>
-     {% if image.blockquote or image.paragraph %}   
-        <div class="extras" {% if forloop.index == 1 %}id="article-start"{% endif %}>
-        {% if image.blockquote %}
-            <blockquote class="quote-only {{ thecycle }}">{{ image.blockquote | newline_to_br }}</blockquote>
-        {% endif %}
-        {% if image.paragraph %}
-        <p class="">{{ image.paragraph | newline_to_br }}</p>
-        {% endif %}
-                        </div>
-      {% endif %}        
+    {% if image.paragraph %}
+    <p class="">{{ image.paragraph | newline_to_br }}</p>
+    {% endif %}
+                    </div>
+  {% endif %}  
+  
+  {% if image.text_link %} 
+  <p class="text-link">
+    <a href="{{ image.text_link_destination}}" target="_blank" title="{{ image.text_link }}" class="text-link">{{ image.text_link}}</a>
+  </p>
+  {% endif %}
+
+{% comment %} Jump links for sections {% endcomment %}
+
+{% if forloop.index == 1 and page.jump_links == true %}
+
+{% assign jumplinks = ''|split:''%}{% comment %} Make a blank array{% endcomment %}
+{% for image in page.images %}{% comment %} Loop through all images {% endcomment %}
+  {% if image.heading %}{% comment %} Check if it starts a new section {% endcomment %}
+    {% assign jumplinks = jumplinks|push:image%}{% comment %} Push everything with a heading into the array {% endcomment %}
+  {% endif %}
+{% endfor %}
+
+{% for image in jumplinks %}
+  {% if forloop.index == 1 %}
+    <div class="jump-links">
+      <span class="jump-links__title">Jump to a section</span>
+      <p>
+  {% endif %}
+  <a href="#{{ image.heading }}" data-jumpIndex="{{ forloop.index }}">{{ image.heading }}</a>
+
+  {% if forloop.last %}
+      </p>
+    </div>
+  {% endif %}
 
 {% endfor %}
+
+{% endif %} {% comment %} END conditional only show jump links after first image {% endcomment %}
+
+
+{% endfor %} {% comment %} master for image in images loop {% endcomment %}
         
         {{ content }}
         
@@ -118,6 +202,7 @@ layout: "default"
 </div></a>
 {% endif %}
 <script>
+
     var color = document.getElementById('feature_color'),
         scheme = color.getAttribute('data-color'),
         body = document.querySelector('body'),
@@ -172,10 +257,59 @@ var requestAnimFrame = (function(){
 })();
 
 
+{% for image in page.images %}
+
+{% if image.img_url == 'gallery' %}
+
+const {{ image.gallery_id }} = new Swiper('.swiper{{ image.gallery_id | prepend: "." }}', {
+  // Optional parameters
+  autoHeight: false,
+
+  slidesPerView: 1,
+  spaceBetween: 16,
+
+  breakpoints: {
+
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 32,
+    },
+
+    1200: {
+      slidesPerView: 3,
+      spaceBetween: 64,
+    },
+  },
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+
+  // Navigation arrows
+  
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  
+
+  // And if we need scrollbar
+  /*
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+  */
+});
+
+{% endif %}
+
+{% endfor %}
+
 
 // Playing with fun chapter marker stuff but let's put it away now. 
 /*
-
 
 var chapterMarkers = document.getElementsByClassName("heading"); // Do not use a period here!
 var values = Array.prototype.map.call(chapterMarkers, function(el) {
@@ -190,6 +324,10 @@ values.forEach(function(el) {
 
 */
 
-   
-        
 </script>
+
+
+
+
+
+

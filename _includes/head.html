@@ -13,9 +13,31 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+  {% if page.url == '/testbed/' or page.url == '/b/' %}
+    <meta name="robots" content="noindex,nofollow">
+  {% endif %}
+
+  {% comment %} SEO Goodness {% endcomment %}
+  <title>{% if page.title %}{{ page.title }} // Max Fronek Design{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{% if page.url == '/' %}I'm a creative director, visual designer, and front-end developer with a proven track record of delivering engaging, unique projects.{% elsif page.is_post %}A case study for {{ page.title }} with focus on my contributions in {% if page.categories %}{% for category in page.categories %}{% if category == 'featured' %}{% continue %}{% else %}{{- category  -}}{% endif %}{%- if forloop.last -%}{% else %},&nbsp;{%- endif -%}{% endfor %}{% endif %}{% else %}I'm a creative director, visual designer, and front-end developer with a proven track record of delivering engaging, unique projects.{% endif %}">
+  <meta name="keywords" content="Creative Director, Graphic Design, Front End Development, UI/UX, Production, Photography, Videography, Creative Leadership, Visual Design, HTML, CSS, JavaScript {% if page.is_post %}{{ page.title | append: " " }}{% if page.categories %}{% for category in page.categories %}{% if category == 'featured' %}{% continue %}{% else %}{{ category | append: " " }}{% endif %}{% endfor %}{% endif %}{% endif %}">
+  <meta name="author" content="Max Fronek">
+  
+{% comment %} Social Share Tags {% endcomment %}
+<meta property="og:title" content="{% if page.is_post %}{{ page.title | append: " // " }}{% endif %}{{ site.title }}">
+<meta property="og:description" content="{% if page.url == '/' %}I'm a creative director, visual designer, and front-end developer with a proven track record of delivering engaging, unique projects.{% elsif page.is_post %}A case study for {{ page.title }} with focus on my contributions in {% if page.categories %}{% for category in page.categories %}{% if category == 'featured' %}{% continue %}{% else %}{{- category  -}}{% endif %}{%- if forloop.last -%}{% else %},&nbsp;{%- endif -%}{% endfor %}{% endif %}{% else %}I'm a creative director, visual designer, and front-end developer with a proven track record of delivering engaging, unique projects.{% endif %}">
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:url" content="{{ page.url }}">
+<meta property="og:type" content="website">
+{% if page.is_post %}<meta property="og:image" content="{% for image in page.images %}{% if image.img_url == "blank" or image.img_url == 'gallery' %}{% continue %}{% else %}{{ site.url }}{{ image.img_url | prepend: '/' }}{% break %}{% endif %}{% endfor %}">{% endif %}
+  
   <link rel="shortcut icon" type="image/png" href="{{ base.url }}/images/favicon.png"/>
+  <!-- fonts -->
   <link rel="stylesheet" href="https://use.typekit.net/wjg6eoc.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;800&display=swap" rel="stylesheet">
+  <!-- styles -->
   <link rel="stylesheet" href="{{ '/css/main.css' | prepend: site.baseurl }}">
   <link
     rel="canonical"
