@@ -3,11 +3,12 @@ layout: photo_post
 title:  "Mazz Hanna Wellness"
 date:   2018-11-1 23:13:52 -0700
 author: Max Fronek
-categories: packaging branding ux/ui design
+categories: packaging branding frontend photography design
 excerpt: Branding, Web Design and Packaging for a CBD and Crystal Infused Beauty Line.
 feature_color: white
 cover_color: pink
 order: 1.5
+jump_links: true
 images:
   - img_url: images/post_images/mazzhanna/MH-1.jpg
     title: Packaging for Mazz Hanna's first 3 CBD-and-crystal infused beauty products
@@ -22,7 +23,7 @@ images:
     title: The founder herself is the hand model used for all products.
     anchor: left
     width: half
-    heading: Product Labels and Packaging
+    heading: Packaging
     change_bg: pink
   - img_url: images/post_images/mazzhanna/MH-4.jpg
     anchor: left
@@ -36,13 +37,13 @@ images:
     width: half
   - img_url: images/post_images/mazzhanna/MH-8.jpg
     width: half
-    paragraph: |
-      This client has both CBD and non-CBD products, and needed a way to differentiate the two quickly and obviously. All CBD-infused products use a geometric patterns and pastels to create a memorable impression and create easy recognition. All non-CBD products are distinguished by a visually clean style, making it easy to identify which products are which.
+    blockquote: |
+      With both CBD and non-CBD products we needed a way to quickly differentiate the two. I used a geometric pattern and pastel color scheme for anything with CBD, creating a immediately recognizable difference with the ultra-minimal "clean" products.
   - img_url: images/post_images/mazzhanna/MH-11.jpg
     width: threequarters
     #start web   
   - img_url: images/post_images/mazzhanna/MH-web-3.jpg
-    heading: Web  
+    heading: Frontend
     width: threequarters
     offset: offset
   - img_url: images/post_images/mazzhanna/MH-web-2.jpg  
@@ -53,6 +54,9 @@ images:
   - img_url: images/post_images/mazzhanna/MH-imac-product-B.mp4
     width: threequarters
     poster: images/post_images/mazzhanna/MH-imac-product.jpg
+    title: Mazz Hanna's launch website PDP, for the 'Get Stoned' box
+    blockquote: |
+      I designed the full site experience for Mazz's launch website, with significant design and code work and stakeholder buy-in.
   - img_url: images/post_images/mazzhanna/MH-web-6.jpg
     width: half
     title: An email capture form, sized to allow use at events and popups

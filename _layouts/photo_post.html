@@ -28,7 +28,7 @@ layout: "default"
         {% if image.img_url == 'gallery' %}
 
 
-        <div class="swiper">
+        <div class="swiper {{ image.gallery_id }}" data-galleryId="{{ image.gallery_id }}">
           <!-- Additional required wrapper -->
           <div class="swiper-wrapper">
             <!-- Slides -->
@@ -56,6 +56,7 @@ layout: "default"
         {% else %}
 
 {% unless image.img_url contains 'blank' %}
+
 <div {% unless forloop.index == 1 %}data-sal="fade" data-sal-delay="450"  data-sal-duration="250" data-sal-easing="ease-in"{% endunless %} class="imagewrap {% if image.width and forloop.index != 1 %}{{ image.width }}{% endif %} {% if image.anchor %}{{ image.anchor }}{% endif %} {% if image.offset %}{{ image.offset }}{% endif %} 
 {% if image.change_bg %}change-to-{{ image.change_bg }}{% endif %}" {% if forloop.index > 3 %} data-sal="fade" data-sal-delay="100"  data-sal-duration="250" data-sal-easing="ease-in" {% endif %} >
        {% if image.img_url contains 'youtube' or image.img_url contains 'vimeo' %}{% capture path %}{{ image.img_url }}{% endcapture %} {% else %}
@@ -67,23 +68,22 @@ layout: "default"
  <video loop muted autoplay webkit-playsinline playsinline poster="{{ poster | strip_html }}{{ site.img_sizes.grande }}" {% if forloop.index == 1 %}class="post-leader"{% endif %}>
         <source src="{{ path | strip_html }}" type="{% if path contains 'mp4' %}video/mp4{% else %}video/webm{% endif %}">
          </video> 
-             {% if forloop.index == 1 %} 
+    {% if forloop.index == 1 %} 
 
-    <figure>
-    <h2 class="title" data-sal="slide-up" data-sal-delay="600"  data-sal-duration="500" data-sal-easing="ease-in">{{ page.title }}</h2>
-   {% if page.excerpt %}<p data-sal="slide-up" data-sal-delay="900"  data-sal-duration="500" data-sal-easing="ease-in" class="blurb">{{ page.excerpt }}</p>{% endif %}  
-    <p class="scroll-helper" data-sal="slide-up" data-sal-delay="1500"  data-sal-duration="500" data-sal-easing="ease-in">&darr;</p>
-    </figure>
+        <figure>
+        <h2 class="title" data-sal="slide-up" data-sal-delay="600"  data-sal-duration="500" data-sal-easing="ease-in">{{ page.title }}</h2>
+      {% if page.excerpt %}<p data-sal="slide-up" data-sal-delay="900"  data-sal-duration="500" data-sal-easing="ease-in" class="blurb">{{ page.excerpt }}</p>{% endif %}  
+        <p class="scroll-helper" data-sal="slide-up" data-sal-delay="1500"  data-sal-duration="500" data-sal-easing="ease-in">&darr;</p>
+        </figure>
 
-     {% endif %}{% comment %} end if forloop.index == 1 {% endcomment  %}
+    {% endif %}{% comment %} end if forloop.index == 1 {% endcomment  %}
+
     {% elsif path contains 'youtube' or path contains 'vimeo' %}
-<div class="videoWrapper">
-    <iframe width="560" height="315" src="{{ path }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+    <div class="videoWrapper">
+        <iframe width="560" height="315" src="{{ path }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
 
     {% else %}{% comment %}end if mp4 webm youtube or vimeo{% endcomment %}
-
-
 
     {% if forloop.index > 3 %}
      <a href="{{ image.img_url | prepend: site.photourl }}" class="expand{% if image.invert %} invert{% endif %}">
@@ -93,12 +93,12 @@ layout: "default"
     {% else %}
 
 
-  {% unless forloop.index == 1 %}<a href="{{ image.img_url | prepend: site.photourl }}" class="expand{% if image.invert %} invert{% endif %}">{% endunless %}
-    <img alt="{{ image.title }}" srcset="{% include img_srcset.html %}" src="{% include img_src.html %}"  sizes="80vw" class="gallery-item {% if forloop.index == 1 %} post-leader{% endif %}" style="{% if image.position %}{{ image.position | prepend: 'object-position: ' }}{% endif %}" />  
+    {% unless forloop.index == 1 %}<a href="{{ image.img_url | prepend: site.photourl }}" class="expand{% if image.invert %} invert{% endif %}">{% endunless %}
+      <img alt="{{ image.title }}" srcset="{% include img_srcset.html %}" src="{% include img_src.html %}"  sizes="80vw" class="gallery-item {% if forloop.index == 1 %} post-leader{% endif %}" style="{% if image.position %}{{ image.position | prepend: 'object-position: ' }}{% endif %}" />  
     {% if forloop.index == 1 %} 
 
     <figure>
-    <h2 class="title" data-sal="slide-up" data-sal-delay="0"  data-sal-duration="500" data-sal-easing="ease-in">{{ page.title }}</h2>
+    <h1 class="title" data-sal="slide-up" data-sal-delay="0"  data-sal-duration="500" data-sal-easing="ease-in">{{ page.title }}</h1>
    {% if page.excerpt %}<p data-sal="slide-up" data-sal-delay="200"  data-sal-duration="500" data-sal-easing="ease-in" class="blurb">{{ page.excerpt }}</p>{% endif %}  
     <p class="scroll-helper" data-sal="slide-up" data-sal-delay="600"  data-sal-duration="500" data-sal-easing="ease-in">&darr;</p>
     </figure>
@@ -106,63 +106,69 @@ layout: "default"
 
 
      {% endif %}{% comment %} end first image only {% endcomment %}
-  {% unless forloop.index == 1 %}</a>  {% endunless %}
+
+    {% unless forloop.index == 1 %}</a>  {% endunless %}
     {% endif %}{% comment %} end if forloop.index > 3 {% endcomment %}
-    
-{% endif %}
-{% endunless %} {% comment %}end skip images where URL is 'blank' {% endcomment %}
-{% if image.title %}
-        <p class="caption">{{ alt }}</p>
-{% endif %}
-        
-        </div>
+  {% endif %}
 
-    {% if image.blockquote or image.paragraph %}   
-        <div class="extras" {% if forloop.index == 1 %}id="article-start"{% endif %}>
-        {% if image.blockquote %}
-            <blockquote class="quote-only {{ thecycle }}">{{ image.blockquote | newline_to_br }}</blockquote>
-        {% endif %}
-        {% if image.paragraph %}
-        <p class="">{{ image.paragraph | newline_to_br }}</p>
-        {% endif %}
-                        </div>
-      {% endif %}  
-      
-      {% if image.text_link %} 
-      <p>
-        <a href="{{ image.text_link_destination}}" target="_blank" title="{{ image.text_link }}" class="text-link">{{ image.text_link}}</a>
-      </p>
-      {% endif %}
 
-    {% comment %} Jump links for sections {% endcomment %}
+          {% if image.title and image.show_caption %}
+                  <p class="caption">{{ alt }}</p>
+          {% endif %}
 
-    {% if forloop.index == 1 and page.jump_links == true %}
+</div>
 
-    {% assign jumplinks = ''|split:''%}{% comment %} Make a blank array{% endcomment %}
-    {% for image in page.images %}{% comment %} Loop through all images {% endcomment %}
-      {% if image.heading %}{% comment %} Check if it starts a new section {% endcomment %}
-        {% assign jumplinks = jumplinks|push:image%}{% comment %} Push everything with a heading into the array {% endcomment %}
-      {% endif %}
-    {% endfor %}
 
-    {% for image in jumplinks %}
-      {% if forloop.index == 1 %}
-        <div class="jump-links">
-          <span class="jump-links__title">Jump to a section</span>
-          <p>
-      {% endif %}
-      <a href="#{{ image.heading }}" data-jumpIndex="{{ forloop.index }}">{{ image.heading }}</a>
 
-      {% if forloop.last %}
-          </p>
-        </div>
-      {% endif %}
-
-    {% endfor %}
-
-    {% endif %} {% comment %} END conditional only show jump links after first image {% endcomment %}
+    {% endunless %} {% comment %}end skip images where URL is 'blank' {% endcomment %} 
 
     {% endif %} {% comment %} end if NOT gallery {% endcomment %}
+
+    {% if image.blockquote or image.paragraph %}   
+    <div class="extras" {% if forloop.index == 1 %}id="article-start"{% endif %}>
+    {% if image.blockquote %}
+        <blockquote class="quote-only {{ thecycle }}">{{ image.blockquote | newline_to_br }}</blockquote>
+    {% endif %}
+    {% if image.paragraph %}
+    <p class="">{{ image.paragraph | newline_to_br }}</p>
+    {% endif %}
+                    </div>
+  {% endif %}  
+  
+  {% if image.text_link %} 
+  <p class="text-link">
+    <a href="{{ image.text_link_destination}}" target="_blank" title="{{ image.text_link }}" class="text-link">{{ image.text_link}}</a>
+  </p>
+  {% endif %}
+
+{% comment %} Jump links for sections {% endcomment %}
+
+{% if forloop.index == 1 and page.jump_links == true %}
+
+{% assign jumplinks = ''|split:''%}{% comment %} Make a blank array{% endcomment %}
+{% for image in page.images %}{% comment %} Loop through all images {% endcomment %}
+  {% if image.heading %}{% comment %} Check if it starts a new section {% endcomment %}
+    {% assign jumplinks = jumplinks|push:image%}{% comment %} Push everything with a heading into the array {% endcomment %}
+  {% endif %}
+{% endfor %}
+
+{% for image in jumplinks %}
+  {% if forloop.index == 1 %}
+    <div class="jump-links">
+      <span class="jump-links__title">Jump to a section</span>
+      <p>
+  {% endif %}
+  <a href="#{{ image.heading }}" data-jumpIndex="{{ forloop.index }}">{{ image.heading }}</a>
+
+  {% if forloop.last %}
+      </p>
+    </div>
+  {% endif %}
+
+{% endfor %}
+
+{% endif %} {% comment %} END conditional only show jump links after first image {% endcomment %}
+
 
 {% endfor %} {% comment %} master for image in images loop {% endcomment %}
         
@@ -250,11 +256,12 @@ var requestAnimFrame = (function(){
   return  window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || function( callback ){ window.setTimeout(callback, 1000 / 60); };
 })();
 
+
 {% for image in page.images %}
 
 {% if image.img_url == 'gallery' %}
 
-const swiper = new Swiper('.swiper', {
+const {{ image.gallery_id }} = new Swiper('.swiper{{ image.gallery_id | prepend: "." }}', {
   // Optional parameters
   autoHeight: false,
 

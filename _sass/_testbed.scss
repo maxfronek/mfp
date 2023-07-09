@@ -61,17 +61,26 @@
               }
               
               .clip-text:before {
-                z-index: -2;
+                z-index: 10;
                 top: 0;
                 right: 0;
                 bottom: 0;
                 left: 0;
-                background-image: inherit;
+                background-image:url(../images/BG--A_green.png);
                 background-size: 200%;
-                -webkit-animation:anim 10s infinite ease-in-out;
-                -moz-animation:anim 10s infinite ease-in-out;
-                -ms-animation:anim 10s infinite ease-in-out;
-                animation:anim 10s infinite ease-in-out;
+                -webkit-animation:anim 10s infinite 1s ease-in-out;
+                -moz-animation:anim 10s infinite 1s ease-in-out;
+                -ms-animation:anim 10s infinite 1s ease-in-out;
+                animation:anim 10s infinite 1s ease-in-out;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                -moz-background-clip: text;
+                -moz-text-fill-color: transparent;
+                -ms-background-clip: text;
+                -ms-text-fill-color: transparent;
+                background-clip: text;
+                text-fill-color: transparent;
+                content: 'MAX FRONEK'
               }
               
               .clip-text:after {
@@ -217,7 +226,9 @@
 
             p {text-indent: 0rem; margin-top: 0 !important;}
 
-        }
+            &:last-of-type { margin-bottom: 6rem;}
+
+        } // end &__list
 
         ul {list-style: none;
             li {list-style: none; font-family: $main-font; letter-spacing: 0.0625rem; font-size: 0.875rem; line-height: 1.5;

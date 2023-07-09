@@ -1,122 +1,141 @@
 --- 
 layout: full-homepage
 ---
-{% comment %}
-<h1 class="title">{{ site.title | replace: " ", "<br />" }}</h1>
-
-<p>{{ site.description }}</p>
-<section class="homepage-info">
-        <div>
-                <h1 class="homepage-title">Max Fronek</h1>
-                <p>Design / Photography</p>
-        </div>
-    </section>
-{% endcomment %}
 
 
-<section class="homepage-single">
-<section id="homepage-info" class="masthead"><h1 class="homepage-title">{{ site.title }}</h1></section>
-<div class="swiper-container">
-<div class="swiper-wrapper">
+<section class="intro intro--b">
 
-{% assign posts = site.posts | sort: 'order' %} {% assign count = 250 %}
-{% for post in posts  limit: 7 %}
-{% if post.title contains "Deep Valley" %}
-{% continue %}
-{% else %}
-
-<div class="swiper-slide"> 
-
-
-          {% for image in post.images limit: 1 %} 
-
-  {% assign count = count | plus: 50 %}
-           <div class="image {{ thecycle }} {% if image.anchor %}{{ image.anchor }}{% endif %}" data-sal="fade" {% comment %} data-sal-delay="{{ count }}" {% endcomment %} data-sal-duration="150" data-sal-easing="ease-in" >
-        {% capture path %}{{ image.img_url }}{% endcapture %}
-{% capture alt %}{{ image.title }}{% endcapture %}
-
-    {% if path contains 'mp4' or path contains 'webm' %}
-                {% capture poster %}{{ image.poster | prepend: site.photourl }}{% endcapture %}
- <video loop muted autoplay playsinline webkit-playsinline src="{{ path | strip_html }}" poster="{{ poster | strip_html }}{{ site.img_sizes.grande }}" class="lazy">
-        <source src="{{ path | strip_html }}" type="{% if path contains 'mp4' %}video/mp4{% else %}video/webm{% endif %}">
-</video>  
-    {% else %}
-
-    <img srcset="{% include img_srcset.html %}" src="{% include img_src.html %}"  sizes="(max-width: 550px) 100vw, 40vw" />  
+    <h1 class="clip-text clip-text_one" data-sal="slide-up" data-sal-delay="300"  data-sal-duration="500" data-sal-easing="ease-in">Max Fronek</h1>
+    <span class="job-title" data-sal="slide-up" data-sal-delay="600"  data-sal-duration="500" data-sal-easing="ease-in">Creative Director</span>
     
-{% endif %}
-
-<div class="content {% comment %}{% if post.cover_color %} {{ post.cover_color }}{% elsif post.feature_color %} {{ post.feature_color }}{% else %} white{% endif %} {% endcomment %}">
-             <a data-sal="slide-up" data-sal-repeat="true" data-sal-delay="250" data-sal-duration="500" href="{{ post.url | prepend: site.url }}" title="{{ post.title }}" ><h2 class="{% include feature_color.html %}">{% if post.title contains 'LSTN' or post.title contains "Accessory" %}{{ post.title | truncatewords: 3, "" }}{% elsif post.title contains "World May Hear" %}{{ post.title | truncatewords: 5, "" }}{% else %}{{ post.title | truncatewords: 2, "" }}{% endif %}</h2></a>
-               <!--  <time>{{ post.date | date: "%B %Y" }}</time> -->
-               {% if post.excerpt != blank %}<p class="excerpt" data-sal="slide-up" data-sal-repeat="true" data-sal-delay="450" data-sal-duration="500">{{ post.excerpt }}</p> {% endif %}
-{% comment %}<a href="{{ post.url | prepend: site.url }}" title="{{ post.title }}" class="see-more" data-sal="slide-up" data-sal-delay="450" data-sal-duration="500" data-sal-once="false">See More</a>{% endcomment %}
-                   <ul data-sal="slide-up" data-sal-repeat="true" data-sal-delay="650" data-sal-duration="500">     {% for category in post.categories %}{% unless category == 'featured' %}<li>{% comment %}<a href="/{{ category }}">{% endcomment %}{{ category }}{% comment%}</a>{% endcomment %}</li>{% endunless %}{% endfor %}</ul>
-         </div>
-<div class="mobile-title"><h4>{{ post.title }}</h4></div>            
-        </div> 
-
-        {% if count >= 500 %}{% assign count = 0 %}{% endif %}   
- {% endfor %}     
-
-
-</div> <!-- end slide -->
-
-{% endif %}
-{% endfor %}
-
-</div><!-- end swiper wrapper -->
-
-</div><!-- End swiper container-->
-
-    <!-- If we need pagination -->
-<div class="swiper-pagination__wrapper">
-        <span class="swiper-pagination-title">Featured Projects</span>
-    <div class="swiper-pagination">
-    </div>
-</div>
-    <!-- If we need navigation buttons -->
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
-
-
-    <!-- If we need scrollbar -->
-    <div class="swiper-scrollbar"></div>
-
-</section>
-
+    </section>
+    
+    <section class="featured-work">
+    
+        <span class="mobile-accordion" data-accordion="true">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M9.5673 14.5796L4.89847 9.91082L4.21692 10.5924L10.0101 16.3855L15.8032 10.5924L15.1217 9.91082L10.5312 14.5014L10.5312 3.55524L9.5673 3.55524L9.5673 14.5796Z" fill="#404040"/>
+            </svg>
+            Featured work</span>
+    
+        {% assign posts = site.posts | sort: 'order' %} {% assign count = 250 %}
+        <div class="images" >
+            {% for post in posts  limit: 8 %}
+                {% if post.title contains "Deep Valley" %}
+                    {% continue %}
+                {% else %}
+    
+                {% for image in post.images limit: 1 %}    
+                {% capture thecycle %}{% cycle 'alpha', 'bravo', 'charlie', 'delta'  %}{% endcapture %}
+                     {% assign count = count | plus: 50 %}
+                         <div class="image {{ thecycle }} {% if image.anchor %}{{ image.anchor }}{% endif %}" data-sal="fade"  data-sal-delay="{{ count }}"  data-sal-duration="150" data-sal-easing="ease-in"  >
+                      {% capture path %}{{ image.img_url  | prepend: site.photourl }}{% endcapture %}
+              {% capture alt %}{{ image.title }}{% endcapture %}
+              
+                  {% if path contains 'mp4' or path contains 'webm' %}
+                               {% capture poster %}{{ image.poster | prepend: site.photourl }}{% endcapture %}
+               <video loop muted autoplay playsinline webkit-playsinline poster="{{ poster | strip_html }}{{ site.img_sizes.grande }}" src="{{ path | strip_html }}" class="lazy">
+                      <source src="{{ path | strip_html }}" type="{% if path contains 'mp4' %}video/mp4{% else %}video/webm{% endif %}">
+              </video>  
+                  {% else %}
+              
+                  <img srcset="{% include img_srcset.html %}" src="{% include img_src.html %}"  sizes="(max-width: 550px) 100vw, 40vw" alt="{{ alt }}"/>  
+                  
+              {% endif %}
+              <div class="content">
+                           <a href="{{ post.url | prepend: site.url }}" title="{{post.title }}"><h2>{% if post.title contains "LSTN" or post.title contains "Accessory" %}{{ post.title | truncatewords: 3, "" }}{% elsif post.title contains "So The" %}{{ post.title }}{% else %}{{ post.title | truncatewords: 2, "" }}{% endif %}</h2>
+                            <div class="tags">
+                                {% for category in post.categories limit: 4 %}
+                                    {% if category == 'design' or category == "featured" %}
+                                        {% continue %}
+                                    {% else %}
+                                        <span class="tag">{{ category }}</span>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                              {% comment %} <time>{{ post.date | date: "%B %Y" }}</time> {% endcomment %}
+                  </a>  
+                       </div>
+               <a class="mobile-title" href="{{ post.url }}">
+                   <h4>{{ post.title }}</h4>
+                   <div class="tags">
+                        {% for category in post.categories limit: 4 %}
+                            {% if category == 'design' or category == "featured" %}
+                                {% continue %}
+                            {% else %}
+                                <span class="tag">{{ category }}</span>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </a>                 
+                      </div>    
+               {% endfor %}       
+                    
+                {% endif %}
+            {% endfor %} {% comment %} end for post in posts limit: 6 loop {% endcomment %}
+        </div>{% comment %} end "images" div {% endcomment %}
+    
+        <a href="/design/" class="more-work">See more<span class="rarr"></span></a>
+    
+    </section>
+    
+    
+    <section class="experience">
+    
+        <h2>Work Experience</h2>
+        <div class="experience__list">
+            <ul>
+                <li>
+                    <span class="title">creative director &mdash; gohunt<br /></span>
+                    <span class="term">october 2021 <span class="rarr"></span> present</span>
+                </li>
+    
+                <li>
+                    <span class="title">art director &mdash; small dog creative<br /></span>
+                    <span class="term">january 2020 <span class="rarr"></span> october 2021</span>
+                </li>
+    
+                <li>
+                    <span class="title">creative director &mdash; lstn sound co<br /></span>
+                    <span class="term">november 2014 <span class="rarr"></span> july 2019</span>
+                </li>
+    
+                <li>
+                    <span class="title">freelance creative &mdash; self<br /></span>
+                    <span class="term">august 2013 <span class="rarr"></span> forever</span>
+                </li>
+    
+            </ul>
+        </div>
+    
+    </section>
+    
+    <section class="experience">
+        <h2>About Me</h2>
+        <div class="experience__list">
+            <p>i started my career as a freelance photographer and videographer. i linked up with the team at lstn and my first job with them was to fly to peru and document us giving hearing aids to people in need. i helped build their brand to new heights, and then I moved into the agency world to broaden my skills with a variety of clients. now i’m all about helping brands big and small with any aspect of their visual messaging. whether you need branding, marketing, frontend development, ui/ux, and any other kind of visual design, i’m here to help. let’s talk.</p>   
+            <div class="contact-max">
+                <ul>
+                    <li><a href="{{ site.photourl }}images/pdfs/MFRONEK-Resume-2020.pdf" target="_blank">Resumé</a></li>
+                    <li><a href="https://linkedin.com/in/maxfronek" target="_blank">LinkedIn</a></li>
+                    <li><a href="mailto:mf@maxfronek.com"  target="_blank">Email</a></li>
+                </ul>
+            </div>
+        </div> <!-- end experience list -->
+    
+        
+    
+    </section>
+    
 {% comment %}
-<script>
-
-
-
-window.addEventListener('load', function() {
-
-let hundoP = window.innerHeight,
-    width = window.innerWidth
-
-function lockMobileViewportHeight() {
-
-if (width > 500) { 
-  document.getElementsByTagName('html')[0].style.cssText = " ";
-  console.log('Window Height is Unlocked');
-
-} else {
-  document.getElementsByTagName('html')[0].style.cssText = "height: " + hundoP + "px";
-  console.log('Window Height is Locked to ' + hundoP + 'px');
-
-}
-
- } 
-
-lockMobileViewportHeight();
-window.addEventListener('resize', function () { lockMobileViewportHeight(); }, false);
-
-
-
-});
-
-
-</script>
-
+// Add skill keywords here for the bots
+    <section class="experience">
+        <h2>Key Skills</h2>
+        <div class="experience__list"> 
+            <ul></ul>
+        </div> <!-- end experience list -->
 {% endcomment %}
+        
+    
+    </section>
+    

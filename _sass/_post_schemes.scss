@@ -71,7 +71,13 @@ $green--background: transparentize($sage, .8);
 }
 .sand {background-color: $light;
     &.footer-links {background-color: $light;}
-    &.next-post {background-color: rgba($light, .75);}
+    &.next-post {background-color: rgba($light, .75);
+    
+        h3 {color: $sage--dark;
+            -webkit-text-stroke-color: $sage--dark;}
+        p {color: $color_content_primary_A;}
+
+    }
     &.content {h1, h2, h3{color: darken($light, 30%); }}
 }
 .pink {background-color: $pink;

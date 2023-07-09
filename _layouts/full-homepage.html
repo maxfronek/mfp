@@ -2,10 +2,10 @@
 <html>
   {% include head.html %}
 
-  <body class="bg {% if page.is_page and page.url == '/testbed/' or page.url == "b"  %}testbed--body{% elsif page.is_page and page.url == '/b/' %}testbed--body{% else %}playground {% endif %}"  {% comment %}Removing feature color for now cause I dont want it interfering with anything fun in the JS {% if page.is_post and post.feature_color %}style="background-color: #{{ post.feature_color }}"{% endif %}{% endcomment %}>
+  <body class="bg {% if page.url == "/" %}testbed--body {% elsif page.is_page and page.url == '/testbed/' or page.url == "b"  %}testbed--body{% elsif page.is_page and page.url == '/b/' %}testbed--body {% else %}playground {% endif %}"  {% comment %}Removing feature color for now cause I dont want it interfering with anything fun in the JS {% if page.is_post and post.feature_color %}style="background-color: #{{ post.feature_color }}"{% endif %}{% endcomment %}>
     {% include header.html %}
     {% include menu.html %}
-    <main class="{% if page.is_post %}post{% elsif page.is_page and page.url == '/testbed/' %}testbed page{% elsif page.is_page and page.url == '/b/' %}testbed page{% elsif page.is_page and page.url != '/' and page.url != "/playground/" %}page{% elsif page.url == '/' %}index-full{% else %}no-class{% endif %}">
+    <main class="{% if page.is_post %}post{% elsif page.is_page and page.url == '/testbed/' %}testbed page{% elsif page.is_page and page.url == '/b/' %}testbed page{% elsif page.is_page and page.url != '/' and page.url != "/playground/" %}page{% elsif page.url == '/' %}{% comment %}index-full {% endcomment %}testbed page{% else %}no-class{% endif %}">
 
 
       <article {% if page.url == '/blog/' %}class="blog"{% elsif page.url == '/photography/' or page.url == '/design/' or page.url contains '/category/' %}class="category"{% endif %}>
@@ -123,5 +123,6 @@ sal();
     </script>
 {% endif %}
 
+{% include footer.html %}
 
 </html>

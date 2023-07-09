@@ -1,0 +1,127 @@
+--- 
+layout: full-homepage
+---
+{% comment %}
+<h1 class="title">{{ site.title | replace: " ", "<br />" }}</h1>
+
+<p>{{ site.description }}</p>
+<section class="homepage-info">
+        <div>
+                <h1 class="homepage-title">Max Fronek</h1>
+                <p>Design / Photography</p>
+        </div>
+    </section>
+
+
+    THIS IS THE OLD HOMEPAGE - RIP 2021 to 2023. Keeping code for posterity or if you ever want to switch back.
+
+
+{% endcomment %}
+
+
+<section class="homepage-single">
+<section id="homepage-info" class="masthead"><h1 class="homepage-title">{{ site.title }}</h1></section>
+<div class="swiper-container">
+<div class="swiper-wrapper">
+
+{% assign posts = site.posts | sort: 'order' %} {% assign count = 250 %}
+{% for post in posts  limit: 7 %}
+{% if post.title contains "Deep Valley" %}
+{% continue %}
+{% else %}
+
+<div class="swiper-slide"> 
+
+
+          {% for image in post.images limit: 1 %} 
+
+  {% assign count = count | plus: 50 %}
+           <div class="image {{ thecycle }} {% if image.anchor %}{{ image.anchor }}{% endif %}" data-sal="fade" {% comment %} data-sal-delay="{{ count }}" {% endcomment %} data-sal-duration="150" data-sal-easing="ease-in" >
+        {% capture path %}{{ image.img_url }}{% endcapture %}
+{% capture alt %}{{ image.title }}{% endcapture %}
+
+    {% if path contains 'mp4' or path contains 'webm' %}
+                {% capture poster %}{{ image.poster | prepend: site.photourl }}{% endcapture %}
+ <video loop muted autoplay playsinline webkit-playsinline src="{{ path | strip_html }}" poster="{{ poster | strip_html }}{{ site.img_sizes.grande }}" class="lazy">
+        <source src="{{ path | strip_html }}" type="{% if path contains 'mp4' %}video/mp4{% else %}video/webm{% endif %}">
+</video>  
+    {% else %}
+
+    <img srcset="{% include img_srcset.html %}" src="{% include img_src.html %}"  sizes="(max-width: 550px) 100vw, 40vw" />  
+    
+{% endif %}
+
+<div class="content {% comment %}{% if post.cover_color %} {{ post.cover_color }}{% elsif post.feature_color %} {{ post.feature_color }}{% else %} white{% endif %} {% endcomment %}">
+             <a data-sal="slide-up" data-sal-repeat="true" data-sal-delay="250" data-sal-duration="500" href="{{ post.url | prepend: site.url }}" title="{{ post.title }}" ><h2 class="{% include feature_color.html %}">{% if post.title contains 'LSTN' or post.title contains "Accessory" %}{{ post.title | truncatewords: 3, "" }}{% elsif post.title contains "World May Hear" %}{{ post.title | truncatewords: 5, "" }}{% else %}{{ post.title | truncatewords: 2, "" }}{% endif %}</h2></a>
+               <!--  <time>{{ post.date | date: "%B %Y" }}</time> -->
+               {% if post.excerpt != blank %}<p class="excerpt" data-sal="slide-up" data-sal-repeat="true" data-sal-delay="450" data-sal-duration="500">{{ post.excerpt }}</p> {% endif %}
+{% comment %}<a href="{{ post.url | prepend: site.url }}" title="{{ post.title }}" class="see-more" data-sal="slide-up" data-sal-delay="450" data-sal-duration="500" data-sal-once="false">See More</a>{% endcomment %}
+                   <ul data-sal="slide-up" data-sal-repeat="true" data-sal-delay="650" data-sal-duration="500">     {% for category in post.categories %}{% unless category == 'featured' %}<li>{% comment %}<a href="/{{ category }}">{% endcomment %}{{ category }}{% comment%}</a>{% endcomment %}</li>{% endunless %}{% endfor %}</ul>
+         </div>
+<div class="mobile-title"><h4>{{ post.title }}</h4></div>            
+        </div> 
+
+        {% if count >= 500 %}{% assign count = 0 %}{% endif %}   
+ {% endfor %}     
+
+
+</div> <!-- end slide -->
+
+{% endif %}
+{% endfor %}
+
+</div><!-- end swiper wrapper -->
+
+</div><!-- End swiper container-->
+
+    <!-- If we need pagination -->
+<div class="swiper-pagination__wrapper">
+        <span class="swiper-pagination-title">Featured Projects</span>
+    <div class="swiper-pagination">
+    </div>
+</div>
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+
+    <!-- If we need scrollbar -->
+    <div class="swiper-scrollbar"></div>
+
+</section>
+
+{% comment %}
+<script>
+
+
+
+window.addEventListener('load', function() {
+
+let hundoP = window.innerHeight,
+    width = window.innerWidth
+
+function lockMobileViewportHeight() {
+
+if (width > 500) { 
+  document.getElementsByTagName('html')[0].style.cssText = " ";
+  console.log('Window Height is Unlocked');
+
+} else {
+  document.getElementsByTagName('html')[0].style.cssText = "height: " + hundoP + "px";
+  console.log('Window Height is Locked to ' + hundoP + 'px');
+
+}
+
+ } 
+
+lockMobileViewportHeight();
+window.addEventListener('resize', function () { lockMobileViewportHeight(); }, false);
+
+
+
+});
+
+
+</script>
+
+{% endcomment %}
