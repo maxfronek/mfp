@@ -2,7 +2,7 @@
     
 		<nav>
 			<ul>
-{% for page in site.pages %} {% if page.title %} {% unless page.is_category_page or page.title == 'Playground' %}
+{% for page in site.pages %} {% if page.title %} {% unless page.is_category_page or page.title == 'Playground' or page.title == 'About Me' or page.title == 'Testbed' %}
 <li class="menu-item"><a href="{{ page.url | prepend: site.baseurl | remove: ',' }}">{{ page.title }}
     </a>
     

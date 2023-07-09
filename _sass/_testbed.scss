@@ -20,7 +20,91 @@
 
     @include huge {font-size: 1.125rem; }
 
-    }
+    } // end .testbed p
+
+    .intro {
+
+        &.intro--b {
+
+            text-align: center; height: 60vh; padding-top: 20vh;
+
+            h1 {font-family: $sub-heading-font; text-transform: uppercase; letter-spacing: clamp(.4rem, .4vw, 1rem); font-size: clamp(2rem, 4vw, 5rem); margin-bottom: 0; font-weight: 800; 
+                -webkit-text-fill-color: transparent;
+                text-fill-color: transparent;
+                -webkit-text-stroke-width: 1px;
+                -webkit-text-stroke-color: $color_content_primary_A;}
+
+            span {font-family: $sub-heading-font; text-transform: uppercase; font-size: clamp(1.125rem, 2vw, 2rem); color: $color_content_secondary; letter-spacing: 0.125rem;}
+
+              .clip-text {
+                position: relative;
+                margin: 0 auto;
+                padding: 0;
+                text-align: center;
+                color: #ffffff;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                -moz-background-clip: text;
+                -moz-text-fill-color: transparent;
+                -ms-background-clip: text;
+                -ms-text-fill-color: transparent;
+                background-clip: text;
+                text-fill-color: transparent;
+              }
+              
+              .clip-text:before,
+              .clip-text:after {
+                position: absolute;
+                content: '';
+              }
+              
+              .clip-text:before {
+                z-index: -2;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                background-image: inherit;
+                background-size: 200%;
+                -webkit-animation:anim 10s infinite ease-in-out;
+                -moz-animation:anim 10s infinite ease-in-out;
+                -ms-animation:anim 10s infinite ease-in-out;
+                animation:anim 10s infinite ease-in-out;
+              }
+              
+              .clip-text:after {
+                position: absolute;
+                z-index: -1;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                background-color: #F2f2f2;
+              }
+              
+              .clip-text_one {
+                background-image:url(../images/BG--A.png);
+                background-size: 150%;
+                -webkit-animation:anim 10s infinite linear;
+                -moz-animation:anim 10s infinite ease-in;
+                -ms-animation:anim 10s infinite ease-in;
+                animation:anim 10s infinite ease-in;
+              }
+              
+              @-webkit-keyframes anim
+              {0%{background-position: 100% 100%;}100%{background-position: 0 0;}}
+              @-moz-keyframes anim
+              {0%{background-position: 100% 100%;}100%{background-position: 0 0;}}
+              @-ms-keyframes anim
+              {0%{background-position: 100% 100%;}100%{background-position: 0 0;}}
+              @keyframes anim
+              {0%{background-position: 100% 100%;}100%{background-position: 0 0;}}
+
+
+
+        } // end intro.intro--b
+
+    } // end intro
 
 
     span.termina {font-family: $sub-heading-font; font-weight: 800;}
@@ -144,11 +228,22 @@
 
         }
 
+        @media (min-width: 1800px) {
+            &__list, h2 {@include flex(0 0 50%);}
+            &__list {
+                ul {margin-left: 0;}
+            }
+
+        } // end min width 1800
+
     }
 
     .contact-max {
 
-        ul {@include flexbox; gap: 2rem; width: fit-content; margin-right: 0; margin-left: auto;
+        ul {@include flexbox; gap: 2rem; width: fit-content; margin-right: 0; margin-left: 0; padding-left: 0; width: 100%;
+
+           //  @media (min-width: 768px) {width: 50%;}
+
             li { text-transform: lowercase; 
                 &:before {content: '';}
                 a { @include flexbox;

@@ -134,10 +134,11 @@ $green--background: transparentize($sage, .8);
     &.footer-links {background-color: $dark-blue; span {color: $dark-blue--complement;}
     }
     &.next-post {background-color: rgba($dark-blue, .75);
-        span {color: $dark-blue--complement;}
+        span {color: $color_content_primary_B;}
     }
     
-      h1, h2, h3 {color: $dark-blue--light !important;}
+      h1, h2 {color: $dark-blue--light !important;}
+        h3 {color: $color_content_primary_B;}
   &.content {h1, h2, h3 {color: $dark-blue--light} ul li, time {color: $dark-blue--light;} }
            .hamburger {
         .patty {background-color: $dark-blue--light;}

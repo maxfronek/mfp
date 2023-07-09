@@ -1,5 +1,5 @@
 // smooth scrolling to anchor links babyyyy
-html {scroll-behavior:smooth}
+html {scroll-behavior:smooth; overflow-x: hidden;}
 
 // resume normal scss shenanigans
 
@@ -12,6 +12,7 @@ body {
   line-height: 1.6;
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
     
     &.lock {overflow:hidden;}    
   
@@ -499,7 +500,7 @@ main {
         } // end imagewrap figure
 
         @include medium {
-          max-height: 88vh; height: 70vh;
+          max-height: 45vh; height: 45vh;
 
           img, video {max-height: 88vh;}
           figure {max-height: 88vh;}

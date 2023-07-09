@@ -25,6 +25,9 @@ group :jekyll_plugins do
   gem "jekyll-category-pages"
 end
 
+# add jekyll archives for easy category pages
+gem 'jekyll-archives'
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 

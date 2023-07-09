@@ -10,7 +10,7 @@ $sub-heading-font: 'termina', 'futura pt', sans-serif;
 $font-style: 'futura-pt', 'Futura', sans-serif;
 $main-font: 'Inter', 'Helvetica', 'Arial', sans-serif;
 
-// colors
+// colors (OLD, keep for posterity cause i don't want to refactor anything yet)
 $main: #ca9a2c;
 $bg: #fafafa;
 $mf-green: #0a2216;
@@ -25,6 +25,41 @@ $header: #0a2216;
 
 $homepage-title-link-unhover: 0px -20px 0px;
 $homepage-title-link-hover: 0px -90px 0px;
+
+
+// colors NEW AND IMPROVED
+
+// index
+
+$grey0: #FFFFFF;
+$grey25: #fafafa;
+$grey50: #f2f2f2;
+$grey100: #e0e0e0;
+$grey400: #a4a4a4;
+$grey500: #8e8e92;
+$grey600: #404040;
+$grey900: #1c1c1d;
+$grey1000: #000000; 
+
+$gold500: #CA9A2C;
+
+$green800: #0A2216;
+
+$blue200: #4FB2E4;
+
+$primary500: $gold500;
+
+// semantic 
+
+$color_content_primary_A: $grey600;
+$color_content_primary_B: $grey25;
+$color_content_secondary: $grey500;
+
+$color_content_primary_A__interactive: $grey400;
+$color_content_primary_B__interactive: $grey400;
+$color_content_secondary__interactive: $grey600;
+
+
 
 //mixins
 

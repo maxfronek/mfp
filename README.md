@@ -1,4 +1,6 @@
-mf.design v2.0 | 2020-09
+mf.design v3.0 | 2023-07
+
+[see it in action](https://mf.design)
 
 OK so to start
 ==============

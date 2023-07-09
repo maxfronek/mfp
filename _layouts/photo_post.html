@@ -25,6 +25,36 @@ layout: "default"
         <h3 class="{{ thecycle }} heading" id="{{ image.heading }}">{{ image.heading }}</h3>
         {% endif %}
 
+        {% if image.img_url == 'gallery' %}
+
+
+        <div class="swiper">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+
+            {% for item in image.gallery_images %}
+
+              <div class="swiper-slide">
+                <a href="{{ item.path | prepend: site.photourl }}" class="expand{% if item.invert %} invert{% endif %}">
+                <img src="{{ item.path }}" alt="{{ item.alt }}" {% if item.border %}style="border: 1px solid #8e8e92;"{% endif %} />
+                </a>
+              </div>
+
+
+            {% endfor %}
+          </div>
+          <!-- If we need pagination -->
+          <div class="swiper-pagination"></div>
+        
+          <div class="swiper-button-prev lum-previous-button"></div>
+          <div class="swiper-button-next lum-next-button"></div>
+
+        </div>
+
+
+        {% else %}
+
 {% unless image.img_url contains 'blank' %}
 <div {% unless forloop.index == 1 %}data-sal="fade" data-sal-delay="450"  data-sal-duration="250" data-sal-easing="ease-in"{% endunless %} class="imagewrap {% if image.width and forloop.index != 1 %}{{ image.width }}{% endif %} {% if image.anchor %}{{ image.anchor }}{% endif %} {% if image.offset %}{{ image.offset }}{% endif %} 
 {% if image.change_bg %}change-to-{{ image.change_bg }}{% endif %}" {% if forloop.index > 3 %} data-sal="fade" data-sal-delay="100"  data-sal-duration="250" data-sal-easing="ease-in" {% endif %} >
@@ -132,7 +162,9 @@ layout: "default"
 
     {% endif %} {% comment %} END conditional only show jump links after first image {% endcomment %}
 
-{% endfor %}
+    {% endif %} {% comment %} end if NOT gallery {% endcomment %}
+
+{% endfor %} {% comment %} master for image in images loop {% endcomment %}
         
         {{ content }}
         
@@ -164,6 +196,7 @@ layout: "default"
 </div></a>
 {% endif %}
 <script>
+
     var color = document.getElementById('feature_color'),
         scheme = color.getAttribute('data-color'),
         body = document.querySelector('body'),
@@ -217,11 +250,59 @@ var requestAnimFrame = (function(){
   return  window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || function( callback ){ window.setTimeout(callback, 1000 / 60); };
 })();
 
+{% for image in page.images %}
+
+{% if image.img_url == 'gallery' %}
+
+const swiper = new Swiper('.swiper', {
+  // Optional parameters
+  autoHeight: false,
+
+  slidesPerView: 1,
+  spaceBetween: 16,
+
+  breakpoints: {
+
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 32,
+    },
+
+    1200: {
+      slidesPerView: 3,
+      spaceBetween: 64,
+    },
+  },
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+
+  // Navigation arrows
+  
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  
+
+  // And if we need scrollbar
+  /*
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+  */
+});
+
+{% endif %}
+
+{% endfor %}
 
 
 // Playing with fun chapter marker stuff but let's put it away now. 
 /*
-
 
 var chapterMarkers = document.getElementsByClassName("heading"); // Do not use a period here!
 var values = Array.prototype.map.call(chapterMarkers, function(el) {
@@ -236,6 +317,10 @@ values.forEach(function(el) {
 
 */
 
-   
-        
 </script>
+
+
+
+
+
+
