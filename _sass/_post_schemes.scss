@@ -86,7 +86,12 @@ $green--background: transparentize($sage, .8);
     blockquote {color: $pink--dark; border-color: $pink--light;}
     p {color: darken($pink--dark, 20%);}
     &.footer-links {background-color: $pink;}
-    &.next-post {background-color: rgba($pink, .75);}
+    &.next-post {background-color: rgba($pink, .75);
+        h3 {color: $pink--dark;
+            -webkit-text-stroke-color: $pink--dark;
+        }
+        p {color: $color_content_primary_A;}
+    }
 }
 .grey {background-color: $grey--dark;
     h1, h2, h3 {color: $grey--light !important;}

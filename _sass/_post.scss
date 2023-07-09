@@ -264,7 +264,7 @@
 }
 
 
-.next-post {width: 100%;background-color: #FAE9FA;min-height: 200px;position: absolute;left: 0;margin-top: 10rem; z-index: 9;
+.next-post {width: 100%;background-color: #FAE9FA;min-height: 200px;position: absolute;left: 0;margin-top: 4.625rem; z-index: 9;
   @include flexbox;
   @include justify-content(center);
   @include align-items(center); @include flex-direction(column);

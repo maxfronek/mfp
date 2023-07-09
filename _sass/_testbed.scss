@@ -28,6 +28,8 @@
 
             text-align: center; height: 60vh; padding-top: 20vh;
 
+            @include medium {height: 400px; height: 45vh; padding-top: 15vh;}
+
             h1 {font-family: $sub-heading-font; text-transform: uppercase; letter-spacing: clamp(.4rem, .4vw, 1rem); font-size: clamp(2rem, 4vw, 5rem); margin-bottom: 0; font-weight: 800; 
                 -webkit-text-fill-color: transparent;
                 text-fill-color: transparent;
@@ -83,7 +85,7 @@
               }
               
               .clip-text_one {
-                background-image:url(../images/BG--A.png);
+                background-image:url(../images/BG--A_green.png);
                 background-size: 150%;
                 -webkit-animation:anim 10s infinite linear;
                 -moz-animation:anim 10s infinite ease-in;
@@ -92,13 +94,13 @@
               }
               
               @-webkit-keyframes anim
-              {0%{background-position: 100% 100%;}100%{background-position: 0 0;}}
+              {0%{background-position: 100% 100%;}80%{background-position: 0 0;}100%{background-position: 0 0;}}
               @-moz-keyframes anim
-              {0%{background-position: 100% 100%;}100%{background-position: 0 0;}}
+              {0%{background-position: 100% 100%;}80%{background-position: 0 0;}100%{background-position: 0 0;}}
               @-ms-keyframes anim
-              {0%{background-position: 100% 100%;}100%{background-position: 0 0;}}
+              {0%{background-position: 100% 100%;}80%{background-position: 0 0;}100%{background-position: 0 0;}}
               @keyframes anim
-              {0%{background-position: 100% 100%;}100%{background-position: 0 0;}}
+              {0%{background-position: 100% 100%;}80%{background-position: 0 0;}100%{background-position: 0 0;}}
 
 
 
@@ -246,10 +248,11 @@
 
             li { text-transform: lowercase; 
                 &:before {content: '';}
-                a { @include flexbox;
+                a { @include flexbox;text-decoration: none; @include prefix(box-shadow, 0px -10px 0px rgba($link-underline-color, .3) inset, webkit); padding-right: 0.5rem;
+
                     &:before {content: ''; background-image: url("data:image/svg+xml,%3Csvg width='29' height='29' viewBox='0 0 29 29' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M17.6863 11.2097L17.6863 17.8125L18.6502 17.8125L18.6502 9.61968L10.4574 9.61968L10.4574 10.5835L16.9494 10.5835L9.20936 18.3236L9.89091 19.0052L17.6863 11.2097Z' fill='%238E8E92'/%3E%3C/svg%3E%0A"); width: 1.875rem; height: 1.875rem; background-size: contain; background-repeat: no-repeat; margin-right: 0.25rem; display: block; transform: rotate(0deg); transition: .15s all ease-in-out;}
 
-                    @include hocus {opacity: .5;
+                    @include hocus {opacity: .9; @include prefix(box-shadow, 0px -30px 0px rgba($link-underline-color, .3) inset, webkit);
                         &:before {transform: rotate(45deg);}
                     } // end a hocus
                 } // end contact-max ul li a

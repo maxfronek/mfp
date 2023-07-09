@@ -12,7 +12,6 @@ body {
   line-height: 1.6;
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
     
     &.lock {overflow:hidden;}    
   
@@ -574,18 +573,18 @@ main {
 
 
 footer {
-  text-align: center;
-  @include flexbox; @include flex-direction(row);@include align-items(center);  @include justify-content(center);  
-  padding: 40px;
+  text-align: center; width: 100vw; background: $grey900;
+  @include flexbox; @include flex-direction(row);@include align-items(center);  @include justify-content(flex-start);  
+  padding: 0.5rem;
     hr {width: 100%; position: absolute; top: unset; margin-top: -5px;z-index: -1; border: 0px solid transparent; border-top: 1px solid $heading-font-color;}
-    .footer-links {/*background-color: $bg;*/ padding: 0 2rem; z-index: 1; margin-top: 2rem;
+    .footer-links {/*background-color: $bg;*/ padding: 0 2rem; z-index: 1; margin: 0.75rem 0 0.5rem;
       &.photo-post-footer {background-color: transparent !important;}
     }
     a {
         &:after {content: ""; margin-right: 1rem;}
         &:last-child {&:after {content: "";margin-right: 0rem;}}
             
-    img {width: 30px; @include prefix(transition, .2s all ease-in-out, ms moz webkit o);}
+    img {width: 30px; @include prefix(transition, .2s all ease-in-out, ms moz webkit o); filter: invert(0.85);}
         
       @include hocus {img { opacity: .6;}}
            @include medium { img {width: 25px;} }

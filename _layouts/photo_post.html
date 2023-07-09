@@ -94,7 +94,7 @@ layout: "default"
 
 
   {% unless forloop.index == 1 %}<a href="{{ image.img_url | prepend: site.photourl }}" class="expand{% if image.invert %} invert{% endif %}">{% endunless %}
-    <img alt="{{ image.title }}" srcset="{% include img_srcset.html %}" src="{% include img_src.html %}"  sizes="80vw" class="gallery-item {% if forloop.index == 1 %} post-leader{% endif %}" />  
+    <img alt="{{ image.title }}" srcset="{% include img_srcset.html %}" src="{% include img_src.html %}"  sizes="80vw" class="gallery-item {% if forloop.index == 1 %} post-leader{% endif %}" style="{% if image.position %}{{ image.position | prepend: 'object-position: ' }}{% endif %}" />  
     {% if forloop.index == 1 %} 
 
     <figure>

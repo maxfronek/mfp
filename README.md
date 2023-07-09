@@ -48,6 +48,13 @@ After the `images` line remember to use YML syntax. You can include some or none
   change_bg: will fade the background from the initial featured color to a new one. must be from the list.
   ```
 
+Here add how to do a swiper/slidey gallery!!!
+
+```
+Gallery gallery gallery
+```
+
+
   At the end, close out your YML front matter with ```---``` and write markdown for anything else you need. End every post with something like this (example from Mazz's post):
 
 ```
@@ -60,3 +67,4 @@ Packaging, Collateral, Product Labeling, Typography
 
 Visit [Mazz Hanna Wellness](http://mazzhanna.com)
 ```
+

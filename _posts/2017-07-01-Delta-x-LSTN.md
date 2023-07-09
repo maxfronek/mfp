@@ -10,18 +10,22 @@ order: 1.6
 images:
   - img_url: images/post_images/lstn/lstn-delta-5.jpg
     title: Image provided by Delta Air Lines  
-    paragraph: |
-      In 2017 Delta Air Lines partnered with LSTN Sound Co to create a line of noise-canceling headphones for all Delta One flights. The aim was to bring in a luxury brand that was also committed to making the world a better place, to set apart the in-flight offering when compared to other carriers.
-
-      I led the design process for the headphones, as well as for the product presentation and supporting collaboration materials. As part of this collaboration LSTN also produced limited edition versions of their flagship headphones, the Troubadour, and hosted pop-up events in Delta Sky Clubs around the USA to promote the partnership and their headphones.
+    blockquote: |
+      Delta Air Lines partnered with LSTN to create a line of noise-canceling headphones for all Delta One flights, aiming to bring in a luxury brand committed to making the world a better place and setting apart their in-flight offering when compared to other carriers.
+  - img_url: https://www.youtube.com/embed/6O82QscgrT4 
+    heading: Mission
+    blockquote: |
+      As a part of this partnership, Delta sponsored a mission to the first place LSTN went with Starkey: Peru. We were able to help thousands of people receive hearing aids as a direct result of this partnership.  
   - img_url: images/post_images/lstn/lstn-delta-3.jpg
     title: More than 1 million of these headphones were produced for use on all transcontinental Delta One flights.
-    paragraph: |
-      The LSTN In-Flight model was featured on Delta One transcontinental flights from 2017 through 2019. I led the design process, working with both Delta's team and our overseas suppliers to bring the original design to life. It adapts LSTN's flagship Troubadour design to the rigorous standards required by Delta.
-    heading: In-Flight Headphones 
+    blockquote: |
+      I led the design process to bring an adapted version of LSTN's flagship design up to the rigorous standards required by Delta. The LSTN In-Flight model was featured on Delta One transcontinental flights from 2017 through 2019. 
+    heading: In-Flight Headphones  
   - img_url: images/post_images/lstn/lstn-delta-2.jpg  
     width: half
-    title: The headphones were packaged in a bag that told the LSTN story.   
+    title: The headphones were packaged in a bag that told the LSTN story.
+    paragraph: |
+      As part of this collaboration LSTN also produced limited edition versions of their flagship headphones, and hosted pop-up events in Delta Sky Clubs around the USA to promote the partnership and their headphones.   
   - img_url: images/post_images/lstn/lstn-delta-6.jpg
     width: half 
     title: Image provided by Delta Air Lines
