@@ -57,7 +57,7 @@ layout: "default"
 
 {% unless image.img_url contains 'blank' %}
 
-<div {% unless forloop.index == 1 %}data-sal="fade" data-sal-delay="450"  data-sal-duration="250" data-sal-easing="ease-in"{% endunless %} class="imagewrap {% if image.width and forloop.index != 1 %}{{ image.width }}{% endif %} {% if image.anchor %}{{ image.anchor }}{% endif %} {% if image.offset %}{{ image.offset }}{% endif %} 
+<div {% unless forloop.index == 1 %}data-sal="fade" data-sal-delay="450"  data-sal-duration="250" data-sal-easing="ease-in"{% endunless %} class="imagewrap {% if image.width and forloop.index != 1 %}{{ image.width }}{% endif %} {% if image.anchor %}{{ image.anchor }}{% endif %} {% if image.offset %}offset{% endif %} 
 {% if image.change_bg %}change-to-{{ image.change_bg }}{% endif %}" {% if forloop.index > 3 %} data-sal="fade" data-sal-delay="100"  data-sal-duration="250" data-sal-easing="ease-in" {% endif %} >
        {% if image.img_url contains 'youtube' or image.img_url contains 'vimeo' %}{% capture path %}{{ image.img_url }}{% endcapture %} {% else %}
         {% capture path %}{{ image.img_url | prepend: site.photourl }}{% endcapture %}{% endif %}

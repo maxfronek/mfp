@@ -29,7 +29,10 @@
 <meta property="og:site_name" content="{{ site.title }}">
 <meta property="og:url" content="{{ page.url }}">
 <meta property="og:type" content="website">
-{% if page.is_post %}<meta property="og:image" content="{% for image in page.images %}{% if image.img_url == "blank" or image.img_url == 'gallery' %}{% continue %}{% else %}{{ site.url }}{{ image.img_url | prepend: '/' }}{% break %}{% endif %}{% endfor %}">{% endif %}
+{% if page.is_post %}<meta property="og:image" content="{% for image in page.images %}{% if image.img_url == "blank" or image.img_url == 'gallery' %}{% continue %}{% else %}{{ site.url }}{{ image.img_url | prepend: '/' }}{% break %}{% endif %}{% endfor %}">
+{% else %}
+<meta property="og:image" content="{{ site.url }}/images/mf__og-home.jpg">
+{% endif %}
   
   <link rel="shortcut icon" type="image/png" href="{{ base.url }}/images/favicon.png"/>
   <!-- fonts -->

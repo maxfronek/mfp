@@ -69,7 +69,7 @@ defaults:
 
 jekyll-archives:
   enabled: []
-  layout: "category-index"
+  layout: "category_index"
   permalinks:
     year: '/:year/'
     month: '/:year/:month/'

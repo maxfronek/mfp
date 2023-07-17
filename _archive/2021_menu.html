@@ -1,10 +1,7 @@
-
 <menu>
     
 		<nav>
 			<ul>
-
-
 {% for page in site.pages %} {% if page.title %} {% unless page.is_category_page or page.title == 'Playground' or page.title == 'About Me' or page.title == 'Testbed' or page.url == '/b/' %}
 <li class="menu-item"><a href="{{ page.url | prepend: site.baseurl | remove: ',' }}">{{ page.title }}
     </a>
@@ -59,9 +56,7 @@
                 
                 {% endunless %}
 {% endif %} {% endfor %}
-
-
-
+                    
                 {% comment %}
                 <li class="menu-item"><a href="{{ '/about' }}">Bio</a><div class="image-preview">
           
@@ -93,24 +88,21 @@
         {% endfor %}
     {% endfor %}
                 </li>
-                {% endcomment %} 
-
+                {% endcomment %}
 			</ul>
 		</nav>
-
- 
 
 <div class="menu-footer-links">
     <a href="https://github.com/{{ site.github_username }}" class="github"><img src="/images/social/social-gh.svg" alt="github logo"></a>
     <a href="https://instagram.com/{{ site.instagram_username }}" class="instagram"><img src="/images/social/social-ig.svg" alt="instagram logo"></a>
     {% comment %}
     <a href="https://dribbble.com/{{ site.dribbble_username }}" class="dribbble"><img src="/images/social/social-drb.svg"></a>
-    {% endcomment %} 
+    {% endcomment %}
     <a href="https://linkedin.com/in/{{ site.linkedin_username }}" class="linkedin"><img src="/images/social/social-lnk.svg" alt="linkedin logo"></a>
     {% comment %}<a href="https://behance.net/{{ site.behance_username }}" class="behance"><img src="/images/social/social-be.svg"></a>{% endcomment %}
     {% comment %}
     <a href="https://twitter.com/{{ site.twitter_username }}" class="twitter"><img src="/images/social/social-tw.svg"></a>
-    {% endcomment %}   
+    {% endcomment %}
     </div>
 
 </menu>
