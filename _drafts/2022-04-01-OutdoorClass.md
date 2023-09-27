@@ -53,9 +53,10 @@ images:
     invert: invert
     heading: Marketing
     title: A video I produced for OutdoorCLass demonstrating the breadth of knowledge and instructors on the platform
+    caption: A video I produced for OutdoorCLass demonstrating the breadth of knowledge and instructors on the platform
     show_caption: true
     blockquote: |
-      OutdoorClass launched in June of 2022 and was immediately well-received by the community, blowing past projections for signups in the first month.
+      OutdoorClass launched in June of 2022 and was immediately embraced by the community, blowing past enrollment projections for the first month and beyond.
 
 
 ---
@@ -72,9 +73,10 @@ Video Editing, Motion Graphics, MOGRT Creation<br />
 Figma, Webflow, InDesign, Illustrator, Photoshop, Blender, Premiere, Audition, Asana, Slack, Midjourney, Adobe Podcast
 
 ### The Team
-**GOHUNT**<br />
-Graphic Designer: Conor Murphy<br />
-Junior Visual Designer: Ami Trivedi<br>
+**OutdoorClass**<br />
+Graphic Designers: Conor Murphy, Ami Trivedi<br />
+Executive Producer: Ryan Bailey<br>
+Lead Photographer: Ryan Kendall<br>
 
 **OH Partners**<br />
 ECD: Tim Washburn

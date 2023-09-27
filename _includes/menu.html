@@ -4,7 +4,6 @@
 		<nav>
 			<ul>
 
-
 {% for page in site.pages %} {% if page.title %} {% unless page.is_category_page or page.title == 'Playground' or page.title == 'About Me' or page.title == 'Testbed' or page.url == '/b/' %}
 <li class="menu-item"><a href="{{ page.url | prepend: site.baseurl | remove: ',' }}">{{ page.title }}
     </a>
@@ -58,8 +57,88 @@
 </li>
                 
                 {% endunless %}
-{% endif %} {% endfor %}
+{% endif %} 
+{% endfor %}
 
+{% comment %} end for page in site.pages and start looping through categories instead {% endcomment %}
+
+                <!-- create categories array -->
+                {% assign categories_array = "" | split:"|" %}
+
+                <!--Add each unique 'my_collection' category to the array-->
+                {% for post in site.posts %}
+                {% for category in post.categories %}
+                    {% assign categories_array = categories_array | push: category | uniq %}
+                {% endfor %}
+                {% endfor %}
+
+             <!--Output the categories you want-->
+             {% assign counter = 1 %}
+                {% for category in categories_array %}
+                    {% assign category_url = category | prepend: '/category/' %}
+                    {% if category == 'packaging' or category == 'branding' or category == 'frontend' %}
+                    <li class="menu-item"><a href="{{ category_url | prepend: site.baseurl  }}">{{ category }}
+                    </a>
+                    {% for post in site.posts %}
+                    {% if post.categories contains category %}
+                        {% if post.title contains "Coast" %}{% assign counter = 4 %}{% endif%}
+                        {% for image in post.images %} 
+                        {% if image.heading %}
+
+                        {% if image.img_url == 'blank' %}
+                        {% continue %}
+                        {% endif %}
+
+                            {% assign heading_cat = image.heading | downcase %}
+                            {% if heading_cat == category %}
+
+                            {% comment %}
+                                {% if image.img_url contains 'blank' %}
+                                    {% assign next_image_index = forloop.index | plus: 1 %}
+                                    {% assign next_image = image[next_image_index] %}
+                                    {% capture path %}
+                                        {{- next_image_index -}}
+                                    {% endcapture %}
+                                {% else %}
+                                    {% capture path %}
+                                        {{- image.img_url | prepend: site.photourl -}}
+                                    {% endcapture %}
+                                {% endif %}
+                            {% endcomment %}
+
+                            {% capture path %}
+                                {{- image.img_url | prepend: site.photourl -}}
+                            {% endcapture %}
+
+                            <div class="image-preview" data-image-offset="{{- counter -}}" data-forloopIndex="{{ forloop.index }}" data-img_url="{{- path -}}">
+                            
+
+
+                            {% capture alt %}{% if image.title %}{{ image.title }}{% else %}{{ post.title }}{% endif %}{% endcapture %}
+                            
+                                {% if path contains 'mp4' or path contains 'webm' %}
+                                    <video loop muted autoplay playsinline webkit-playsinline>
+                                        <source src="{{ path | strip_html }}" type="{% if path contains 'mp4' %}video/mp4{% else %}video/webm{% endif %}">
+                                    </video>  
+                                {% else %}
+                        
+                                <img srcset="{% include img_srcset.html %}" src="{% include img_src.html %}"  sizes="(max-width: 550px) 0vw, 40vw" alt="{{ alt }}" />  
+                            
+                                {% endif %}
+
+                            {% break %}
+                            </div>
+                            {% endif %}{% comment %} end if heading_cat == category {% endcomment %}
+                            {% endif %}{% comment %} end if image.heading exists {% endcomment %}
+                        {% endfor %}{% comment %} end for image in post.images {% endcomment %}
+                    {% endif %}{% comment %} end IF post has category {% endcomment %}
+
+                    {% endfor %}{% comment %} end for post in site.posts {% endcomment %}
+
+                {% assign counter = counter | plus: 1 %}
+                </li>
+                    {% else %}{% continue %}{% endif %}{% comment %} end IF category is specified {% endcomment %}
+                {% endfor %}{% comment %} end FOR category in categories_array {% endcomment %}
 
 
                 {% comment %}

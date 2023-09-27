@@ -59,6 +59,36 @@ p {color: #aaa;}
 }
 .pink.next-post {background-color: rgba(233, 194, 213, 0.15);}
 
+// testbed changes for night mode goodness
+
+.testbed--body {background-color: #161c18;
+
+  .hamburger.is-visible .menu-bg {background: #161c18;}
+
+}
+
+.testbed .intro.intro--b h1 {
+  -webkit-text-stroke-color: #F2f2f2;
+}
+
+.testbed .intro.intro--b .clip-text {
+
+  color: #FAFAFA;
+  &:after {
+    background-color: #161c18;
+  }
+
+} 
+
+.testbed .images .image .content {
+  background: rgba(64,64,64, 0.9);
+}
+
+.testbed .more-work {background-color: #161c18;}
+.testbed .more-work:hover, .testbed .more-work:active, .testbed .more-work:focus {background-color: #161c18; color: #ccc;}
+
+.testbed span.rarr::after {filter: invert(1);}
+
 // this bracket closes the dark mode media query
   }
 

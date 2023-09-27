@@ -51,7 +51,7 @@
     </script>
     {% endif %}
 
-{% if page.url == '/' or page.url == '/photography/' or page.url == '/design/' or page.url == '/blog/' or page.url == '/playground/' %}
+{% if page.url == '/' or page.url == '/photography/' or page.url == '/design/' or page.url == '/blog/' or page.url == '/playground/' or page.url contains 'category' or page.url contains 'tag' %}
     <script>
 
 imagesLoaded( document.querySelector('#masonry'), function() {

@@ -21,11 +21,14 @@ is_category_page: true
         {% assign posts = paginator.posts | sort: 'order' %} 
     {% for post in posts limit:paginator.per_page %}
 
+      {% assign category_name = page.title | downcase %}
     
-    {% for image in post.images limit: 1 %}    
+    {% for image in post.images %}  
+      {% if image.heading contains category_name %}          
+
   {% capture thecycle %}{% cycle 'alpha', 'bravo', 'charlie', 'delta'  %}{% endcapture %}
        
-           <div class="image {{ thecycle }} {% if image.anchor %}{{ image.anchor }}{% endif %}"  >
+           <div class="image {{ thecycle }} {% if image.anchor %}{{ image.anchor }}{% endif %}"  data-sal="fade"  data-sal-delay="{{ count }}"  data-sal-duration="150" data-sal-easing="ease-in">
         {% capture path %}{{ image.img_url }}{% endcapture %}
 {% capture alt %}{{ image.title }}{% endcapture %}
 
@@ -49,10 +52,11 @@ is_category_page: true
     </a>  
          </div>
                
-        </div>    
- {% endfor %}       
+        </div>   
+        {% endif %} {% comment %} end IF image.heading == category_name {% endcomment %} 
+{% endfor %}{% comment %} end FOR image in post.images {% endcomment %}
 
-    {% endfor %}
+    {% endfor %} {% comment %} end for post in posts limit pagination {% endcomment %}
   </section>
   <!-- Show navigation next/previous page links if applicable -->
   <nav><p>
@@ -65,16 +69,21 @@ is_category_page: true
   <!-- Pagination is not active -->
   <h1 class="category-title">{{ page.title }}</h1>
 
-  <section class="images home" id="masonry">
+  {% assign category_name = page.title | downcase %}
+  <section class="images" id="masonry" data-category="{{- category_name -}}">
     <!-- Show excerpts for all posts in this category -->
     {% assign posts = page.posts | sort: 'order' %} 
 {% for post in posts %}
 
     
-    {% for image in post.images limit: 1 %}    
+    {% for image in post.images %}  
+        {% if image.heading %} 
+        {% assign heading_category = image.heading | downcase %}
+        {% if heading_category == category_name %}
+
   {% capture thecycle %}{% cycle 'alpha', 'bravo', 'charlie', 'delta'  %}{% endcapture %}
        
-           <div class="image {{ thecycle }} {% if image.anchor %}{{ image.anchor }}{% endif %}"  >
+           <div class="image {{ thecycle }} {% if image.anchor %}{{ image.anchor }}{% endif %}" data-sal="fade"  data-sal-delay="{{ count }}"  data-sal-duration="150" data-sal-easing="ease-in" data-categoryHeading="{{ heading_category }}">
         {% capture path %}{{ image.img_url }}{% endcapture %}
 {% capture alt %}{{ image.title }}{% endcapture %}
 
@@ -93,10 +102,13 @@ is_category_page: true
     </a>  
          </div>
                
-        </div>    
- {% endfor %}       
+        </div>  
+        {% endif %}{% comment %} end IF category matches image heading {% endcomment %} 
+        {% break %}
+        {% endif %}  {% comment %} end IF image.heading {% endcomment %}    
+ {% endfor %}{% comment %} end FOR image in images {% endcomment %}    
 
-{% endfor %}
+{% endfor %}{% comment %} end FOR post in posts {% endcomment %}
   </section>
 
 {% endif %}
